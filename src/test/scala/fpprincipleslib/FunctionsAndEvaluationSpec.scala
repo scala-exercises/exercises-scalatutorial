@@ -6,12 +6,12 @@ import org.scalatest.Spec
 import org.scalatest.prop.Checkers
 import shapeless.HNil
 
-class FunctionsAndEvaluationSection extends Spec with Checkers {
+class FunctionsAndEvaluationSectionSpec extends Spec with Checkers {
   def `function asserts` = {
-    check(Test.testSuccess(SectionA.functionAssert _, true :: HNil))
+    check(Test.testSuccess(FunctionsAndEvaluationSection.functionAssert _, true :: HNil))
   }
 
   def `function false asserts` = {
-    check(Test.testSuccess(SectionA.functionFalseAssert _, false :: HNil))
+    check(Test.testSuccess(FunctionsAndEvaluationSection.functionFalseAssert _, false :: HNil))
   }
 }
