@@ -1,10 +1,10 @@
-lazy val template = (project in file("."))
+lazy val `scala-tutorial` = (project in file("."))
     .enablePlugins(ExerciseCompilerPlugin)
     .settings(
       organization := "org.scala-exercises",
-      name         := "exercises-fpprinciples",
+      name         := "exercises-scalatutorial",
       scalaVersion := "2.11.8",
-      version := "0.3.1-SNAPSHOT",
+      version := "0.3.0-SNAPSHOT",
       resolvers ++= Seq(
         Resolver.sonatypeRepo("snapshots"),
         Resolver.sonatypeRepo("releases")

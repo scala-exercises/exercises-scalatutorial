@@ -1,4 +1,4 @@
-package fpprincipleslib
+package scalatutorial
 
 import org.scalatest._
 import org.scalaexercises.definitions._

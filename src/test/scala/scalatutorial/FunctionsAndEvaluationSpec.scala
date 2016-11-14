@@ -1,4 +1,4 @@
-package fpprincipleslib
+package scalatutorial
 
 import org.scalacheck.Shapeless._
 import org.scalaexercises.Test
