@@ -46,14 +46,10 @@ object DefinitionsAndEvaluation extends ScalaTutorialSection {
     * = Methods =
     *
     * Definitions can have parameters. For instance:
-    *
-    * {{{
-    *   def square(x: Double) = x * x
-    * }}}
-    *
-    * And then you can ''call'' a method as follows:
     */
   def usingSquare(res0: Double): Unit = {
+    def square(x: Double) = x * x
+
     square(3.0) shouldBe res0
   }
 
@@ -61,6 +57,8 @@ object DefinitionsAndEvaluation extends ScalaTutorialSection {
     * Let’s define a method that computes the area of a disc, given its radius:
     */
   def areaExercise(res0: Double): Unit = {
+    def square(x: Double) = x * x
+
     def area(radius: Double): Double = 3.14159 * square(radius)
 
     area(10) shouldBe res0
@@ -208,7 +206,5 @@ object DefinitionsAndEvaluation extends ScalaTutorialSection {
     * Scala normally uses call-by-value.
     */
   def nothing(): Unit = ()
-
-  def square(x: Double) = x * x
 
 }

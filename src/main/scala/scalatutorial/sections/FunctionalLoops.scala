@@ -68,7 +68,7 @@ object FunctionalLoops extends ScalaTutorialSection {
     *
     * To compute `sqrt(x)`:
     *
-    *  - Start with an initial _estimate_ `y` (let's pick `y = 1`).
+    *  - Start with an initial ''estimate'' `y` (let's pick `y = 1`).
     *  - Repeatedly improve the estimate by taking the mean of `y` and `x/y`.
     *
     * Example:
@@ -83,7 +83,7 @@ object FunctionalLoops extends ScalaTutorialSection {
     *
     * = Implementation in Scala =
     *
-    * First, we define a method which computes one iteration step
+    * First, we define a method which computes one iteration step:
     *
     * {{{
     *   def sqrtIter(guess: Double, x: Double): Double =
