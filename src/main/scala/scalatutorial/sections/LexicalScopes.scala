@@ -136,7 +136,7 @@ object LexicalScopes extends ScalaTutorialSection {
     * There are two ways to overcome this problem.
     *
     * You could write the multi-line expression in parentheses, because semicolons
-    * are never inserted inside `(...)`:
+    * are never inserted inside `(…)`:
     *
     * {{{
     *   (someLongExpression
@@ -151,20 +151,78 @@ object LexicalScopes extends ScalaTutorialSection {
     *   someOtherExpression
     * }}}
     *
-    * = Summary =
+    * = Top-Level Definitions =
     *
-    * You have seen simple elements of functional programing in Scala.
+    * In real Scala programs, `def` and `val` definitions must be written
+    * within a top-level ''object definition'', in .scala file:
     *
-    *  - arithmetic and boolean expressions
-    *  - conditional expressions if-else
-    *  - functions with recursion
-    *  - nesting and lexical scope
+    * {{{
+    *   object MyExecutableProgram {
+    *     val myVal = …
+    *     def myMethod = …
+    *   }
+    * }}}
     *
-    * You have learned the difference between the call-by-name and
-    * call-by-value evaluation strategies.
+    * The above code defines an ''object'' named `MyExecutableProgram`. You
+    * can refer to its ''members'' using the usual dot notation:
     *
-    * You have learned a way to reason about program execution: reduce expressions using
-    * the substitution model.
+    * {{{
+    *   MyExecutableProgram.myMethod
+    * }}}
+    *
+    * The definition of `MyExecutableProgram` is ''top-level'' because it
+    * is not nested within another definition.
+    *
+    * = Packages and Imports =
+    *
+    * Top-level definitions can be organized in ''packages'':
+    *
+    * {{{
+    *   // file foo/Bar.scala
+    *   package foo
+    *   object Bar { … }
+    * }}}
+    *
+    * {{{
+    *   // file foo/Baz.scala
+    *   package foo
+    *   object Baz { … }
+    * }}}
+    *
+    * Definitions located in a package are visible from other definitions
+    * located in the same package:
+    *
+    * {{{
+    *   // file foo/Baz.scala
+    *   package foo
+    *   object Baz {
+    *     // Bar is visible because it is in the `foo` package too
+    *     Bar.someMethod
+    *   }
+    * }}}
+    *
+    * On the other hand, definitions located in other packages are not directly
+    * visible: you must use ''fully qualified names'' to refer to them:
+    *
+    * {{{
+    *   // file quux/Quux.scala
+    *   package quux
+    *   object Quux {
+    *     foo.Bar.someMethod
+    *   }
+    * }}}
+    *
+    * Finally, you can import names to avoid repeating their fully qualified form:
+    *
+    * {{{
+    *   // file quux/Quux.scala
+    *   package quux
+    *   import foo.Bar
+    *   object Quux {
+    *     // Bar refers to the imported `foo.Bar`
+    *     Bar.someMethod
+    *   }
+    * }}}
     */
   def nothing(): Unit = ()
 }

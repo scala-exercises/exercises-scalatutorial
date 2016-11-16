@@ -113,6 +113,20 @@ object FunctionalLoops extends ScalaTutorialSection {
     *   def sqrt(x: Double) = sqrtIter(1.0, x)
     * }}}
     *
+    * = Summary =
+    *
+    * You have seen simple elements of functional programing in Scala.
+    *
+    *  - arithmetic and boolean expressions
+    *  - conditional expressions if-else
+    *  - functions with recursion
+    *
+    * You have learned the difference between the call-by-name and
+    * call-by-value evaluation strategies.
+    *
+    * You have learned a way to reason about program execution: reduce expressions using
+    * the substitution model.
+    *
     * = Exercise =
     *
     * Complete the following method definition that computes the factorial of a number:
