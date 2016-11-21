@@ -115,7 +115,7 @@ object StandardLibrary extends ScalaTutorialSection {
     val cond: (Int, Int) => Boolean = res0
     def insert(x: Int, xs: List[Int]): List[Int] =
       xs match {
-        case List() => res1
+        case List() => x :: res1
         case y :: ys =>
           if (cond(x, y)) x :: y :: ys
           else y :: insert(x, ys)
