@@ -12,7 +12,7 @@ object StructuringInformation extends ScalaTutorialSection {
     * This section introduces the ways you can structure information in Scala.
     * We will base our examples on the following domain, a ''music sheet'':
     *
-    * <img src="/assets/scala_tutorial/music_sheet.png" />
+    * <img src="/assets/scala_tutorial/music_sheet.png" style="max-width: 100%" />
     *
     * = Aggregating Information With Case Classes =
     *

@@ -138,6 +138,8 @@ object TermsAndTypes extends ScalaTutorialSection {
     *   1.to(10) == 1 to 10
     * }}}
     *
+    * Any method with a parameter can be used like an infix operator.
+    *
     * = Values and Types =
     *
     * Expressions have a ''value'' and a ''type''. The evaluation model

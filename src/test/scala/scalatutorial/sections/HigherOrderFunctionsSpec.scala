@@ -12,6 +12,4 @@ class HigherOrderFunctionsSpec extends Spec with Checkers {
     check(Test.testSuccess(HigherOrderFunctions.tailRecSum _, 1 :: 0 :: HNil))
   }
 
-
-
 }

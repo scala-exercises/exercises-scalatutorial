@@ -175,7 +175,9 @@ object LexicalScopes extends ScalaTutorialSection {
     *
     * = Packages and Imports =
     *
-    * Top-level definitions can be organized in ''packages'':
+    * Top-level definitions can be organized in ''packages''.
+    * To place a class or object inside a package, use a package clause
+    * at the top of your source file:
     *
     * {{{
     *   // file foo/Bar.scala
@@ -222,6 +224,48 @@ object LexicalScopes extends ScalaTutorialSection {
     *     // Bar refers to the imported `foo.Bar`
     *     Bar.someMethod
     *   }
+    * }}}
+    *
+    * = Automatic Imports =
+    *
+    * Some entities are automatically imported in any Scala program.
+    *
+    * These are:
+    *
+    *  - All members of package `scala`
+    *  - All members of package `java.lang`
+    *  - All members of the singleton object `scala.Predef`.
+    *
+    * Here are the fully qualified names of some types and functions
+    * which you have seen so far:
+    *
+    * {{{
+    *   Int                            scala.Int
+    *   Boolean                        scala.Boolean
+    *   Object                         java.lang.Object
+    *   String                         java.lang.String
+    * }}}
+    *
+    * = Writing Executable Programs =
+    *
+    * So far our examples of code were executed from your Web
+    * browser, but it is also possible to create standalone
+    * applications in Scala.
+    *
+    * Each such application contains an object with a `main` method.
+    *
+    * For instance, here is the "Hello World!" program in Scala:
+    *
+    * {{{
+    *   object Hello {
+    *     def main(args: Array[String]) = println("hello world!")
+    *   }
+    * }}}
+    *
+    * Once this program is compiled, you can start it from the command line with
+    *
+    * {{{
+    *   $ scala Hello
     * }}}
     */
   def nothing(): Unit = ()
