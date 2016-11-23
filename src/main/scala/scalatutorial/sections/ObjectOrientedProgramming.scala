@@ -533,20 +533,6 @@ object ObjectOrientedProgramming extends ScalaTutorialSection {
     *
     * Singleton objects are values, so `Empty` evaluates to itself.
     *
-
-Exercise
-========
-
-Write a method `union` for forming the union of two sets. You should
-implement the following abstract class.
-
-      abstract class IntSet {
-        def incl(x: Int): IntSet
-        def contains(x: Int): Boolean
-        def union(other: IntSet): IntSet
-      }
-
-    *
     * = Dynamic Binding =
     *
     * Object-oriented languages (including Scala) implement
@@ -571,7 +557,7 @@ implement the following abstract class.
   *
   * = Traits =
   *
-  * In Java, as well as in Scala, a class can only have one superclass.
+  * In Scala, a class can only have one superclass.
   *
   * But what if a class has several natural supertypes to which it conforms
   * or from which it wants to inherit code?
@@ -596,7 +582,7 @@ implement the following abstract class.
   *   class Square extends Shape with Planar with Movable …
   * }}}
   *
-  * Traits cannot have (value) parameters, only classes can.
+  * On the other hand, traits cannot have (value) parameters, only classes can.
   *
   * = Scala's Class Hierarchy =
   *
