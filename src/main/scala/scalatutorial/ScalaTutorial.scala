@@ -27,8 +27,8 @@ object ScalaTutorial extends Library {
     ObjectOrientedProgramming,
     ImperativeProgramming,
     ClassesVsCaseClasses,
-    LazyEvaluation,
     PolymorphicTypes,
+    LazyEvaluation,
     TypeClasses
   )
 }

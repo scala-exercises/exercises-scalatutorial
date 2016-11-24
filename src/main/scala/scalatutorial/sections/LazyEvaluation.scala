@@ -106,10 +106,10 @@ object LazyEvaluation extends ScalaTutorialSection {
     * Here's the trait `Stream`:
     *
     * {{{
-    *   trait Stream[+A] extends Seq[A] {
+    *   trait Stream[+T] extends Seq[T] {
     *     def isEmpty: Boolean
-    *     def head: A
-    *     def tail: Stream[A]
+    *     def head: T
+    *     def tail: Stream[T]
     *     …
     *   }
     * }}}
