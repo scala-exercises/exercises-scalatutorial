@@ -103,9 +103,9 @@ object StandardLibrary extends ScalaTutorialSection {
     * This idea describes ''Insertion Sort'':
     *
     * {{{
-    *   def isort(xs: List[Int]): List[Int] = xs match {
+    *   def insertionSort(xs: List[Int]): List[Int] = xs match {
     *     case List() => List()
-    *     case y :: ys => insert(y, isort(ys))
+    *     case y :: ys => insert(y, insertionSort(ys))
     *   }
     * }}}
     *
