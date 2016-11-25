@@ -10,7 +10,7 @@ import sections._
   */
 object ScalaTutorial extends Library {
   val owner = "scala-exercises"
-  val repository = "exercises-fpprinciples"
+  val repository = "exercises-scalatutorial"
   override val color = Some("#f26527")
   val logoPath = "scala-tutorial"
 

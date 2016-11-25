@@ -11,6 +11,9 @@ object TermsAndTypes extends ScalaTutorialSection {
     * The contents is based on the MOOCS [[https://www.coursera.org/learn/progfun1/home Functional Programming Principles in Scala]]
     * and [[https://www.coursera.org/learn/progfun2/home Functional Program Design in Scala]].
     *
+    * The target audience is people who already have ''some'' experience of programming and who are familiar with
+    * the JVM.
+    *
     * = Elements of Programming =
     *
     * Programming languages give programmers ways to express computations.
