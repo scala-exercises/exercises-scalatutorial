@@ -20,4 +20,8 @@ class TermsAndTypesSpec extends Spec with Checkers {
 //    check(Test.testSuccess(TermsAndTypes.staticTyping _, 10 :: HNil))
 //  }
 
+  def `check more methods`: Unit = {
+    check(Test.testSuccess(TermsAndTypes.moreMethods _, "10" :: false :: "ba" :: HNil))
+  }
+
 }

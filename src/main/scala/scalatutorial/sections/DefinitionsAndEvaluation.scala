@@ -204,7 +204,19 @@ object DefinitionsAndEvaluation extends ScalaTutorialSection {
     * corresponding parameter is unused in the evaluation of the function body.
     *
     * Scala normally uses call-by-value.
+    *
+    * = Exercise =
+    *
+    * Complete the following definition of the `triangleArea` function,
+    * which takes a triangle base and height as parameters and returns
+    * its area:
     */
-  def nothing(): Unit = ()
+  def triangleAreaExercise(res0: Double, res1: Double): Unit = {
+    def triangleArea(base: Double, height: Double): Double =
+      base * height / res0
+
+    triangleArea(3, 4) shouldBe 6
+    triangleArea(5, 6) shouldBe res1
+  }
 
 }

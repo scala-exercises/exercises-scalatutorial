@@ -261,21 +261,32 @@ object StandardLibrary extends ScalaTutorialSection {
     *
     * === Manipulating `Either[A, B]` Values ===
     *
-    * `Either` has `map` and `flatMap`. These methods transform the `Right`
-    * case only. Way say that `Either` is “right biased”:
+    * Since Scala 2.12, `Either` has `map` and `flatMap`. These methods
+    * transform the `Right` case only. Way say that `Either` is “right biased”:
     *
     * {{{
     *   Right(1).map((x: Int) => x + 1) shouldBe Right(2)
     *   Left("foo").map((x: Int) => x + 1) shouldBe Left("foo")
     * }}}
     *
-    * `Either` also has a `filterOrElse` method that turn a `Right` value
+    * `Either` also has a `filterOrElse` method that turns a `Right` value
     * into a `Left` value if it does not satisfy a given predicate:
     *
     * {{{
     *   Right(1).filterOrElse(x => x % 2 == 0, "Odd value") shouldBe Left("Odd value")
     * }}}
+    *
+    * However, prior to Scala 2.12, `Either` was “unbiased”. You had to explicitly
+    * specify which “side” (`Left` or `Right`) you wanted to `map`:
     */
-  def nothing(): Unit = ()
+  def either(res0: Either[String, Int], res1: Either[String, Int]): Unit = {
+    def triple(x: Int): Int = 3 * x
+
+    def tripleEither(x: Either[String, Int]): Either[String, Int] =
+      x.right.map(triple)
+
+    tripleEither(Right(1)) shouldBe res0
+    tripleEither(Left("not a number")) shouldBe res1
+  }
 
 }

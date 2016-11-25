@@ -8,8 +8,8 @@ import shapeless.HNil
 
 class HigherOrderFunctionsSpec extends Spec with Checkers {
 
-  def `check tail rec sum`: Unit = {
-    check(Test.testSuccess(HigherOrderFunctions.tailRecSum _, 1 :: 0 :: HNil))
-  }
+//  def `check tail rec sum`: Unit = {
+//    check(Test.testSuccess(HigherOrderFunctions.tailRecSum _, 1 :: 0 :: HNil))
+//  }
 
 }

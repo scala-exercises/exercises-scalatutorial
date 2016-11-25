@@ -320,14 +320,33 @@ object ImperativeProgramming extends ScalaTutorialSection {
     * Example:
     *
     * {{{
-    *   for (i <- 1 until 3; j <- "abc") println(i + " " + j)
+    *   for (i <- 1 until 3; j <- "abc") println(s"$i $j")
     * }}}
     *
     * translates to:
     *
     * {{{
-    *   (1 until 3) foreach (i => "abc" foreach (j => println(i + " " + j)))
+    *   (1 until 3) foreach (i => "abc" foreach (j => println(s"$i $j")))
     * }}}
+    *
+    * = Exercise =
+    *
+    * Complete the following imperative implementation of `factorial`:
     */
-  def nothing(): Unit = ()
+  def factorialExercise(res0: Int, res1: Int, res2: Int): Unit = {
+    def factorial(n: Int): Int = {
+      var result = res0
+      var i = res1
+      while (i <= n) {
+        result = result * i
+        i = i + res2
+      }
+      result
+    }
+
+    factorial(2) shouldBe 2
+    factorial(3) shouldBe 6
+    factorial(4) shouldBe 24
+    factorial(5) shouldBe 120
+  }
 }

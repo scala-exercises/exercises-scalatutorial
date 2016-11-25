@@ -267,6 +267,22 @@ object LexicalScopes extends ScalaTutorialSection {
     * {{{
     *   $ scala Hello
     * }}}
+    *
+    * = Exercise =
+    *
     */
-  def nothing(): Unit = ()
+  def objectScopes(res0: Int): Unit = {
+    object Foo {
+      val x = 1
+    }
+    object Bar {
+      val x = 2
+    }
+    object Baz {
+      import Bar.x
+      val y = x + Foo.x
+    }
+
+    Baz.y shouldBe res0
+  }
 }

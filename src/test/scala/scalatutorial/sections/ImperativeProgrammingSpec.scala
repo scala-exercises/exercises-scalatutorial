@@ -12,4 +12,9 @@ class ImperativeProgrammingSpec extends Spec with Checkers {
     check(Test.testSuccess(ImperativeProgramming.observationalEquivalence _, 10 :: HNil))
   }
 
+// Disabled because property based testing generates numbers that are too expensive too compute
+//  def `check factorial`: Unit = {
+//    check(Test.testSuccess(ImperativeProgramming.factorialExercise _, 1 :: 2 :: 1 :: HNil))
+//  }
+
 }

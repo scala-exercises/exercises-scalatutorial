@@ -42,6 +42,9 @@ object StructuringInformation extends ScalaTutorialSection {
     *   val c3 = Note("C", "Quarter", 3)
     * }}}
     *
+    * `c3` is a value that aggregates the arguments passed to the `Note`
+    * constructor.
+    *
     * Then, you can retrieve the information carried by each ''member'' (`name`,
     * `duration` and `octave`) by using the dot notation:
     */
@@ -221,6 +224,28 @@ object StructuringInformation extends ScalaTutorialSection {
     * {{{
     *   case class Note(name: String, duration: String, octave: Int) extends Symbol
     * }}}
+    *
+    * = Exercise =
+    *
+    * Consider the following algebraic data type that models note durations.
+    * Complete the implementation of the function `fractionOfWhole`, which
+    * takes as parameter a duration and returns the corresponding fraction
+    * of the `Whole` duration.
     */
-  def nothing(): Unit = ()
+  def adts(res0: Double, res1: Double): Unit = {
+    sealed trait Duration
+    case object Whole extends Duration
+    case object Half extends Duration
+    case object Quarter extends Duration
+
+    def fractionOfWhole(duration: Duration): Double =
+      duration match {
+        case Whole => 1.0
+        case Half => res0
+        case Quarter => res1
+      }
+
+    fractionOfWhole(Half) shouldBe 0.5
+    fractionOfWhole(Quarter) shouldBe 0.25
+  }
 }

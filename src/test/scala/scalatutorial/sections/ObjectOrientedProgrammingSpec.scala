@@ -12,6 +12,9 @@ class ObjectOrientedProgrammingSpec extends Spec with Checkers {
     check(Test.testSuccess(ObjectOrientedProgramming.dynamicBinding _, false :: true :: HNil))
   }
 
+  def `check reducer`: Unit = {
+    check(Test.testSuccess(ObjectOrientedProgramming.reducer _, 24 :: 10 :: HNil))
+  }
 
 
 }

@@ -419,7 +419,21 @@ object PolymorphicTypes extends ScalaTutorialSection {
     *
     *  - covariant type parameters may appear in lower bounds of method type parameters
     *  - contravariant type parameters may appear in upper bounds of method
+    *
+    * = Exercise =
+    *
+    * Complete the following implementation of the `size` function that returns
+    * the size of a given list.
     */
-  def nothing(): Unit = ()
+  def sizeExercise(res0: Int, res1: Int): Unit = {
+    def size[A](xs: List[A]): Int =
+      xs match {
+        case Nil => res0
+        case y :: ys => res1 + size(ys)
+      }
+    size(Nil) shouldBe 0
+    size(List(1, 2)) shouldBe 2
+    size(List("a", "b", "c")) shouldBe 3
+  }
 
 }

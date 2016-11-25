@@ -16,4 +16,8 @@ class DefinitionsAndEvaluationSpec extends Spec with Checkers {
     check(Test.testSuccess(DefinitionsAndEvaluation.areaExercise _, 314.159 :: HNil))
   }
 
+  def `check triangle area`: Unit = {
+    check(Test.testSuccess(DefinitionsAndEvaluation.triangleAreaExercise _, 2.0 :: 15.0 :: HNil))
+  }
+
 }

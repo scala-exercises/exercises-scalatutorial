@@ -164,13 +164,23 @@ object TermsAndTypes extends ScalaTutorialSection {
   /**
     * = Common Types =
     *
-    *  - `Int`: 32-bit integers
-    *  - `Double`: 64-bit floating point numbers
-    *  - `Boolean`: boolean values
-    *  - `String`: text
+    *  - `Int`: 32-bit integers (e.g. `1`, `23`, `456`)
+    *  - `Double`: 64-bit floating point numbers (e.g. `1.0`, `2.3`, `4.56`)
+    *  - `Boolean`: boolean values (`true` and `false`)
+    *  - `String`: text (e.g. `"foo"`, `"bar"`)
     *
-    *  Note that type names always begin with an upper case.
+    * Note that type names always begin with an upper case letter.
+    *
+    * = Exercise =
+    *
+    * Here are some more methods of standard types. Can you guess what they do?
     */
-  def nothing(): Unit = ()
+  def moreMethods(res0: String, res1: Boolean, res2: String): Unit = {
+    16.toHexString shouldBe res0
+    (0 to 10).contains(10) shouldBe true
+    (0 until 10).contains(10) shouldBe res1
+    "foo".drop(1) shouldBe "oo"
+    "bar".take(2) shouldBe res2
+  }
 
 }

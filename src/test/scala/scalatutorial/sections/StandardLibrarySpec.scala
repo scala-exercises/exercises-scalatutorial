@@ -12,4 +12,8 @@ class StandardLibrarySpec extends Spec with Checkers {
     check(Test.testSuccess(StandardLibrary.insertionSort _, ((_: Int) < (_: Int)) ::  List.empty[Int] :: HNil))
   }
 
+  def `check either`: Unit = {
+    check(Test.testSuccess(StandardLibrary.either _, (Right[String, Int](3): Either[String, Int]) :: (Left[String, Int]("not a number"): Either[String, Int]) :: HNil))
+  }
+
 }

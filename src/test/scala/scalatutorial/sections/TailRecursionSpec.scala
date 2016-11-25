@@ -8,8 +8,8 @@ import shapeless.HNil
 
 class TailRecursionSpec extends Spec with Checkers {
 
-  def `check tail recursive factorial`: Unit = {
-    check(Test.testSuccess(TailRecursion.tailRecFactorial _, 0 :: 1 :: 1 :: HNil))
-  }
+//  def `check tail recursive factorial`: Unit = {
+//    check(Test.testSuccess(TailRecursion.tailRecFactorial _, 0 :: 1 :: 1 :: HNil))
+//  }
 
 }

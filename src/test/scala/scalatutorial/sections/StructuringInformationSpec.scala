@@ -16,6 +16,8 @@ class StructuringInformationSpec extends Spec with Checkers {
     check(Test.testSuccess(StructuringInformation.caseClassEquals _, true :: false :: HNil))
   }
 
-
+  def `check adts`: Unit = {
+    check(Test.testSuccess(StructuringInformation.adts _, 0.5 :: 0.25 :: HNil))
+  }
 
 }

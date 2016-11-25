@@ -12,4 +12,8 @@ class LexicalScopesSpec extends Spec with Checkers {
     check(Test.testSuccess(LexicalScopes.scopeRules _, 16 :: HNil))
   }
 
+  def `check objects scopes`: Unit = {
+    check(Test.testSuccess(LexicalScopes.objectScopes _, 3 :: HNil))
+  }
+
 }

@@ -304,7 +304,7 @@ object ObjectOrientedProgramming extends ScalaTutorialSection {
     * a computation model based on substitution. Now we extend this
     * model to classes and objects.
     *
-    * How is an instantiation of the class `new C(e1, …, en)` evaluted?
+    * How is an instantiation of the class `new C(e1, …, en)` evaluated?
     *
     * The expression arguments `e1, …, en`
     * are evaluated like the arguments of a normal function. That's it.
@@ -627,6 +627,35 @@ object ObjectOrientedProgramming extends ScalaTutorialSection {
   *   val y: String = null // y: String
   *   val z: Int = null    // error: type mismatch
   * }}}
+  *
+  * = Exercise =
+  *
+  * The following `Reducer` abstract class defines how to
+  * reduce a list of values into a single value by starting
+  * with an initial value and combining it with each element
+  * of the list:
   */
-  def nothing(): Unit = ()
+  def reducer(res0: Int, res1: Int): Unit = {
+    abstract class Reducer(init: Int) {
+      def combine(x: Int, y: Int): Int
+      def reduce(xs: List[Int]): Int =
+        xs match {
+          case Nil => init
+          case y :: ys => combine(y, reduce(ys))
+        }
+    }
+
+    object Product extends Reducer(1) {
+      def combine(x: Int, y: Int): Int = x * y
+    }
+
+    object Sum extends Reducer(0) {
+      def combine(x: Int, y: Int): Int = x + y
+    }
+
+    val nums = List(1, 2, 3, 4)
+
+    Product.reduce(nums) shouldBe res0
+    Sum.reduce(nums) shouldBe res1
+  }
 }
