@@ -9,8 +9,8 @@ This repository hosts a library for the first course of the [Scala MOOC](https:/
 - Clone this repository, compile and publish the project:
 
 ~~~ sh
-git clone git@github.com:scalacenter/exercises-fpprinciples.git
-cd exercises-fpprinciples/
+git clone git@github.com:scala-exercises/exercises-scalatutorial.git
+cd exercises-scalatutorial/
 sbt compile publishLocal # it is important to first run the `compile` command alone
 ~~~
 
