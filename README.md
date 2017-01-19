@@ -4,6 +4,45 @@
 
 This repository hosts a library for the first course of the [Scala MOOC](https://www.coursera.org/specializations/scala) ("Functional Programming Principles in Scala").
 
+## Run Locally
+
+- Clone this repository, compile and publish the project:
+
+~~~ sh
+git clone git@github.com:scala-exercises/exercises-scalatutorial.git
+cd exercises-scalatutorial/
+sbt compile publishLocal # it is important to first run the `compile` command alone
+~~~
+
+- Clone the `evaluator` and run it:
+
+~~~ sh
+git clone git@github.com:scala-exercises/evaluator.git
+cd evaluator/
+sbt "project evaluator-server" run
+~~~
+
+- Clone the `scala-tutorial` branch of our `scala-exercises` fork:
+
+~~~ sh
+git clone -b scala-tutorial git@github.com:scalacenter/scala-exercises.git
+~~~
+
+- Follow the database setup instructions given
+  [here](https://github.com/scala-exercises/scala-exercises#configure-the-database)
+
+- Add the following line the `server/conf/application.dev.conf`:
+
+~~~
+evaluator.secretKey="secretKey"
+~~~
+
+- Run the server:
+
+~~~ sh
+sbt -mem 1500 run
+~~~
+
 ## About Scala exercises
 
 "Scala Exercises" brings exercises for the Stdlib, Cats, Shapeless and many other great libraries for Scala to your browser. Offering hundreds of solvable exercises organized into several categories covering the basics of the Scala language and it's most important libraries.
