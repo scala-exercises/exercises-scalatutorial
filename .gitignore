@@ -32,5 +32,4 @@ bin/
 .DS_Store
 
 # PGP keys
-pubring.gpg
 secring.gpg
