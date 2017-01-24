@@ -1,5 +1,6 @@
 lazy val `scala-tutorial` = (project in file("."))
     .enablePlugins(ExerciseCompilerPlugin)
+    .settings(publishSettings:_*)
     .settings(
       organization := "org.scala-exercises",
       name         := "exercises-scalatutorial",
@@ -18,3 +19,31 @@ lazy val `scala-tutorial` = (project in file("."))
         compilerPlugin("org.spire-math" %% "kind-projector" % "0.7.1")
       )
     )
+
+// Distribution
+
+lazy val gpgFolder = sys.env.getOrElse("PGP_FOLDER", ".")
+
+lazy val publishSettings = Seq(
+  organizationName := "Scala Exercises",
+  organizationHomepage := Some(new URL("http://scala-exercises.org")),
+  startYear := Some(2016),
+  description := "Scala Exercises: The path to enlightenment",
+  homepage := Some(url("http://scala-exercises.org")),
+  pgpPassphrase := Some(sys.env.getOrElse("PGP_PASSPHRASE", "").toCharArray),
+  pgpPublicRing := file(s"$gpgFolder/pubring.gpg"),
+  pgpSecretRing := file(s"$gpgFolder/secring.gpg"),
+  credentials += Credentials("Sonatype Nexus Repository Manager",  "oss.sonatype.org",  sys.env.getOrElse("PUBLISH_USERNAME", ""),  sys.env.getOrElse("PUBLISH_PASSWORD", "")),
+  scmInfo := Some(ScmInfo(url("https://github.com/scala-exercises/exercises-scalatutorial"), "https://github.com/scala-exercises/exercises-scalatutorial.git")),
+  licenses := Seq("Apache License, Version 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt")),
+  publishMavenStyle := true,
+  publishArtifact in Test := false,
+  pomIncludeRepository := Function.const(false),
+  publishTo := {
+    val nexus = "https://oss.sonatype.org/"
+    if (isSnapshot.value)
+      Some("Snapshots" at nexus + "content/repositories/snapshots")
+    else
+      Some("Releases" at nexus + "service/local/staging/deploy/maven2")
+  }
+)
