@@ -13,7 +13,7 @@ class TermsAndTypesSpec extends Spec with Checkers {
   }
 
   def `check methods`: Unit = {
-    check(Test.testSuccess(TermsAndTypes.methods _, 42 :: "HELLO, SCALA!" :: HNil))
+    check(Test.testSuccess(TermsAndTypes.methods _, "HELLO, SCALA!" :: 42 :: HNil))
   }
 
 //  def `static typing`: Unit = {

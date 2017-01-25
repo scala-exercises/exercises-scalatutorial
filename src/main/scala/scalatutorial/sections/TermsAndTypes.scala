@@ -119,9 +119,9 @@ object TermsAndTypes extends ScalaTutorialSection {
     * number, and the `toUpperCase` method returns the target `String` in
     * upper case.
     */
-  def methods(res0: Int, res1: String): Unit = {
-    "Hello, Scala!".toUpperCase shouldBe res1
-    -42.abs shouldBe res0
+  def methods(res0: String, res1: Int): Unit = {
+    "Hello, Scala!".toUpperCase shouldBe res0
+    -42.abs shouldBe res1
   }
 
   /**
