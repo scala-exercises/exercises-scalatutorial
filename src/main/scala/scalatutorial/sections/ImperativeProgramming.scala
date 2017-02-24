@@ -283,7 +283,7 @@ object ImperativeProgramming extends ScalaTutorialSection {
     *
     * == While-Loops ==
     *
-    * We can also write loops with the `wile` keyword:
+    * We can also write loops with the `while` keyword:
     *
     * {{{
     *   def power (x: Double, exp: Int): Double = {
