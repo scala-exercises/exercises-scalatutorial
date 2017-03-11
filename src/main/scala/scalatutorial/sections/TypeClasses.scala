@@ -60,7 +60,8 @@ object TypeClasses extends ScalaTutorialSection {
     *       case y :: ys => insert(y, insertionSort(ys)(lessThan))
     *     }
     *   }
-    *
+    * }}}
+    
     * = Calling Parameterized Sort =
     *
     * We can now call `insertionSort` as follows:
