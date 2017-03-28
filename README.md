@@ -1,5 +1,4 @@
-#Scala Exercises - Functional Programming Principles library
-
+# Scala Exercises - Functional Programming Principles library
 ------------------------
 
 This repository hosts a library for the first course of the [Scala MOOC](https://www.coursera.org/specializations/scala) ("Functional Programming Principles in Scala").
@@ -43,7 +42,7 @@ evaluator.secretKey="secretKey"
 sbt -mem 1500 run
 ~~~
 
-## About Scala exercises
+## About Scala exercises
 
 "Scala Exercises" brings exercises for the Stdlib, Cats, Shapeless and many other great libraries for Scala to your browser. Offering hundreds of solvable exercises organized into several categories covering the basics of the Scala language and it's most important libraries.
 
@@ -54,7 +53,7 @@ Scala Exercises is available at [scala-exercises.org](https://scala-exercises.or
 Contributions welcome! Please join our [Gitter channel](https://gitter.im/scala-exercises/scala-exercises)
 to get involved, or visit our [GitHub site](https://github.com/scala-exercises).
 
-##License
+## License
 
 Copyright (C) 2015-2016 47 Degrees, LLC.
 Reactive, scalable software solutions.
