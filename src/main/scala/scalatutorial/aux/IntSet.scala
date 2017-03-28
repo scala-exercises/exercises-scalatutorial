@@ -1,3 +1,8 @@
+/*
+ * scala-exercises - exercises-scalatutorial
+ * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ */
+
 package scalatutorial.aux
 
 abstract class IntSet {
@@ -7,13 +12,13 @@ abstract class IntSet {
 
 object Empty extends IntSet {
   def contains(x: Int): Boolean = false
-  def incl(x: Int): IntSet = new NonEmpty(x, Empty, Empty)
+  def incl(x: Int): IntSet      = new NonEmpty(x, Empty, Empty)
 }
 class NonEmpty(elem: Int, left: IntSet, right: IntSet) extends IntSet {
 
   def contains(x: Int): Boolean =
     if (x < elem) left contains x
-      else if (x > elem) right contains x
+    else if (x > elem) right contains x
     else true
 
   def incl(x: Int): IntSet =

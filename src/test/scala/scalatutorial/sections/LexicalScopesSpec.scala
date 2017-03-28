@@ -1,3 +1,8 @@
+/*
+ * scala-exercises - exercises-scalatutorial
+ * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ */
+
 package scalatutorial.sections
 
 import org.scalacheck.Shapeless._
@@ -8,12 +13,10 @@ import shapeless.HNil
 
 class LexicalScopesSpec extends Spec with Checkers {
 
-  def `check scope rules`: Unit = {
+  def `check scope rules`: Unit =
     check(Test.testSuccess(LexicalScopes.scopeRules _, 16 :: HNil))
-  }
 
-  def `check objects scopes`: Unit = {
+  def `check objects scopes`: Unit =
     check(Test.testSuccess(LexicalScopes.objectScopes _, 3 :: HNil))
-  }
 
 }

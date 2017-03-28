@@ -1,3 +1,8 @@
+/*
+ * scala-exercises - exercises-scalatutorial
+ * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ */
+
 package scalatutorial.aux
 
 object Sorting {
@@ -12,7 +17,7 @@ object Sorting {
       }
 
     xs match {
-      case List() => List()
+      case List()  => List()
       case y :: ys => insert(y, insertionSort(ys))
     }
   }
