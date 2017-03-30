@@ -155,7 +155,7 @@ object ClassesVsCaseClasses extends ScalaTutorialSection {
    *     }
    *
    *     // toString redefinition to return the value of an instance instead of its memory addres
-   *     override def toString = s"Note($name, $duration, $octave)"
+   *     override def toString = s"Note($name,$duration,$octave)"
    *
    *     // Create a copy of a case class, with potentially modified field values
    *     def copy(name: String = name, duration: String = duration, octave: Int = octave): Note =
@@ -170,12 +170,19 @@ object ClassesVsCaseClasses extends ScalaTutorialSection {
    *       new Note(name, duration, octave)
    *
    *     // Extractor for pattern matching
-   *     def unapply(note: Note): Option[(String, String, Int)) =
+   *     def unapply(note: Note): Option[(String, String, Int)] =
    *       if (note eq null) None
    *       else Some((note.name, note.duration, note.octave))
    *
    *   }
    * }}}
    */
-  def nothing(): Unit = ()
+  def encoding(res0: String, res1: Boolean, res2: String): Unit = {
+    val c3 = Note("C", "Quarter", 3)
+    c3.toString shouldBe res0
+    val d = Note("D", "Quarter", 3)
+    c3.equals(d) shouldBe res1
+    val c4 = c3.copy(octave = 4)
+    c4.toString shouldBe res2
+  }
 }
