@@ -141,20 +141,20 @@ object StructuringInformation extends ScalaTutorialSection {
    * the possible case of symbols is fixed. The compiler can leverage this
    * knowledge to warn us if we write code that does not handle ''all''
    * the cases:
-   */
-  def unexhaustive(): Unit = {
-    sealed trait Symbol
-    case class Note(name: String, duration: String, octave: Int) extends Symbol
-    case class Rest(duration: String)                            extends Symbol
-
-    def nonExhaustiveDuration(symbol: Symbol): String =
-      symbol match {
-        case Rest(duration) => duration
-      }
-  }
-
-  /**
-   * Try to run the above code to see how the compiler informs us that
+   * {{{
+   * def unexhaustive(): Unit = {
+   * sealed trait Symbol
+   * case class Note(name: String, duration: String, octave: Int) extends Symbol
+   * case class Rest(duration: String)                            extends Symbol
+   *
+   * def nonExhaustiveDuration(symbol: Symbol): String =
+   *   symbol match {
+   *     case Rest(duration) => duration
+   *   }
+   * }
+   *}}}
+   *
+   * If we try to run the above code to see how the compiler informs us that
    * we don’t handle all the cases in `nonExhaustiveDuration`.
    *
    * = Equals =

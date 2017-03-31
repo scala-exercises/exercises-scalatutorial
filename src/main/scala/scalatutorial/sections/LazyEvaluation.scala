@@ -209,6 +209,18 @@ object LazyEvaluation extends ScalaTutorialSection {
    *   lazy val x = expr
    * }}}
    *
+   * = Lazy Vals and Streams =
+   *
+   * Using a lazy value for `tail`, `Stream.cons` can be implemented more efficiently:
+   *
+   * {{{
+   *   def cons[T](hd: T, tl: => Stream[T]) = new Stream[T] {
+   *     def head = hd
+   *     lazy val tail = tl
+   *     …
+   *   }
+   * }}}
+   *
    * == Exercise ==
    */
   def lazyVal(res0: String): Unit = {
@@ -223,18 +235,4 @@ object LazyEvaluation extends ScalaTutorialSection {
     builder.result() shouldBe res0
   }
 
-  /**
-   * = Lazy Vals and Streams =
-   *
-   * Using a lazy value for `tail`, `Stream.cons` can be implemented more efficiently:
-   *
-   * {{{
-   *   def cons[T](hd: T, tl: => Stream[T]) = new Stream[T] {
-   *     def head = hd
-   *     lazy val tail = tl
-   *     …
-   *   }
-   * }}}
-   */
-  def nothing(): Unit = ()
 }
