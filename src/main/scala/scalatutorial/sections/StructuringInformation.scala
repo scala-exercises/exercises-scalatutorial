@@ -122,7 +122,7 @@ object StructuringInformation extends ScalaTutorialSection {
    *     case p1 => e1
    *     case p2 => e2
    *     …
-   *     case pn => pn
+   *     case pn => en
    *   }
    * }}}
    *
