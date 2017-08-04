@@ -1,6 +1,6 @@
-val scalaExerciesV = "0.4.0-SNAPSHOT"
+val scalaExercisesV = "0.4.0-SNAPSHOT"
 
-def dep(artifactId: String) = "org.scala-exercises" %% artifactId % scalaExerciesV
+def dep(artifactId: String) = "org.scala-exercises" %% artifactId % scalaExercisesV
 
 lazy val `scala-tutorial` = (project in file("."))
   .enablePlugins(ExerciseCompilerPlugin)
