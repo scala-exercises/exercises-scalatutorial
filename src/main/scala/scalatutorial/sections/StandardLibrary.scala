@@ -267,7 +267,7 @@ object StandardLibrary extends ScalaTutorialSection {
    * === Manipulating `Either[A, B]` Values ===
    *
    * Since Scala 2.12, `Either` has `map` and `flatMap`. These methods
-   * transform the `Right` case only. Way say that `Either` is “right biased”:
+   * transform the `Right` case only. We say that `Either` is “right biased”:
    *
    * {{{
    *   Right(1).map((x: Int) => x + 1) shouldBe Right(2)
