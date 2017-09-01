@@ -35,10 +35,12 @@ object TailRecursion extends ScalaTutorialSection {
    *   gcd(21, 14 % 21)
    *   gcd(21, 14)
    *   if (14 == 0) 21 else gcd(14, 21 % 14)
+   *   if (false) 21 else gcd(14, 21 % 14)
    *   gcd(14, 7)
    *   gcd(7, 14 % 7)
    *   gcd(7, 0)
    *   if (0 == 0) 7 else gcd(0, 7 % 0)
+   *   if (true) 7 else gcd(0, 7 % 0)
    *   7
    * }}}
    *
