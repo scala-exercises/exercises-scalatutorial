@@ -112,7 +112,7 @@ object HigherOrderFunctions extends ScalaTutorialSection {
    * }}}
    *
    * Here, `(x: Int)` is the ''parameter'' of the function, and
-   * `x * x * x` is it's ''body''.
+   * `x * x * x` is its ''body''.
    *
    * The type of the parameter can be omitted if it can be inferred by the
    * compiler from the context.
