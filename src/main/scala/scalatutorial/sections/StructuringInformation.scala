@@ -142,7 +142,6 @@ object StructuringInformation extends ScalaTutorialSection {
    * knowledge to warn us if we write code that does not handle ''all''
    * the cases:
    * {{{
-   * def unexhaustive(): Unit = {
    * sealed trait Symbol
    * case class Note(name: String, duration: String, octave: Int) extends Symbol
    * case class Rest(duration: String)                            extends Symbol
@@ -151,7 +150,7 @@ object StructuringInformation extends ScalaTutorialSection {
    *   symbol match {
    *     case Rest(duration) => duration
    *   }
-   * }
+   *
    *}}}
    *
    * If we try to run the above code to see how the compiler informs us that
