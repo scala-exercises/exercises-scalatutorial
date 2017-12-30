@@ -52,7 +52,7 @@ object TypeClasses extends ScalaTutorialSection {
    *
    * {{{
    *   def insertionSort[T](xs: List[T])(lessThan: (T, T) => Boolean) = {
-   *     def insert(y: Int, ys: List[Int]): List[Int] =
+   *     def insert(y: T, ys: List[T]): List[T] =
    *       ys match {
    *         …
    *         case z :: zs =>
@@ -99,7 +99,7 @@ object TypeClasses extends ScalaTutorialSection {
    *
    * {{{
    *   def insertionSort[T](xs: List[T])(ord: Ordering[T]): List[T] = {
-   *     def insert(y: Int, ys: List[Int]): List[Int] =
+   *     def insert(y: T, ys: List[T]): List[T] =
    *       … if (ord.lt(y, z)) …
    *
    *     … insert(y, insertionSort(ys)(ord)) …
@@ -127,7 +127,7 @@ object TypeClasses extends ScalaTutorialSection {
    *
    * {{{
    *   def insertionSort[T](xs: List[T])(implicit ord: Ordering[T]): List[T] = {
-   *     def insert(y: Int, ys: List[Int]): List[Int] =
+   *     def insert(y: T, ys: List[T]): List[T] =
    *       … if (ord.lt(y, z)) …
    *
    *     … insert(y, insertionSort(ys)) …
