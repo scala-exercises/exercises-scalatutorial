@@ -109,8 +109,11 @@ object FunctionalLoops extends ScalaTutorialSection {
    *     (guess + x / guess) / 2
    *
    *   def isGoodEnough(guess: Double, x: Double) =
-   *     abs(guess * guess - x) < 0.001
+   *     math.abs(guess * guess - x) < 0.001
    * }}}
+   *
+   * If we don't want to repeat math.abs every time we use it, we can call `import math.abs`
+   * at the beginning of the file, and from then on call `abs` directly.
    *
    * Third, we define the `sqrt` function:
    *
