@@ -163,7 +163,7 @@ object DefinitionsAndEvaluation extends ScalaTutorialSection {
    *   def x = loop
    * }}}
    *
-   * is OK, but a definition
+   * is OK, but a value
    *
    * {{{
    *   val x = loop
