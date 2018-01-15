@@ -18,7 +18,8 @@ class TypeClassesSpec extends Spec with Checkers {
   def `check rational ordering`: Unit = {
     val ordering =
       (x: Rational, y: Rational) => x.numer * y.denom - y.numer * x.denom
-    check(Test.testSuccess(TypeClasses.rationalOrdering _, ordering :: HNil))
+
+    TypeClasses.rationalOrdering(ordering)
   }
 
 }
