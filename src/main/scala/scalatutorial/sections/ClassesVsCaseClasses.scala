@@ -5,7 +5,7 @@
 
 package scalatutorial.sections
 
-import scalatutorial.aux.{BankAccount, Note}
+import scalatutorial.utils.{BankAccount, Note}
 
 /** @param name classes_vs_case_classes */
 object ClassesVsCaseClasses extends ScalaTutorialSection {

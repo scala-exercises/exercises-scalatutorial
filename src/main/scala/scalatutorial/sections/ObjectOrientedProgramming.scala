@@ -5,7 +5,7 @@
 
 package scalatutorial.sections
 
-import scalatutorial.aux.{Empty, IntSet, NonEmpty}
+import scalatutorial.utils.{Empty, IntSet, NonEmpty}
 
 /** @param name object_oriented_programming */
 object ObjectOrientedProgramming extends ScalaTutorialSection {

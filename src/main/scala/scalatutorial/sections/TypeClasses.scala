@@ -5,8 +5,8 @@
 
 package scalatutorial.sections
 
-import scalatutorial.aux.Rational
-import scalatutorial.aux.Sorting.insertionSort
+import scalatutorial.utils.Rational
+import scalatutorial.utils.Sorting.insertionSort
 
 /** @param name type_classes */
 object TypeClasses extends ScalaTutorialSection {
