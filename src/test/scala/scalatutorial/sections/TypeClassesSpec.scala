@@ -11,7 +11,7 @@ import org.scalatest.Spec
 import org.scalatest.prop.Checkers
 import shapeless.HNil
 
-import scalatutorial.aux.Rational
+import scalatutorial.utils.Rational
 
 class TypeClassesSpec extends Spec with Checkers {
 
