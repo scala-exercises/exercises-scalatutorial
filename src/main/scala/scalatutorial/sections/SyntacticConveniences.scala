@@ -341,7 +341,7 @@ object SyntacticConveniences extends ScalaTutorialSection {
    */
   def repeatedParameters(res0: Double): Unit = {
     def average(x: Int, xs: Int*): Double =
-      (x :: xs.to[List]).sum.toDouble / (xs.size + 1)
+      (x :: xs.toList).sum.toDouble / (xs.size + 1)
 
     average(1) shouldBe 1.0
     average(1, 2) shouldBe 1.5
