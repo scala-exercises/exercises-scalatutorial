@@ -33,7 +33,7 @@ object LexicalScopes extends ScalaTutorialSection {
    *       (guess + x / guess) / 2
    *
    *     def isGoodEnough(guess: Double, x: Double) =
-   *       abs(square(guess) - x) < 0.001
+   *       math.abs(guess * guess - x) < 0.001
    *
    *     sqrtIter(1.0, x)
    *   }
@@ -96,7 +96,7 @@ object LexicalScopes extends ScalaTutorialSection {
    *       (guess + x / guess) / 2
    *
    *     def isGoodEnough(guess: Double) =
-   *       abs(square(guess) - x) < 0.001
+   *       math.abs(guess * guess - x) < 0.001
    *
    *     sqrtIter(1.0)
    *   }
