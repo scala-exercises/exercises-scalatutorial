@@ -220,7 +220,7 @@ object DefinitionsAndEvaluation extends ScalaTutorialSection {
     def triangleArea(base: Double, height: Double): Double =
       base * height / res0
 
-    triangleArea(3, 4) shouldBe 6
+    triangleArea(3, 4) shouldBe 6.0
     triangleArea(5, 6) shouldBe res1
   }
 
