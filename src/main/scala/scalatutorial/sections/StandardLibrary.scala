@@ -116,7 +116,7 @@ object StandardLibrary extends ScalaTutorialSection {
    *
    * Complete the definition insertion sort by filling in the blanks in the definition below:
    */
-  def insertionSort(res0: (Int, Int) => Boolean, res1: List[Int]): Unit = {
+  def insertionSort(res0: (x: Int, y: Int) => Boolean, res1: List[Int]): Unit = {
     val cond: (Int, Int) => Boolean = res0
     def insert(x: Int, xs: List[Int]): List[Int] =
       xs match {
