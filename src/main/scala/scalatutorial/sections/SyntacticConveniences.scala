@@ -354,7 +354,7 @@ object SyntacticConveniences extends ScalaTutorialSection {
    * By forcing users to supply at least one parameter, we make it impossible
    * for them to compute the average of an empty list of numbers.
    *
-   * Sometimes you want to supply each element of a list as as many parameters.
+   * Sometimes you want to supply each element of a list as many parameters.
    * You can do that by adding a `: _*` type ascription to your list:
    *
    * {{{
