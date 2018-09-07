@@ -194,7 +194,7 @@ object DefinitionsAndEvaluation extends ScalaTutorialSection {
    * = Call-by-name and call-by-value =
    *
    * The first evaluation strategy is known as ''call-by-value'',
-   * the second is is known as ''call-by-name''.
+   * the second is known as ''call-by-name''.
    *
    * Both strategies reduce to the same final values
    * as long as
