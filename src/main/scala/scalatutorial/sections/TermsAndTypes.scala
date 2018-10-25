@@ -167,6 +167,9 @@ object TermsAndTypes extends ScalaTutorialSection {
    */
   def staticTyping(res0: Int): Unit =
     1 to res0
+  /*
+  * Now add in a type that is an Int and watch it compile.
+  */
 
   /**
    * = Common Types =
