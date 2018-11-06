@@ -51,7 +51,7 @@ object TypeClasses extends ScalaTutorialSection {
    * parameter:
    *
    * {{{
-   *   def insertionSort[T](xs: List[T])(lessThan: (T, T) => Boolean) = {
+   *   def insertionSort[T](xs: List[T])(lessThan: (T, T) => Boolean): List[T] = {
    *     def insert(y: T, ys: List[T]): List[T] =
    *       ys match {
    *         …
