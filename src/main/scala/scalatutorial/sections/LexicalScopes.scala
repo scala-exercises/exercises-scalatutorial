@@ -73,7 +73,7 @@ object LexicalScopes extends ScalaTutorialSection {
       val x = f(3)
       x * x
     } + x
-    result shouldBe res0
+    result shouldBe 16
   }
 
   /**
@@ -288,6 +288,6 @@ object LexicalScopes extends ScalaTutorialSection {
       val y = x + Foo.x
     }
 
-    Baz.y shouldBe res0
+    Baz.y shouldBe 3
   }
 }
