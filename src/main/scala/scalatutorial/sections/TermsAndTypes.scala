@@ -143,7 +143,7 @@ object TermsAndTypes extends ScalaTutorialSection {
    * The infix syntax can also be used with regular methods:
    *
    * {{{
-   *   1.to(10) == 1 to 10
+   *   1.to(10) == (1 to 10)
    * }}}
    *
    * Any method with a parameter can be used like an infix operator.
