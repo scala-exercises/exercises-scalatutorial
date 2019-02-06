@@ -55,7 +55,7 @@ object FunctionalLoops extends ScalaTutorialSection {
    *
    * Note that `&&` and `||` do not always need their right operand to be evaluated.
    *
-   * We say, these expressions use “short-circuit evaluation”.
+   * We say these expressions use “short-circuit evaluation”.
    *
    * = Computing the Square Root of a Value =
    *
