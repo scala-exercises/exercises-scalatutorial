@@ -24,8 +24,14 @@ object StandardLibrary extends ScalaTutorialSection {
    *
    *  - Lists are immutable --- the elements of a list cannot be changed,
    *  - Lists are recursive (as you will see in the next subsection),
-   *  - Lists are ''homogeneous'': the elements of a list must all have the
-   *    same type.
+   *  - Lists are ''homogeneous'': A list is intended to be composed of elements that all have the same type.
+   *
+   * That's because when you create a `List` of elements with different types it will look for a common ancestor.
+   * The common ancestor for all types is `Any`
+   *
+   * {{{
+   *   val heterogeneousList: List[Any] = List(1, "1", '1')
+   * }}}
    *
    * The type of a list with elements of type `T` is written `List[T]`:
    *
