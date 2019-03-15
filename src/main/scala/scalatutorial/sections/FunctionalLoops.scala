@@ -76,7 +76,7 @@ object FunctionalLoops extends ScalaTutorialSection {
    *  - Start with an initial ''estimate'' `y` (let's pick `y = 1`).
    *  - Repeatedly improve the estimate by taking the mean of `y` and `x/y`.
    *
-   * Example:
+   * Example: Evaluation of the square root of 2 (x = 2):
    *
    * {{{
    *   Estimation          Quotient              Mean
