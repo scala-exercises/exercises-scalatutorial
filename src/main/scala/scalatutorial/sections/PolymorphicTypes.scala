@@ -328,7 +328,7 @@ object PolymorphicTypes extends ScalaTutorialSection {
    * }}}
    *
    * In such a case, intuitively, it makes sense to have `Vet[Mammal] <: Vet[Zebra]` because
-   * a vet that can treat any mammal is able to to treat a zebra in particular. This is
+   * a vet that can treat any mammal is able to treat a zebra in particular. This is
    * an example of a contravariant type.
    *
    * == Variance Checks ==
