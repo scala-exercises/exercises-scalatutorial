@@ -159,7 +159,7 @@ object LexicalScopes extends ScalaTutorialSection {
    * = Top-Level Definitions =
    *
    * In real Scala programs, `def` and `val` definitions must be written
-   * within a top-level ''object definition'', in .scala file:
+   * within a top-level ''object definition'', in a .scala file:
    *
    * {{{
    *   object MyExecutableProgram {
