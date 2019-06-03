@@ -235,7 +235,7 @@ object StandardLibrary extends ScalaTutorialSection {
    *  - or a `Failure`.
    *
    * The key difference between `None` and `Failure`s is that the latter provide
-   * the reason of the failure:
+   * the reason for the failure:
    *
    * {{{
    *   def sqrt(x: Double): Try[Double] =
@@ -249,7 +249,7 @@ object StandardLibrary extends ScalaTutorialSection {
    * be decomposed using pattern matching.
    *
    * `Try[A]` also have `map`, `filter` and `flatMap`. They behave the same
-   * as with `Option[A]`, excepted that any exception that is thrown
+   * as with `Option[A]`, except that any exception that is thrown
    * during their execution is converted into a `Failure`.
    *
    * == Either ==
@@ -259,8 +259,8 @@ object StandardLibrary extends ScalaTutorialSection {
    * of type `B`. It can be decomposed in two cases: `Left` or `Right`.
    *
    * You can use one case to represent the failure and the other to represent
-   * the success. One difference with `Try` is that you can choose another
-   * type than `Throwable` to represent the exception. Another difference
+   * the success. What makes it different from `Try` is that you can choose a
+   * type other than `Throwable` to represent the exception. Another difference
    * is that exceptions that occur when transforming `Either` values are
    * not converted into failures.
    *
