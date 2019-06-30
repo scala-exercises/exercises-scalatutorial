@@ -160,7 +160,7 @@ object StructuringInformation extends ScalaTutorialSection {
    * = Equals =
    *
    * It is worth noting that, since the purpose of case classes is to
-   * aggregate values, comparing case class instances compare their values:
+   * aggregate values, comparing case class instances compares their values:
    *
    */
   def caseClassEquals(res0: Boolean, res1: Boolean): Unit = {
