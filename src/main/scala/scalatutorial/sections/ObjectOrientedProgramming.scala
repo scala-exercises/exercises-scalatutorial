@@ -286,7 +286,7 @@ object ObjectOrientedProgramming extends ScalaTutorialSection {
    *
    *  - takes the parameters of the class
    *  - and executes all statements in the class body
-   *    (such as the `require` a couple of slides back).
+   *    (such as the `require` above).
    *
    * == Auxiliary Constructors ==
    *
