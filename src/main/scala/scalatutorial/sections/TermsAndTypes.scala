@@ -181,6 +181,7 @@ object TermsAndTypes extends ScalaTutorialSection {
    * = Exercise =
    *
    * Here are some more methods of standard types. Can you guess what they do?
+   * If you get stuck, try evaluating each statement in turn in a scala REPL to see what the result is.
    */
   def moreMethods(res0: String, res1: Boolean, res2: String): Unit = {
     16.toHexString shouldBe res0
