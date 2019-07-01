@@ -292,7 +292,9 @@ object ObjectOrientedProgramming extends ScalaTutorialSection {
    *
    * Scala also allows the declaration of ''auxiliary constructors''.
    *
-   * These are methods named `this`.
+   * These are methods named `this`, but with different function signatures from both the primary constructor and each other.
+   * They allow a new instance of the class to be created with fewer arguments, and invoke a previously defined constructor using 
+   * the arguments they are passed and specified default values. 
    *
    * Adding an auxiliary constructor to the class `Rational`:
    *
@@ -302,6 +304,23 @@ object ObjectOrientedProgramming extends ScalaTutorialSection {
    *     ...
    *   }
    * }}}
+   *
+   * The constructor which matches the function signature of the new call will be invoked.  
+   *
+   * {{{
+   *   class Vehicle(wheels: Int, color: String) {
+   *     def this(wheels: Int) = this(wheels, "red")
+   *     def this(color: String) = this(4, color)
+   *     def this() = this(4, "red")
+   *     ...
+   *   }
+   *
+   *  val w = new Vehicle(18, "blue") // primary constructor invoked
+   *  val x = new Vehicle(18) // first auxiliary invoked 
+   *  val y = new Vehicle("yellow") // second auxiliary invoked
+   *  val z = new Vehicle() // third auxiliary invoked
+   * }}}
+   *
    *
    * = Classes and Substitutions =
    *
