@@ -285,7 +285,7 @@ object ObjectOrientedProgramming extends ScalaTutorialSection {
    * The primary constructor:
    *
    *  - takes the parameters of the class
-   *  - and executes all statements in the class body
+   *  - and executes all statements in the constructor body
    *    (such as the `require` a couple of slides back).
    *
    * == Auxiliary Constructors ==
