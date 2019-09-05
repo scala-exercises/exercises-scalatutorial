@@ -2,7 +2,7 @@ language: scala
 scala:
 - 2.11.11
 jdk:
-- oraclejdk8
+- openjdk8
 script:
 - sbt test
 - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then
