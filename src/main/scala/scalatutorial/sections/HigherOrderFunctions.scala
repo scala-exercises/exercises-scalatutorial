@@ -153,7 +153,7 @@ object HigherOrderFunctions extends ScalaTutorialSection {
   def tailRecSum(res0: Int, res1: Int): Unit = {
     def sum(f: Int => Int, a: Int, b: Int): Int = {
       def loop(x: Int, acc: Int): Int = {
-        if (x > b) acc
+        if (x == b) acc
         else loop(x + res0, acc + f(x))
       }
       loop(a, res1)
