@@ -106,10 +106,10 @@ object FunctionalLoops extends ScalaTutorialSection {
    *
    * {{{
    *   def improve(guess: Double, x: Double) =
-   *     (guess + x / guess) / 2
+   *     (guess + x/guess) / 2
    *
    *   def isGoodEnough(guess: Double, x: Double) =
-   *     abs(guess * guess - x) < 0.001
+   *     abs(guess*guess - x) < 0.001
    * }}}
    *
    * Third, we define the `sqrt` function:
