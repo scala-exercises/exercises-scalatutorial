@@ -133,7 +133,7 @@ object TailRecursion extends ScalaTutorialSection {
         if (x == res0) result
         else iter(x - res1, result * x)
 
-      iter(n, res2)
+      iter(res2, n)
     }
 
     factorial(3) shouldBe 6
