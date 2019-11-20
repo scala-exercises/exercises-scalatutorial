@@ -1,25 +1,26 @@
 /*
- * scala-exercises - exercises-scalatutorial
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ *  scala-exercises - exercises-scalatutorial
+ *  Copyright (C) 2015-2019 47 Degrees, LLC. <http://www.47deg.com>
+ *
  */
 
 package scalatutorial.sections
 
-import org.scalacheck.Shapeless._
+import org.scalacheck.ScalacheckShapeless._
 import org.scalaexercises.Test
-import org.scalatest.Spec
-import org.scalatest.prop.Checkers
+import org.scalatest.refspec.RefSpec
+import org.scalatestplus.scalacheck.Checkers
 import shapeless.HNil
 
-class ClassesVsCaseClassesSpec extends Spec with Checkers {
+class ClassesVsCaseClassesSpec extends RefSpec with Checkers {
 
-  def `check creation and manipulation`: Unit =
+  def `check creation and manipulation`(): Unit =
     check(Test.testSuccess(ClassesVsCaseClasses.creationAndManipulation _, "C" :: HNil))
 
-  def `check equality`: Unit =
+  def `check equality`(): Unit =
     check(Test.testSuccess(ClassesVsCaseClasses.equality _, false :: true :: HNil))
 
-  def `check encoding`: Unit =
+  def `check encoding`(): Unit =
     check(
       Test.testSuccess(
         ClassesVsCaseClasses.encoding _,

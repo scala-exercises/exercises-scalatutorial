@@ -1,25 +1,26 @@
 /*
- * scala-exercises - exercises-scalatutorial
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ *  scala-exercises - exercises-scalatutorial
+ *  Copyright (C) 2015-2019 47 Degrees, LLC. <http://www.47deg.com>
+ *
  */
 
 package scalatutorial.sections
 
-import org.scalacheck.Shapeless._
+import org.scalacheck.ScalacheckShapeless._
 import org.scalaexercises.Test
-import org.scalatest.Spec
-import org.scalatest.prop.Checkers
+import org.scalatest.refspec.RefSpec
+import org.scalatestplus.scalacheck.Checkers
 import shapeless.HNil
 
-class StandardLibrarySpec extends Spec with Checkers {
+class StandardLibrarySpec extends RefSpec with Checkers {
 
-  def `check insertion sort`: Unit =
+  def `check insertion sort`(): Unit =
     check(
       Test.testSuccess(
         StandardLibrary.insertionSort _,
         ((_: Int) < (_: Int)) :: List.empty[Int] :: HNil))
 
-  def `check either`: Unit =
+  def `check either`(): Unit =
     check(
       Test.testSuccess(
         StandardLibrary.either _,

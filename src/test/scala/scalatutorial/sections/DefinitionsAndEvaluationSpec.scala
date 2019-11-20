@@ -1,25 +1,26 @@
 /*
- * scala-exercises - exercises-scalatutorial
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ *  scala-exercises - exercises-scalatutorial
+ *  Copyright (C) 2015-2019 47 Degrees, LLC. <http://www.47deg.com>
+ *
  */
 
 package scalatutorial.sections
 
-import org.scalacheck.Shapeless._
+import org.scalacheck.ScalacheckShapeless._
 import org.scalaexercises.Test
-import org.scalatest.Spec
-import org.scalatest.prop.Checkers
+import org.scalatest.refspec.RefSpec
+import org.scalatestplus.scalacheck.Checkers
 import shapeless.HNil
 
-class DefinitionsAndEvaluationSpec extends Spec with Checkers {
+class DefinitionsAndEvaluationSpec extends RefSpec with Checkers {
 
-  def `check using square`: Unit =
+  def `check using square`(): Unit =
     check(Test.testSuccess(DefinitionsAndEvaluation.usingSquare _, 9.0 :: HNil))
 
-  def `check area exercise`: Unit =
+  def `check area exercise`(): Unit =
     check(Test.testSuccess(DefinitionsAndEvaluation.areaExercise _, 314.159 :: HNil))
 
-  def `check triangle area`: Unit =
+  def `check triangle area`(): Unit =
     check(Test.testSuccess(DefinitionsAndEvaluation.triangleAreaExercise _, 2.0 :: 15.0 :: HNil))
 
 }
