@@ -1,6 +1,7 @@
 /*
- * scala-exercises - exercises-scalatutorial
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ *  scala-exercises - exercises-scalatutorial
+ *  Copyright (C) 2015-2019 47 Degrees, LLC. <http://www.47deg.com>
+ *
  */
 
 package scalatutorial.sections
@@ -158,10 +159,9 @@ object HigherOrderFunctions extends ScalaTutorialSection {
    */
   def tailRecSum(res0: Int, res1: Int): Unit = {
     def sum(f: Int => Int, a: Int, b: Int): Int = {
-      def loop(x: Int, acc: Int): Int = {
+      def loop(x: Int, acc: Int): Int =
         if (x > b) acc
         else loop(x + res0, acc + f(x))
-      }
       loop(a, res1)
     }
     sum(x => x, 1, 10) shouldBe 55

@@ -1,6 +1,7 @@
 /*
- * scala-exercises - exercises-scalatutorial
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ *  scala-exercises - exercises-scalatutorial
+ *  Copyright (C) 2015-2019 47 Degrees, LLC. <http://www.47deg.com>
+ *
  */
 
 package scalatutorial.sections
@@ -49,7 +50,7 @@ object SyntacticConveniences extends ScalaTutorialSection {
   def tuples(res0: (Int, String)): Unit = {
     def pair(i: Int, s: String): (Int, String) = (i, s)
 
-    pair(42, "foo") shouldBe (42, "foo")
+    pair(42, "foo") shouldBe ((42, "foo"))
     pair(0, "bar") shouldBe res0
   }
 

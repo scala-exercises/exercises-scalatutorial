@@ -1,11 +1,12 @@
 /*
- * scala-exercises - exercises-scalatutorial
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ *  scala-exercises - exercises-scalatutorial
+ *  Copyright (C) 2015-2019 47 Degrees, LLC. <http://www.47deg.com>
+ *
  */
 
 package scalatutorial.sections
 
-import scalatutorial.utils.{Empty, IntSet, NonEmpty}
+import scalatutorial.utils.{Empty, NonEmpty}
 
 /** @param name object_oriented_programming */
 object ObjectOrientedProgramming extends ScalaTutorialSection {
