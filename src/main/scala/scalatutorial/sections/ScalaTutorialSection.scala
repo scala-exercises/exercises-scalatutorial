@@ -7,6 +7,7 @@
 package scalatutorial.sections
 
 import org.scalaexercises.definitions.Section
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
-trait ScalaTutorialSection extends FlatSpec with Matchers with Section
+trait ScalaTutorialSection extends AnyFlatSpec with Matchers with Section
