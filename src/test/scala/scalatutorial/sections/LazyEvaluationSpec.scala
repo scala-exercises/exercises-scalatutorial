@@ -14,8 +14,8 @@ import shapeless.HNil
 
 class LazyEvaluationSpec extends RefSpec with Checkers {
 
-  def `check stream range`(): Unit =
-    check(Test.testSuccess(LazyEvaluation.streamRangeExercise _, 3 :: HNil))
+  def `check lazy list range`(): Unit =
+    check(Test.testSuccess(LazyEvaluation.llRangeExercise _, 4 :: HNil))
 
   def `check lazy val`(): Unit =
     check(Test.testSuccess(LazyEvaluation.lazyVal _, "xzyz" :: HNil))

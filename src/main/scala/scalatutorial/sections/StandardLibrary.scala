@@ -295,7 +295,7 @@ object StandardLibrary extends ScalaTutorialSection {
     def triple(x: Int): Int = 3 * x
 
     def tripleEither(x: Either[String, Int]): Either[String, Int] =
-      x.right.map(triple)
+      x.map(triple)
 
     tripleEither(Right(1)) shouldBe res0
     tripleEither(Left("not a number")) shouldBe res1
