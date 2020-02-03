@@ -137,10 +137,10 @@ object FunctionalLoops extends ScalaTutorialSection {
    *
    * Complete the following method definition that computes the factorial of a number:
    */
-  def factorialExercise(res0: Int, res1: Int, res2: Int): Unit = {
+  def factorialExercise(res0: Int, res1: Int): Unit = {
     def factorial(n: Int): Int =
       if (n == res0) res1
-      else factorial(n - res2) * n
+      else factorial(n - 1) * n
 
     factorial(3) shouldBe 6
     factorial(4) shouldBe 24

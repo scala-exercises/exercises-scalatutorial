@@ -127,14 +127,14 @@ object TailRecursion extends ScalaTutorialSection {
    *
    * Complete the following definition of a tail-recursive version of `factorial`:
    */
-  def tailRecFactorial(res0: Int, res1: Int, res2: Int): Unit = {
+  def tailRecFactorial(res0: Int, res1: Int): Unit = {
     def factorial(n: Int): Int = {
       @tailrec
       def iter(x: Int, result: Int): Int =
         if (x == res0) result
-        else iter(x - res1, result * x)
+        else iter(x - 1, result * x)
 
-      iter(n, res2)
+      iter(n, res1)
     }
 
     factorial(3) shouldBe 6
