@@ -12,12 +12,9 @@ import org.scalatest.refspec.RefSpec
 import org.scalatestplus.scalacheck.Checkers
 import shapeless.HNil
 
-class LazyEvaluationSpec extends RefSpec with Checkers {
+class TailRecursionSpec extends RefSpec with Checkers {
 
-  def `check lazy list range`(): Unit =
-    check(Test.testSuccess(LazyEvaluation.llRangeExercise _, 4 :: HNil))
-
-  def `check lazy val`(): Unit =
-    check(Test.testSuccess(LazyEvaluation.lazyVal _, "xzyz" :: HNil))
+  def `factorial exercise tail recursive`(): Unit =
+    check(Test.testSuccess(TailRecursion.tailRecFactorial _, 0 :: 1 :: HNil))
 
 }

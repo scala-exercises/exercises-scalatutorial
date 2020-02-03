@@ -161,9 +161,9 @@ object HigherOrderFunctions extends ScalaTutorialSection {
     def sum(f: Int => Int, a: Int, b: Int): Int = {
       def loop(x: Int, acc: Int): Int =
         if (x > b) acc
-        else loop(x + res0, acc + f(x))
-      loop(a, res1)
+        else loop(x + 1, acc + f(x))
+      loop(a, res0)
     }
-    sum(x => x, 1, 10) shouldBe 55
+    sum(x => x, 1, res1) shouldBe 55
   }
 }
