@@ -81,7 +81,7 @@ object LexicalScopes extends ScalaTutorialSection {
    * = Lexical Scoping =
    *
    * Definitions of outer blocks are visible inside a block unless they are shadowed.
-   * Shadowed defintions are ones which are redefined in a lower scope.
+   * Shadowed definitions are ones which are redefined in a lower scope.
    *
    * Therefore, we can simplify `sqrt` by eliminating redundant occurrences of the `x` parameter, which means
    * the same thing everywhere:
