@@ -20,7 +20,7 @@ object ProjectPlugin extends AutoPlugin {
       val scalatest: String           = "3.1.1"
       val scalatestplusScheck: String = "3.1.0.0-RC2"
       val scalacheck: String          = "1.14.3"
-      val scalacheckShapeless: String = "1.2.4"
+      val scalacheckShapeless: String = "1.2.5"
     }
   }
 
