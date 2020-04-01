@@ -424,7 +424,7 @@ object PolymorphicTypes extends ScalaTutorialSection {
    * This passes variance checks, because:
    *
    *  - covariant type parameters may appear in lower bounds of method type parameters
-   *  - contravariant type parameters may appear in upper bounds of method
+   *  - contravariant type parameters may appear in upper bounds of method type parameters
    *
    * = Exercise =
    *
