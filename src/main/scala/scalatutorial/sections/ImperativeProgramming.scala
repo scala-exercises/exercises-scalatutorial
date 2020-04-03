@@ -115,9 +115,11 @@ object ImperativeProgramming extends ScalaTutorialSection {
    *       balance
    *     }
    *     def withdraw(amount: Int): Int =
-   *       if (0 < amount && amount <= balance) {
+   *       if (0 <= amount && amount <= balance) {
    *         balance = balance - amount
    *         balance
+   *       } else if (amount < 0) {
+   *         throw new Error("invalid withdraw amount")
    *       } else throw new Error("insufficient funds")
    *   }
    * }}}
