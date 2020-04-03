@@ -308,7 +308,7 @@ object ImperativeProgramming extends ScalaTutorialSection {
    * In Scala there is a kind of `for` loop:
    *
    * {{{
-   *   for (i <- 1 until 3) { System.out.print(i + " ") }
+   *   for (i <- 1 until 3) { System.out.print(i.toString + " ") }
    * }}}
    *
    * This displays `1 2`.
