@@ -103,7 +103,7 @@ object ObjectOrientedProgramming extends ScalaTutorialSection {
    *     )
    *
    *   def makeString(r: Rational) =
-   *     r.numer + "/" + r.denom
+   *     s"${r.numer}/${r.denom}"
    * }}}
    *
    * And then:
@@ -133,7 +133,7 @@ object ObjectOrientedProgramming extends ScalaTutorialSection {
    *       new Rational(numer * r.denom + r.numer * denom, denom * r.denom)
    *     def mul(r: Rational) = ...
    *     ...
-   *     override def toString = numer + "/" + denom
+   *     override def toString = s"$numer/$denom"
    *   }
    * }}}
    *
