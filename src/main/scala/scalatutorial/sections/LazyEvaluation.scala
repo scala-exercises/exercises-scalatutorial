@@ -21,13 +21,13 @@ object LazyEvaluation extends ScalaTutorialSection {
    * This is ''much'' shorter than the recursive alternative:
    *
    * {{{
-   *   def secondPrime(from: Int, to: Int) = nthPrime(from, to, 2)
    *   def nthPrime(from: Int, to: Int, n: Int): Int =
    *     if (from >= to) throw new Error("no prime")
    *     else if (isPrime(from))
    *       if (n == 1) from else nthPrime(from + 1, to, n - 1)
    *     else nthPrime(from + 1, to, n)
    * }}}
+   *   def secondPrime(from: Int, to: Int) = nthPrime(from, to, 2)
    *
    * But from a standpoint of performance, the first version is pretty bad; it constructs
    * ''all'' prime numbers between `1000` and `10000` in a list, but only ever looks at
