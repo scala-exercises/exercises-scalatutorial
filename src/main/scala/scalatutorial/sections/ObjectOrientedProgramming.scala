@@ -582,7 +582,7 @@ object ObjectOrientedProgramming extends ScalaTutorialSection {
    * }}}
    *
    * Classes, objects and traits can inherit from at most one class but
-   * arbitrary many traits:
+   * arbitrarily many traits:
    *
    * {{{
    *   class Square extends Shape with Planar with Movable …
