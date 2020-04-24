@@ -1,0 +1,65 @@
+[comment]: <> (Don't edit this file!)
+[comment]: <> (It is automatically updated after every release of https://github.com/47degrees/.github)
+[comment]: <> (If you want to suggest a change, please open a PR or issue in that repository)
+
+# Authors
+
+## Maintainers
+
+The maintainers of the project are:
+
+- [![47erbot](https://avatars1.githubusercontent.com/u/24799081?v=4&s=20) **47erbot**](https://github.com/47erbot)
+- [![AdrianRaFo](https://avatars0.githubusercontent.com/u/15971742?v=4&s=20) **Adrian Ramirez Fornell (AdrianRaFo)**](https://github.com/AdrianRaFo)
+- [![angoglez](https://avatars0.githubusercontent.com/u/10107285?v=4&s=20) **Ana Gómez González (angoglez)**](https://github.com/angoglez)
+- [![dominv](https://avatars1.githubusercontent.com/u/3943031?v=4&s=20) **Domingo Valera (dominv)**](https://github.com/dominv)
+- [![kiroco12](https://avatars1.githubusercontent.com/u/48894338?v=4&s=20) **Enrique Nieto (kiroco12)**](https://github.com/kiroco12)
+- [![fedefernandez](https://avatars0.githubusercontent.com/u/720923?v=4&s=20) **Fede Fernández (fedefernandez)**](https://github.com/fedefernandez)
+- [![FRosner](https://avatars2.githubusercontent.com/u/3427394?v=4&s=20) **Frank Rosner (FRosner)**](https://github.com/FRosner)
+- [![jdesiloniz](https://avatars2.githubusercontent.com/u/2835739?v=4&s=20) **Javier de Silóniz Sandino (jdesiloniz)**](https://github.com/jdesiloniz)
+- [![juanpedromoreno](https://avatars2.githubusercontent.com/u/4879373?v=4&s=20) **Juan Pedro Moreno (juanpedromoreno)**](https://github.com/juanpedromoreno)
+- [![calvellido](https://avatars0.githubusercontent.com/u/7753447?v=4&s=20) **Juan Valencia (calvellido)**](https://github.com/calvellido)
+- [![julienrf](https://avatars2.githubusercontent.com/u/332812?v=4&s=20) **Julien Richard-Foy (julienrf)**](https://github.com/julienrf)
+- [![MaureenElsberry](https://avatars0.githubusercontent.com/u/17556002?v=4&s=20) **Maureen Elsberry  (MaureenElsberry)**](https://github.com/MaureenElsberry)
+
+## Contributors
+
+These are the people that have contributed to the _exercises-scalatutorial_ project:
+
+- [![julienrf](https://avatars2.githubusercontent.com/u/332812?v=4&s=20) **julienrf**](https://github.com/julienrf)
+- [![jdesiloniz](https://avatars2.githubusercontent.com/u/2835739?v=4&s=20) **jdesiloniz**](https://github.com/jdesiloniz)
+- [![juanpedromoreno](https://avatars2.githubusercontent.com/u/4879373?v=4&s=20) **juanpedromoreno**](https://github.com/juanpedromoreno)
+- [![kiroco12](https://avatars1.githubusercontent.com/u/48894338?v=4&s=20) **kiroco12**](https://github.com/kiroco12)
+- [![FRosner](https://avatars2.githubusercontent.com/u/3427394?v=4&s=20) **FRosner**](https://github.com/FRosner)
+- [![MaureenElsberry](https://avatars0.githubusercontent.com/u/17556002?v=4&s=20) **MaureenElsberry**](https://github.com/MaureenElsberry)
+- [![sauntimo](https://avatars3.githubusercontent.com/u/2720466?v=4&s=20) **sauntimo**](https://github.com/sauntimo)
+- [![xiaowei-zhang](https://avatars0.githubusercontent.com/u/19760649?v=4&s=20) **xiaowei-zhang**](https://github.com/xiaowei-zhang)
+- [![dominv](https://avatars1.githubusercontent.com/u/3943031?v=4&s=20) **dominv**](https://github.com/dominv)
+- [![AdrianRaFo](https://avatars0.githubusercontent.com/u/15971742?v=4&s=20) **AdrianRaFo**](https://github.com/AdrianRaFo)
+- [![CaileenD](https://avatars3.githubusercontent.com/u/9513625?v=4&s=20) **CaileenD**](https://github.com/CaileenD)
+- [![calvellido](https://avatars0.githubusercontent.com/u/7753447?v=4&s=20) **calvellido**](https://github.com/calvellido)
+- [![angoglez](https://avatars0.githubusercontent.com/u/10107285?v=4&s=20) **angoglez**](https://github.com/angoglez)
+- [![47erbot](https://avatars1.githubusercontent.com/u/24799081?v=4&s=20) **47erbot**](https://github.com/47erbot)
+- [![alexmdac](https://avatars3.githubusercontent.com/u/41476?v=4&s=20) **alexmdac**](https://github.com/alexmdac)
+- [![timaschew](https://avatars1.githubusercontent.com/u/110870?v=4&s=20) **timaschew**](https://github.com/timaschew)
+- [![arjun1438](https://avatars1.githubusercontent.com/u/15716626?v=4&s=20) **arjun1438**](https://github.com/arjun1438)
+- [![btoueg](https://avatars3.githubusercontent.com/u/498190?v=4&s=20) **btoueg**](https://github.com/btoueg)
+- [![dleve123](https://avatars2.githubusercontent.com/u/1561546?v=4&s=20) **dleve123**](https://github.com/dleve123)
+- [![dskrvk](https://avatars1.githubusercontent.com/u/2267624?v=4&s=20) **dskrvk**](https://github.com/dskrvk)
+- [![Dx724](https://avatars1.githubusercontent.com/u/12465997?v=4&s=20) **Dx724**](https://github.com/Dx724)
+- [![TwelveNights](https://avatars2.githubusercontent.com/u/9423051?v=4&s=20) **TwelveNights**](https://github.com/TwelveNights)
+- [![fractalliter](https://avatars1.githubusercontent.com/u/25972962?v=4&s=20) **fractalliter**](https://github.com/fractalliter)
+- [![ecamellini](https://avatars3.githubusercontent.com/u/6418684?v=4&s=20) **ecamellini**](https://github.com/ecamellini)
+- [![fedefernandez](https://avatars0.githubusercontent.com/u/720923?v=4&s=20) **fedefernandez**](https://github.com/fedefernandez)
+- [![jgeofil](https://avatars2.githubusercontent.com/u/12494787?v=4&s=20) **jgeofil**](https://github.com/jgeofil)
+- [![JuanmaBM](https://avatars0.githubusercontent.com/u/7102242?v=4&s=20) **JuanmaBM**](https://github.com/JuanmaBM)
+- [![exp0nge](https://avatars0.githubusercontent.com/u/11747245?v=4&s=20) **exp0nge**](https://github.com/exp0nge)
+- [![Michad](https://avatars3.githubusercontent.com/u/5895099?v=4&s=20) **Michad**](https://github.com/Michad)
+- [![iselind](https://avatars1.githubusercontent.com/u/21103057?v=4&s=20) **iselind**](https://github.com/iselind)
+- [![Tschis](https://avatars1.githubusercontent.com/u/20662669?v=4&s=20) **Tschis**](https://github.com/Tschis)
+- [![jiggaPls](https://avatars0.githubusercontent.com/u/9080788?v=4&s=20) **jiggaPls**](https://github.com/jiggaPls)
+- [![rvilla87](https://avatars2.githubusercontent.com/u/26299708?v=4&s=20) **rvilla87**](https://github.com/rvilla87)
+- [![SCKelemen](https://avatars1.githubusercontent.com/u/4325375?v=4&s=20) **SCKelemen**](https://github.com/SCKelemen)
+- [![amitsingh-10](https://avatars1.githubusercontent.com/u/51735639?v=4&s=20) **amitsingh-10**](https://github.com/amitsingh-10)
+- [![artnan](https://avatars2.githubusercontent.com/u/28643106?v=4&s=20) **artnan**](https://github.com/artnan)
+- [![mlahoz](https://avatars0.githubusercontent.com/u/2168902?v=4&s=20) **mlahoz**](https://github.com/mlahoz)
+- [![prokofyev](https://avatars0.githubusercontent.com/u/4557968?v=4&s=20) **prokofyev**](https://github.com/prokofyev)
