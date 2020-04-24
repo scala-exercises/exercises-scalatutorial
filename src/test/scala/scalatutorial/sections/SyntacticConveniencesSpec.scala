@@ -18,7 +18,9 @@ class SyntacticConveniencesSpec extends RefSpec with Checkers {
     check(
       Test.testSuccess(
         SyntacticConveniences.stringInterpolation _,
-        "Hello, Functional Programming!" :: HNil))
+        "Hello, Functional Programming!" :: HNil
+      )
+    )
 
   def `check string interpolation2`(): Unit =
     check(Test.testSuccess(SyntacticConveniences.stringInterpolation2 _, "Hello, SCALA!" :: HNil))
@@ -42,6 +44,8 @@ class SyntacticConveniencesSpec extends RefSpec with Checkers {
     check(
       Test.testSuccess(
         SyntacticConveniences.typeAlias _,
-        (Right((2, 0)): Either[String, (Int, Int)]) :: HNil))
+        (Right((2, 0)): Either[String, (Int, Int)]) :: HNil
+      )
+    )
 
 }

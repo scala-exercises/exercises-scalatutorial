@@ -24,6 +24,8 @@ class ClassesVsCaseClassesSpec extends RefSpec with Checkers {
     check(
       Test.testSuccess(
         ClassesVsCaseClasses.encoding _,
-        "Note(C,Quarter,3)" :: false :: "Note(C,Quarter,4)" :: HNil))
+        "Note(C,Quarter,3)" :: false :: "Note(C,Quarter,4)" :: HNil
+      )
+    )
 
 }

@@ -1,55 +1,49 @@
-import de.heikoseeberger.sbtheader.HeaderPlugin.autoImport._
-import de.heikoseeberger.sbtheader.License._
 import sbt.Keys._
 import sbt._
-import sbtorgpolicies._
-import sbtorgpolicies.model._
-import sbtorgpolicies.OrgPoliciesPlugin.autoImport._
+import com.alejandrohdezma.sbt.github.SbtGithubPlugin
 
 object ProjectPlugin extends AutoPlugin {
 
   override def trigger: PluginTrigger = allRequirements
 
-  override def requires: Plugins = plugins.JvmPlugin && OrgPoliciesPlugin
+  override def requires: Plugins = plugins.JvmPlugin && SbtGithubPlugin
 
   object autoImport {
 
     lazy val V = new {
-      val scala213: String            = "2.13.1"
       val shapeless: String           = "2.3.3"
-      val scalatest: String           = "3.1.1"
-      val scalatestplusScheck: String = "3.1.0.0-RC2"
+      val scala: String               = "2.13.2"
+      val scalaExercises: String      = "0.6.0-SNAPSHOT"
       val scalacheck: String          = "1.14.3"
       val scalacheckShapeless: String = "1.2.5"
+      val scalatest: String           = "3.1.1"
+      val scalatestplusScheck: String = "3.1.1.1"
     }
-  }
 
-  import autoImport._
+    def dep(artifactId: String) = "org.scala-exercises" %% artifactId % V.scalaExercises
+
+    lazy val exercisesSettings = Seq(
+      libraryDependencies ++= Seq(
+        dep("exercise-compiler"),
+        dep("definitions"),
+        "com.chuusai"                %% "shapeless"                 % V.shapeless,
+        "org.scalatest"              %% "scalatest"                 % V.scalatest,
+        "org.scalacheck"             %% "scalacheck"                % V.scalacheck,
+        "org.scalatestplus"          %% "scalacheck-1-14"           % V.scalatestplusScheck,
+        "com.github.alexarchambault" %% "scalacheck-shapeless_1.14" % V.scalacheckShapeless
+      )
+    )
+  }
 
   override def projectSettings: Seq[Def.Setting[_]] =
     Seq(
-      description := "Scala Exercises: The path to enlightenment",
-      startYear := Option(2016),
-      orgGithubSetting := GitHubSettings(
-        organization = "scala-exercises",
-        project = name.value,
-        organizationName = "Scala Exercises",
-        groupId = "org.scala-exercises",
-        organizationHomePage = url("https://www.scala-exercises.org"),
-        organizationEmail = "hello@47deg.com"
-      ),
-      orgLicenseSetting := ApacheLicense,
-      scalaVersion := V.scala213,
-      scalaOrganization := "org.scala-lang",
+      organization := "org.scala-exercises",
+      organizationName := "47 Degrees",
+      organizationHomepage := Some(url("https://47deg.com")),
+      scalaVersion := autoImport.V.scala,
       resolvers ++= Seq(
-        Resolver.mavenLocal,
         Resolver.sonatypeRepo("snapshots"),
         Resolver.sonatypeRepo("releases")
-      ),
-      scalacOptions := sbtorgpolicies.model.scalacCommonOptions,
-      headerLicense := Some(Custom(s"""| scala-exercises - ${name.value}
-                                       | Copyright (C) 2015-2019 47 Degrees, LLC. <http://www.47deg.com>
-                                       |
-                                       |""".stripMargin))
+      )
     )
 }
