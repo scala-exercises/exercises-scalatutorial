@@ -1,5 +1,4 @@
-resolvers += Resolver.sonatypeRepo("snapshots")
-addSbtPlugin("org.scala-exercises" % "sbt-exercise"      % "0.6.0-SNAPSHOT")
+addSbtPlugin("org.scala-exercises" % "sbt-exercise"      % "0.6.0")
 addSbtPlugin("com.geirsson"        % "sbt-ci-release"    % "1.5.3")
 addSbtPlugin("org.scalameta"       % "sbt-mdoc"          % "2.1.5")
 addSbtPlugin("org.scalameta"       % "sbt-scalafmt"      % "2.3.4")

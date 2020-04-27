@@ -1,3 +1,8 @@
+import com.jsuereth.sbtpgp.PgpKeys.publishSigned
+
+publishLocal := (publishLocal dependsOn compile).value
+publishSigned := (publishSigned dependsOn compile).value
+
 addCommandAlias("ci-test", "scalafmtCheckAll; scalafmtSbtCheck; test")
 addCommandAlias("ci-docs", "github; project-docs/mdoc; headerCreateAll")
 
