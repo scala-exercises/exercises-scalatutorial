@@ -16,7 +16,7 @@ object ProjectPlugin extends AutoPlugin {
       val scalaExercises: String      = "0.6.0"
       val scalacheck: String          = "1.14.3"
       val scalacheckShapeless: String = "1.2.5"
-      val scalatest: String           = "3.1.1"
+      val scalatest: String           = "3.1.2"
       val scalatestplusScheck: String = "3.1.1.1"
     }
 
