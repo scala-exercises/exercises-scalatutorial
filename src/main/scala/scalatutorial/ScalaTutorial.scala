@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,8 @@ import org.scalaexercises.definitions.Library
 
 import sections._
 
-/** Quickly learn Scala through an interactive tutorial based on the first two courses of the Scala MOOCs.
+/**
+ * Quickly learn Scala through an interactive tutorial based on the first two courses of the Scala MOOCs.
  *
  * @param name scala_tutorial
  */

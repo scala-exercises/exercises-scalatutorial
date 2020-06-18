@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,8 @@
 
 package scalatutorial.sections
 
-/** @param name terms_and_types */
+/**
+ * @param name terms_and_types */
 object TermsAndTypes extends ScalaTutorialSection {
 
   /**
@@ -100,7 +101,6 @@ object TermsAndTypes extends ScalaTutorialSection {
    *   3 * 3
    *   9
    * }}}
-   *
    */
   def evaluation(res0: Int, res1: String): Unit = {
     1 + 2 shouldBe res0

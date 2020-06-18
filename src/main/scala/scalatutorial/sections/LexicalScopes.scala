@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,8 @@
 
 package scalatutorial.sections
 
-/** @param name lexical_scopes */
+/**
+ * @param name lexical_scopes */
 object LexicalScopes extends ScalaTutorialSection {
 
   /**
@@ -75,7 +76,6 @@ object LexicalScopes extends ScalaTutorialSection {
    * == Exercise: Scope Rules ==
    *
    * What is the value of `result` in the following program?
-   *
    */
   def scopeRules(res0: Int): Unit = {
     val x         = 0
@@ -286,7 +286,6 @@ object LexicalScopes extends ScalaTutorialSection {
    * }}}
    *
    * = Exercise =
-   *
    */
   def objectScopes(res0: Int): Unit = {
     object Foo {
