@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,8 @@
 
 package scalatutorial.sections
 
-/** @param name lazy_evaluation */
+/**
+ * @param name lazy_evaluation */
 object LazyEvaluation extends ScalaTutorialSection {
 
   /**
@@ -234,9 +235,9 @@ object LazyEvaluation extends ScalaTutorialSection {
   def lazyVal(res0: String): Unit = {
     val builder = new StringBuilder
 
-    val x      = { builder += 'x'; 1 }
+    val x = { builder += 'x'; 1 }
     lazy val y = { builder += 'y'; 2 }
-    def z      = { builder += 'z'; 3 }
+    def z = { builder += 'z'; 3 }
 
     z + y + x + z + y + x
 

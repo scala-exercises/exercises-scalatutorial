@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,8 @@
 
 package scalatutorial.sections
 
-/** @param name standard_library */
+/**
+ * @param name standard_library */
 object StandardLibrary extends ScalaTutorialSection {
 
   /**
@@ -216,12 +217,11 @@ object StandardLibrary extends ScalaTutorialSection {
 
   /**
    * Filter values with `filter`:
-   *
    */
   def optionFilter(res0: Option[Int], res1: Option[Int]): Unit = {
     Some(1).filter(x => x % 2 == 0) shouldBe None
     Some(2).filter(x => x % 2 == 0) shouldBe Some(2)
-    res0.filter(x => x    % 2 == 0) shouldBe res1
+    res0.filter(x => x % 2 == 0) shouldBe res1
   }
 
   /**

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,8 @@ package scalatutorial.sections
 import scalatutorial.utils.Rational
 import scalatutorial.utils.Sorting.insertionSort
 
-/** @param name type_classes */
+/**
+ * @param name type_classes */
 object TypeClasses extends ScalaTutorialSection {
 
   /**
@@ -77,7 +78,7 @@ object TypeClasses extends ScalaTutorialSection {
    *     }
    *   }
    * }}}
-
+   *
    * = Calling Parameterized Sort =
    *
    * We can now call `insertionSort` as follows:

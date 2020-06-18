@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,8 @@ package scalatutorial.sections
 
 import scalatutorial.utils.{BankAccount, Note}
 
-/** @param name classes_vs_case_classes */
+/**
+ * @param name classes_vs_case_classes */
 object ClassesVsCaseClasses extends ScalaTutorialSection {
 
   /**
@@ -74,7 +75,6 @@ object ClassesVsCaseClasses extends ScalaTutorialSection {
    * members, whereas this is not the case with regular classes.
    *
    * = Equality =
-   *
    */
   def equality(res0: Boolean, res1: Boolean): Unit = {
     val aliceAccount = new BankAccount

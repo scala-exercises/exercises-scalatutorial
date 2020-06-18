@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 47 Degrees <https://47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,8 @@
 
 package scalatutorial.sections
 
-/** @param name structuring_information */
+/**
+ * @param name structuring_information */
 object StructuringInformation extends ScalaTutorialSection {
 
   /**
@@ -163,7 +164,7 @@ object StructuringInformation extends ScalaTutorialSection {
    *     case Rest(duration) => duration
    *   }
    * }
-   *}}}
+   * }}}
    *
    * If we try to run the above code to see how the compiler informs us that
    * we don’t handle all the cases in `nonExhaustiveDuration`.
@@ -172,7 +173,6 @@ object StructuringInformation extends ScalaTutorialSection {
    *
    * It is worth noting that, since the purpose of case classes is to
    * aggregate values, comparing case class instances compares their values:
-   *
    */
   def caseClassEquals(res0: Boolean, res1: Boolean): Unit = {
     case class Note(name: String, duration: String, octave: Int)
