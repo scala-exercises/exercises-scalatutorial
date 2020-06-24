@@ -17,7 +17,8 @@
 package scalatutorial.sections
 
 /**
- * @param name definitions_and_evaluation */
+ * @param name definitions_and_evaluation
+ */
 object DefinitionsAndEvaluation extends ScalaTutorialSection {
 
   /**

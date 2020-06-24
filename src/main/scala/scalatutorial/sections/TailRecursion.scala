@@ -19,7 +19,8 @@ package scalatutorial.sections
 import scala.annotation.tailrec
 
 /**
- * @param name tail_recursion */
+ * @param name tail_recursion
+ */
 object TailRecursion extends ScalaTutorialSection {
 
   /**
