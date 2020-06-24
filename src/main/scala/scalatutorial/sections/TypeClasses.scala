@@ -20,7 +20,8 @@ import scalatutorial.utils.Rational
 import scalatutorial.utils.Sorting.insertionSort
 
 /**
- * @param name type_classes */
+ * @param name type_classes
+ */
 object TypeClasses extends ScalaTutorialSection {
 
   /**

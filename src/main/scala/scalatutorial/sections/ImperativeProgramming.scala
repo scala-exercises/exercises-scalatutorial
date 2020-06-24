@@ -19,7 +19,8 @@ package scalatutorial.sections
 import scalatutorial.utils.BankAccount
 
 /**
- * @param name imperative_programming */
+ * @param name imperative_programming
+ */
 object ImperativeProgramming extends ScalaTutorialSection {
 
   /**

@@ -19,7 +19,8 @@ package scalatutorial.sections
 import scalatutorial.utils.{Empty, NonEmpty}
 
 /**
- * @param name object_oriented_programming */
+ * @param name object_oriented_programming
+ */
 object ObjectOrientedProgramming extends ScalaTutorialSection {
 
   /**

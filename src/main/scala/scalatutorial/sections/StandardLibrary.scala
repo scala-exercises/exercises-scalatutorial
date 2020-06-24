@@ -17,7 +17,8 @@
 package scalatutorial.sections
 
 /**
- * @param name standard_library */
+ * @param name standard_library
+ */
 object StandardLibrary extends ScalaTutorialSection {
 
   /**

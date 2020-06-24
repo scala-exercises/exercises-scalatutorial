@@ -17,7 +17,8 @@
 package scalatutorial.sections
 
 /**
- * @param name terms_and_types */
+ * @param name terms_and_types
+ */
 object TermsAndTypes extends ScalaTutorialSection {
 
   /**
