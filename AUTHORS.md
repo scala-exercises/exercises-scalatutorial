@@ -28,8 +28,8 @@ These are the people that have contributed to the _exercises-scalatutorial_ proj
 
 - [![julienrf](https://avatars2.githubusercontent.com/u/332812?v=4&s=20) **julienrf**](https://github.com/julienrf)
 - [![juanpedromoreno](https://avatars2.githubusercontent.com/u/4879373?v=4&s=20) **juanpedromoreno**](https://github.com/juanpedromoreno)
-- [![jdesiloniz](https://avatars2.githubusercontent.com/u/2835739?v=4&s=20) **jdesiloniz**](https://github.com/jdesiloniz)
 - [![47erbot](https://avatars1.githubusercontent.com/u/24799081?v=4&s=20) **47erbot**](https://github.com/47erbot)
+- [![jdesiloniz](https://avatars2.githubusercontent.com/u/2835739?v=4&s=20) **jdesiloniz**](https://github.com/jdesiloniz)
 - [![kiroco12](https://avatars1.githubusercontent.com/u/48894338?v=4&s=20) **kiroco12**](https://github.com/kiroco12)
 - [![FRosner](https://avatars2.githubusercontent.com/u/3427394?v=4&s=20) **FRosner**](https://github.com/FRosner)
 - [![MaureenElsberry](https://avatars0.githubusercontent.com/u/17556002?v=4&s=20) **MaureenElsberry**](https://github.com/MaureenElsberry)
