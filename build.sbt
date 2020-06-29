@@ -2,7 +2,7 @@ import com.jsuereth.sbtpgp.PgpKeys.publishSigned
 
 ThisBuild / organization := "org.scala-exercises"
 ThisBuild / githubOrganization := "47degrees"
-ThisBuild / scalaVersion := "2.13.2"
+ThisBuild / scalaVersion := "2.13.3"
 
 publish / skip := true
 
@@ -18,8 +18,8 @@ lazy val exercises = (project in file("."))
   .settings(name := "exercises-scalatutorial")
   .settings(
     libraryDependencies ++= Seq(
-      "org.scala-exercises"        %% "exercise-compiler"         % "0.6.1",
-      "org.scala-exercises"        %% "definitions"               % "0.6.1",
+      "org.scala-exercises"        %% "exercise-compiler"         % "0.6.3",
+      "org.scala-exercises"        %% "definitions"               % "0.6.3",
       "com.chuusai"                %% "shapeless"                 % "2.3.3",
       "org.scalatest"              %% "scalatest"                 % "3.2.0",
       "org.scalacheck"             %% "scalacheck"                % "1.14.3",
