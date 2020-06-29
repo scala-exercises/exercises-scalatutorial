@@ -1,5 +1,26 @@
 # Changelog
 
+## [v0.6.3](https://github.com/scala-exercises/exercises-scalatutorial/tree/v0.6.3) (2020-06-29)
+
+[Full Changelog](https://github.com/scala-exercises/exercises-scalatutorial/compare/v0.6.2...v0.6.3)
+
+📈 **Dependency updates**
+
+- Update sbt to 1.3.13 [\#139](https://github.com/scala-exercises/exercises-scalatutorial/pull/139) ([scala-steward](https://github.com/scala-steward))
+- Update sbt-mdoc to 2.2.3 [\#137](https://github.com/scala-exercises/exercises-scalatutorial/pull/137) ([scala-steward](https://github.com/scala-steward))
+- Update scalacheck-1-14 to 3.2.0.0 [\#134](https://github.com/scala-exercises/exercises-scalatutorial/pull/134) ([scala-steward](https://github.com/scala-steward))
+- Update scalatest to 3.2.0 [\#133](https://github.com/scala-exercises/exercises-scalatutorial/pull/133) ([scala-steward](https://github.com/scala-steward))
+- Update sbt-mdoc to 2.2.2 [\#131](https://github.com/scala-exercises/exercises-scalatutorial/pull/131) ([scala-steward](https://github.com/scala-steward))
+- Update sbt to 1.3.11 [\#127](https://github.com/scala-exercises/exercises-scalatutorial/pull/127) ([scala-steward](https://github.com/scala-steward))
+- Update scalatest to 3.1.2 [\#126](https://github.com/scala-exercises/exercises-scalatutorial/pull/126) ([scala-steward](https://github.com/scala-steward))
+
+**Merged pull requests:**
+
+- Updates build [\#140](https://github.com/scala-exercises/exercises-scalatutorial/pull/140) ([juanpedromoreno](https://github.com/juanpedromoreno))
+- Update scalafmt-core to 2.6.1 [\#135](https://github.com/scala-exercises/exercises-scalatutorial/pull/135) ([BenFradet](https://github.com/BenFradet))
+- Updated SyntacticConveniences.scala [\#129](https://github.com/scala-exercises/exercises-scalatutorial/pull/129) ([aamir-f](https://github.com/aamir-f))
+- Prepare repository for next  release and SBT build improvements [\#128](https://github.com/scala-exercises/exercises-scalatutorial/pull/128) ([juanpedromoreno](https://github.com/juanpedromoreno))
+
 ## [v0.6.2](https://github.com/scala-exercises/exercises-scalatutorial/tree/v0.6.2) (2020-04-27)
 
 [Full Changelog](https://github.com/scala-exercises/exercises-scalatutorial/compare/v0.6.1...v0.6.2)
