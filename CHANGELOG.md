@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.6.4](https://github.com/scala-exercises/exercises-scalatutorial/tree/v0.6.4) (2020-06-30)
+
+[Full Changelog](https://github.com/scala-exercises/exercises-scalatutorial/compare/v0.6.3...v0.6.4)
+
 ## [v0.6.3](https://github.com/scala-exercises/exercises-scalatutorial/tree/v0.6.3) (2020-06-29)
 
 [Full Changelog](https://github.com/scala-exercises/exercises-scalatutorial/compare/v0.6.2...v0.6.3)
@@ -92,7 +96,7 @@
 - Fix typo in StandardLibrary.scala [\#20](https://github.com/scala-exercises/exercises-scalatutorial/pull/20) ([TwelveNights](https://github.com/TwelveNights))
 - Updating sbt org policies [\#19](https://github.com/scala-exercises/exercises-scalatutorial/pull/19) ([dominv](https://github.com/dominv))
 - Updating libraries versions [\#18](https://github.com/scala-exercises/exercises-scalatutorial/pull/18) ([dominv](https://github.com/dominv))
-- Update DefinitionsAndEvaluations.scala [\#16](https://github.com/scala-exercises/exercises-scalatutorial/pull/16) ([jiggaPls](https://github.com/jiggaPls))
+- Update DefinitionsAndEvaluations.scala [\#16](https://github.com/scala-exercises/exercises-scalatutorial/pull/16) ([ghostnostic](https://github.com/ghostnostic))
 - Fixing typo in Standard Library [\#14](https://github.com/scala-exercises/exercises-scalatutorial/pull/14) ([ecamellini](https://github.com/ecamellini))
 - Fixing typo in Pattern Matching block example [\#13](https://github.com/scala-exercises/exercises-scalatutorial/pull/13) ([mlahoz](https://github.com/mlahoz))
 - Update TypeClasses.scala [\#12](https://github.com/scala-exercises/exercises-scalatutorial/pull/12) ([prokofyev](https://github.com/prokofyev))
