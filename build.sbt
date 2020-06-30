@@ -4,8 +4,6 @@ ThisBuild / organization := "org.scala-exercises"
 ThisBuild / githubOrganization := "47degrees"
 ThisBuild / scalaVersion := "2.13.3"
 
-publish / skip := true
-
 // This is required by the exercises compiler:
 publishLocal := (publishLocal dependsOn compile).value
 publishSigned := (publishSigned dependsOn compile).value
