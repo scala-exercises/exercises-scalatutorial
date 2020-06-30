@@ -58,7 +58,6 @@ These are the people that have contributed to the _exercises-scalatutorial_ proj
 - [![Michad](https://avatars3.githubusercontent.com/u/5895099?v=4&s=20) **Michad**](https://github.com/Michad)
 - [![iselind](https://avatars1.githubusercontent.com/u/21103057?v=4&s=20) **iselind**](https://github.com/iselind)
 - [![Tschis](https://avatars1.githubusercontent.com/u/20662669?v=4&s=20) **Tschis**](https://github.com/Tschis)
-- [![jiggaPls](https://avatars0.githubusercontent.com/u/9080788?v=4&s=20) **jiggaPls**](https://github.com/jiggaPls)
 - [![rvilla87](https://avatars2.githubusercontent.com/u/26299708?v=4&s=20) **rvilla87**](https://github.com/rvilla87)
 - [![SCKelemen](https://avatars1.githubusercontent.com/u/4325375?v=4&s=20) **SCKelemen**](https://github.com/SCKelemen)
 - [![aamir-f](https://avatars0.githubusercontent.com/u/16462830?v=4&s=20) **aamir-f**](https://github.com/aamir-f)
