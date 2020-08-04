@@ -62,7 +62,7 @@ object SyntacticConveniences extends ScalaTutorialSection {
   def tuples(res0: (Int, String)): Unit = {
     def pair(i: Int, s: String): (Int, String) = (i, s)
 
-    pair(42, "foo") shouldBe ((42, "foo"))
+    pair(42, "foo") shouldBe (42, "foo")
     pair(0, "bar") shouldBe res0
   }
 
