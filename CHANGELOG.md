@@ -1,5 +1,24 @@
 # Changelog
 
+## [v0.6.6](https://github.com/scala-exercises/exercises-scalatutorial/tree/v0.6.6) (2020-08-10)
+
+[Full Changelog](https://github.com/scala-exercises/exercises-scalatutorial/compare/v0.6.4...v0.6.6)
+
+📈 **Dependency updates**
+
+- Update definitions, exercise-compiler, ... to 0.6.4 [\#154](https://github.com/scala-exercises/exercises-scalatutorial/pull/154) ([47erbot](https://github.com/47erbot))
+- Update sbt-mdoc to 2.2.4 [\#153](https://github.com/scala-exercises/exercises-scalatutorial/pull/153) ([47erbot](https://github.com/47erbot))
+- Update scalacheck-1-14 to 3.2.1.0 [\#152](https://github.com/scala-exercises/exercises-scalatutorial/pull/152) ([47erbot](https://github.com/47erbot))
+- Update scalatest to 3.2.1 [\#151](https://github.com/scala-exercises/exercises-scalatutorial/pull/151) ([47erbot](https://github.com/47erbot))
+- Update sbt-scalafmt to 2.4.2 [\#148](https://github.com/scala-exercises/exercises-scalatutorial/pull/148) ([47erbot](https://github.com/47erbot))
+- Update scalafmt-core to 2.6.4 [\#147](https://github.com/scala-exercises/exercises-scalatutorial/pull/147) ([47erbot](https://github.com/47erbot))
+- Update scalafmt-core to 2.6.3 [\#146](https://github.com/scala-exercises/exercises-scalatutorial/pull/146) ([scala-steward](https://github.com/scala-steward))
+- Update scalafmt-core to 2.6.2 [\#144](https://github.com/scala-exercises/exercises-scalatutorial/pull/144) ([scala-steward](https://github.com/scala-steward))
+
+**Merged pull requests:**
+
+- Remove double parenthesis in tuple exercise [\#149](https://github.com/scala-exercises/exercises-scalatutorial/pull/149) ([Gerko32](https://github.com/Gerko32))
+
 ## [v0.6.4](https://github.com/scala-exercises/exercises-scalatutorial/tree/v0.6.4) (2020-06-30)
 
 [Full Changelog](https://github.com/scala-exercises/exercises-scalatutorial/compare/v0.6.3...v0.6.4)
@@ -22,7 +41,7 @@
 
 - Updates build [\#140](https://github.com/scala-exercises/exercises-scalatutorial/pull/140) ([juanpedromoreno](https://github.com/juanpedromoreno))
 - Update scalafmt-core to 2.6.1 [\#135](https://github.com/scala-exercises/exercises-scalatutorial/pull/135) ([BenFradet](https://github.com/BenFradet))
-- Updated SyntacticConveniences.scala [\#129](https://github.com/scala-exercises/exercises-scalatutorial/pull/129) ([aamir-f](https://github.com/aamir-f))
+- Updated SyntacticConveniences.scala [\#129](https://github.com/scala-exercises/exercises-scalatutorial/pull/129) ([aamirfayaz](https://github.com/aamirfayaz))
 - Prepare repository for next  release and SBT build improvements [\#128](https://github.com/scala-exercises/exercises-scalatutorial/pull/128) ([juanpedromoreno](https://github.com/juanpedromoreno))
 
 ## [v0.6.2](https://github.com/scala-exercises/exercises-scalatutorial/tree/v0.6.2) (2020-04-27)
