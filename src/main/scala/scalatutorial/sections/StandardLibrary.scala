@@ -73,7 +73,7 @@ object StandardLibrary extends ScalaTutorialSection {
    *
    * === Right Associativity ===
    *
-   * Convention: Operators ending in “`:`” associate to the right.
+   * Convention: Operators ending in “`::`” associate to the right.
    *
    * `A :: B :: C` is interpreted as `A :: (B :: C)`.
    *
