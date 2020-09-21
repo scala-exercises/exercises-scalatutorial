@@ -83,7 +83,7 @@ object StandardLibrary extends ScalaTutorialSection {
    *   val nums = 1 :: 2 :: 3 :: 4 :: Nil
    * }}}
    *
-   * Operators ending in “`:`” are also different in the fact that they are seen as method calls of
+   * Operators ending in “`::`” are also different in the fact that they are seen as method calls of
    * the ''right-hand'' operand.
    *
    * So the expression above is equivalent to:
