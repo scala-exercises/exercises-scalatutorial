@@ -97,7 +97,7 @@ object HigherOrderFunctions extends ScalaTutorialSection {
    * (of types `A1` and `A2`, respectively) and return a result of type `B`.
    *
    * More generally, `(A1, ..., An) => B` is the type of functions that take `n`
-   * arguments (of types `A1` to An`) and return a result of type `B`.
+   * arguments (of types `A1` to `An`) and return a result of type `B`.
    *
    * = Anonymous Functions =
    *
