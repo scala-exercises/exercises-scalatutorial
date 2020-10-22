@@ -73,7 +73,15 @@ object ClassesVsCaseClasses extends ScalaTutorialSection {
    * this is not required for case classes.
    *
    * Also, we see that the case class constructor parameters are promoted to
-   * members, whereas this is not the case with regular classes.
+   * members, whereas this is not true for regular classes: the parameters
+   * will remain private.
+   *
+   * {{{
+   *    class MyClass(x: Int) { def doubledX = x * 2 }
+   *    val myInstance = new MyClass(5)
+   *    myInstance.doubledX // returns  10
+   *    myInstance.x        // error: value x is not a member of MyClass
+   * }}}
    *
    * = Equality =
    */
