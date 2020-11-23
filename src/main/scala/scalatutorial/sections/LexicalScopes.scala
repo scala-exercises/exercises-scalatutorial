@@ -92,7 +92,7 @@ object LexicalScopes extends ScalaTutorialSection {
    * = Lexical Scoping =
    *
    * Definitions of outer blocks are visible inside a block unless they are shadowed.
-   * Shadowed defintions are ones which are redefined in a lower scope.
+   * Shadowed definitions are ones which are redefined in a lower scope.
    *
    * Therefore, we can simplify `sqrt` by eliminating redundant occurrences of the `x` parameter, which means
    * the same thing everywhere:
@@ -127,7 +127,7 @@ object LexicalScopes extends ScalaTutorialSection {
    *
    * but most people would omit the semicolon.
    *
-   * On the other hand, if there are more than one statements on a line, they need to be
+   * On the other hand, if there is more than one statement on a line, they need to be
    * separated by semicolons:
    *
    * {{{
