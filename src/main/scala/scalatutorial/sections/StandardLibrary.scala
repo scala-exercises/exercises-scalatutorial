@@ -61,7 +61,7 @@ object StandardLibrary extends ScalaTutorialSection {
    *
    *  - the empty list `Nil`, and
    *  - the construction operation `::` (pronounced ''cons''): `x :: xs` gives a new list
-   *    with the first element `x`, followed by the elements of `xs` (which is a list itself).
+   *    with the first element `x`, called the `head`, followed by the `tail` `xs`, which is itself a list of elements.
    *
    * For example:
    *
