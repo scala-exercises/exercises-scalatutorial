@@ -299,8 +299,7 @@ object StandardLibrary extends ScalaTutorialSection {
    *   Right(1).filterOrElse(x => x % 2 == 0, "Odd value") shouldBe Left("Odd value")
    * }}}
    *
-   * However, prior to Scala 2.12, `Either` was “unbiased”. You had to explicitly
-   * specify which “side” (`Left` or `Right`) you wanted to `map`:
+   * Specify which “side” (`Left` or `Right`) you wanted to `map`:
    */
   def either(res0: Either[String, Int], res1: Either[String, Int]): Unit = {
     def triple(x: Int): Int = 3 * x
