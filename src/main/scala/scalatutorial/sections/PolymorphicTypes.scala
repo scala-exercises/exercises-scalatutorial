@@ -93,9 +93,10 @@ object PolymorphicTypes extends ScalaTutorialSection {
    *
    * This is also called ''type erasure''.
    *
-   * Languages that use type erasure include Java, Scala, Haskell, ML, OCaml.
+   * Languages that use type erasure include Java, Scala (version <3), Haskell, ML, OCaml.
    *
-   * Some other languages keep the type parameters around at run time, these include C++, C#, F#.
+   * Some other languages keep the type parameters around at run time, these include C++, C#, F#. Scala 3 introduces a new [`tasty`](https://docs.scala-lang.org/scala3/guides/tasty-overview.html) 
+   * format that keeps this information as well.
    *
    * = Polymorphism =
    *
