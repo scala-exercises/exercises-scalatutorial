@@ -379,7 +379,7 @@ object PolymorphicTypes extends ScalaTutorialSection {
    *  - `T` is contravariant and appears only as a method parameter type
    *  - `U` is covariant and appears only as a method result type
    *
-   * So the method is checks out OK.
+   * So the method checks out OK.
    *
    * = Making Classes Covariant =
    *
