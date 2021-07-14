@@ -25,7 +25,7 @@ import shapeless.HNil
 class LazyEvaluationSpec extends RefSpec with Checkers {
 
   def `check lazy list range`(): Unit =
-    check(Test.testSuccess(LazyEvaluation.llRangeExercise _, 4 :: HNil))
+    check(Test.testSuccess(LazyEvaluation.llRangeExercise _, 3 :: HNil))
 
   def `check lazy val`(): Unit =
     check(Test.testSuccess(LazyEvaluation.lazyVal _, "xzyz" :: HNil))
