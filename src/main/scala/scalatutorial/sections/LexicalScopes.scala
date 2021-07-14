@@ -79,7 +79,7 @@ object LexicalScopes extends ScalaTutorialSection {
    * What is the value of `result` in the following program?
    */
   def scopeRules(res0: Int): Unit = {
-    val x         = 0
+    val x         = 1
     def f(y: Int) = y + 1
     val result = {
       val x = f(3)
