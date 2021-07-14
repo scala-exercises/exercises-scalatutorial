@@ -68,7 +68,7 @@ object DefinitionsAndEvaluation extends ScalaTutorialSection {
   def usingSquare(res0: Double): Unit = {
     def square(x: Double) = x * x
 
-    square(3.0) shouldBe res0
+    square(3.0) shouldBe 4.0
   }
 
   /**
