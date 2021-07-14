@@ -512,7 +512,7 @@ object ObjectOrientedProgramming extends ScalaTutorialSection {
    *
    * The definitions of `contains` and `incl` in the classes
    * `Empty` and `NonEmpty` ''implement'' the abstract
-   * functions in the base trait `IntSet`.
+   * functions in the base class `IntSet`.
    *
    * It is also possible to ''redefine'' an existing, non-abstract
    * definition in a subclass by using `override`.
