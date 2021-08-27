@@ -17,24 +17,25 @@
 package scalatutorial.sections
 
 /**
- * @param name higher_order_functions
+ * @param name
+ *   higher_order_functions
  */
 object HigherOrderFunctions extends ScalaTutorialSection {
 
   /**
-   * = Higher-Order Functions =
+   * =Higher-Order Functions=
    *
    * Functional languages treat functions as ''first-class values''.
    *
-   * This means that, like any other value, a function
-   * can be passed as a parameter and returned as a result.
+   * This means that, like any other value, a function can be passed as a parameter and returned as
+   * a result.
    *
    * This provides a flexible way to compose programs.
    *
-   * Functions that take other functions as parameters or that return functions
-   * as results are called ''higher order functions''.
+   * Functions that take other functions as parameters or that return functions as results are
+   * called ''higher order functions''.
    *
-   * = Motivation =
+   * =Motivation=
    *
    * Consider the following programs.
    *
@@ -45,8 +46,7 @@ object HigherOrderFunctions extends ScalaTutorialSection {
    *     if (a > b) 0 else a + sumInts(a + 1, b)
    * }}}
    *
-   * Take the sum of the cubes of all the integers between `a`
-   * and `b`:
+   * Take the sum of the cubes of all the integers between `a` and `b`:
    *
    * {{{
    *   def cube(x: Int): Int = x * x * x
@@ -55,18 +55,16 @@ object HigherOrderFunctions extends ScalaTutorialSection {
    *     if (a > b) 0 else cube(a) + sumCubes(a + 1, b)
    * }}}
    *
-   * Take the sum of the factorials of all the integers between `a`
-   * and `b`:
+   * Take the sum of the factorials of all the integers between `a` and `b`:
    *
    * {{{
    *   def sumFactorials(a: Int, b: Int): Int =
    *     if (a > b) 0 else factorial(a) + sumFactorials(a + 1, b)
    * }}}
    *
-   * Note how similar these methods are.
-   * Can we factor out the common pattern?
+   * Note how similar these methods are. Can we factor out the common pattern?
    *
-   * = Summing with Higher-Order Functions =
+   * =Summing with Higher-Order Functions=
    *
    * Let's define:
    *
@@ -85,21 +83,20 @@ object HigherOrderFunctions extends ScalaTutorialSection {
    *   def sumFactorials(a: Int, b: Int) = sum(factorial, a, b)
    * }}}
    *
-   * = Function Types =
+   * =Function Types=
    *
-   * The type `A => B` is the type of a ''function'' that
-   * takes an argument of type `A` and returns a result of
-   * type `B`.
+   * The type `A => B` is the type of a ''function'' that takes an argument of type `A` and returns
+   * a result of type `B`.
    *
    * So, `Int => Int` is the type of functions that map integers to integers.
    *
-   * Similarly, `(A1, A2) => B` is the type of functions that take two arguments
-   * (of types `A1` and `A2`, respectively) and return a result of type `B`.
+   * Similarly, `(A1, A2) => B` is the type of functions that take two arguments (of types `A1` and
+   * `A2`, respectively) and return a result of type `B`.
    *
-   * More generally, `(A1, ..., An) => B` is the type of functions that take `n`
-   * arguments (of types `A1` to `An`) and return a result of type `B`.
+   * More generally, `(A1, ..., An) => B` is the type of functions that take `n` arguments (of types
+   * `A1` to `An`) and return a result of type `B`.
    *
-   * = Anonymous Functions =
+   * =Anonymous Functions=
    *
    * Passing functions as parameters leads to the creation of many small functions.
    *
@@ -117,12 +114,12 @@ object HigherOrderFunctions extends ScalaTutorialSection {
    *   println("abc")
    * }}}
    *
-   * because strings exist as ''literals''. Analogously we would like function
-   * literals, which let us write a function without giving it a name.
+   * because strings exist as ''literals''. Analogously we would like function literals, which let
+   * us write a function without giving it a name.
    *
    * These are called ''anonymous functions''.
    *
-   * == Anonymous Function Syntax ==
+   * ==Anonymous Function Syntax==
    *
    * Example of a function that raises its argument to a cube:
    *
@@ -130,11 +127,10 @@ object HigherOrderFunctions extends ScalaTutorialSection {
    *   (x: Int) => x * x * x
    * }}}
    *
-   * Here, `(x: Int)` is the ''parameter'' of the function, and
-   * `x * x * x` is its ''body''.
+   * Here, `(x: Int)` is the ''parameter'' of the function, and `x * x * x` is its ''body''.
    *
-   * The type of the parameter can be omitted if it can be inferred by the
-   * compiler from the context.
+   * The type of the parameter can be omitted if it can be inferred by the compiler from the
+   * context.
    *
    * If there are several parameters, they are separated by commas:
    *
@@ -142,10 +138,10 @@ object HigherOrderFunctions extends ScalaTutorialSection {
    *   (x: Int, y: Int) => x + y
    * }}}
    *
-   * == Anonymous Functions are Syntactic Sugar ==
+   * ==Anonymous Functions are Syntactic Sugar==
    *
-   * An anonymous function `(x1: T1, …, xn: Tn) => e`
-   * can always be expressed using `def` as follows:
+   * An anonymous function `(x1: T1, …, xn: Tn) => e` can always be expressed using `def` as
+   * follows:
    *
    * {{{
    *   { def f(x1: T1, …, xn: Tn) = e ; f }
@@ -155,7 +151,7 @@ object HigherOrderFunctions extends ScalaTutorialSection {
    *
    * One can therefore say that anonymous functions are ''syntactic sugar''.
    *
-   * == Summation with Anonymous Functions ==
+   * ==Summation with Anonymous Functions==
    *
    * Using anonymous functions, we can write sums in a shorter way:
    *
@@ -164,10 +160,9 @@ object HigherOrderFunctions extends ScalaTutorialSection {
    *   def sumCubes(a: Int, b: Int) = sum(x => x * x * x, a, b)
    * }}}
    *
-   * = Exercise =
+   * =Exercise=
    *
-   * The `sum` function uses linear recursion. Complete the following tail-recursive
-   * version:
+   * The `sum` function uses linear recursion. Complete the following tail-recursive version:
    */
   def tailRecSum(res0: Int, res1: Int): Unit = {
     def sum(f: Int => Int, a: Int, b: Int): Int = {
