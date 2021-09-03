@@ -17,12 +17,13 @@
 package scalatutorial.sections
 
 /**
- * @param name lazy_evaluation
+ * @param name
+ *   lazy_evaluation
  */
 object LazyEvaluation extends ScalaTutorialSection {
 
   /**
-   * = Motivation =
+   * =Motivation=
    *
    * Consider the following program that finds the second prime number between 1000 and 10000:
    *
@@ -39,27 +40,27 @@ object LazyEvaluation extends ScalaTutorialSection {
    *       if (n == 1) from else nthPrime(from + 1, to, n - 1)
    *     else nthPrime(from + 1, to, n)
    * }}}
-   *   def secondPrime(from: Int, to: Int) = nthPrime(from, to, 2)
+   * def secondPrime(from: Int, to: Int) = nthPrime(from, to, 2)
    *
-   * But from a standpoint of performance, the first version is pretty bad; it constructs
-   * ''all'' prime numbers between `1000` and `10000` in a list, but only ever looks at
-   * the first two elements of that list.
+   * But from a standpoint of performance, the first version is pretty bad; it constructs ''all''
+   * prime numbers between `1000` and `10000` in a list, but only ever looks at the first two
+   * elements of that list.
    *
-   * Reducing the upper bound would speed things up, but risks that we miss the
-   * second prime number all together.
+   * Reducing the upper bound would speed things up, but risks that we miss the second prime number
+   * all together.
    *
-   * = Delayed Evaluation =
+   * =Delayed Evaluation=
    *
    * However, we can make the short-code efficient by using a trick:
    *
-   *  - Avoid computing the tail of a sequence until it is needed for the evaluation
-   *    result (which might be never)
+   *   - Avoid computing the tail of a sequence until it is needed for the evaluation result (which
+   *     might be never)
    *
    * This idea is implemented in a new class, the `LazyList`.
    *
    * LazyLists are similar to lists, but their elements are evaluated only ''on demand''.
    *
-   * = Defining LazyLists =
+   * =Defining LazyLists=
    *
    * LazyLists are defined from a constructor `LazyList.cons`.
    *
@@ -69,10 +70,10 @@ object LazyEvaluation extends ScalaTutorialSection {
    *   val xs = LazyList.cons(1, LazyList.cons(2, LazyList.empty))
    * }}}
    *
-   * = LazyList Ranges =
+   * =LazyList Ranges=
    *
-   * Let's try to write a function that returns a `LazyList` representing a range of numbers
-   * between `lo` and `hi`:
+   * Let's try to write a function that returns a `LazyList` representing a range of numbers between
+   * `lo` and `hi`:
    *
    * {{{
    *   def llRange(lo: Int, hi: Int): LazyList[Int] =
@@ -90,12 +91,13 @@ object LazyEvaluation extends ScalaTutorialSection {
    *
    * The functions have almost identical structure yet they evaluate quite differently.
    *
-   *  - `listRange(start, end)` will produce a list with `end - start` elements and return it.
-   *  - `llRange(start, end)` returns a single object of type `LazyList` with `start` as head element.
-   *    - The other elements are only computed when they are needed, where
-   *      “needed” means that someone calls `tail` on the stream.
+   *   - `listRange(start, end)` will produce a list with `end - start` elements and return it.
+   *   - `llRange(start, end)` returns a single object of type `LazyList` with `start` as head
+   *     element.
+   *     - The other elements are only computed when they are needed, where “needed” means that
+   *       someone calls `tail` on the stream.
    *
-   * = Methods on LazyLists =
+   * =Methods on LazyLists=
    *
    * `LazyList` supports almost all methods of `List`.
    *
@@ -117,7 +119,7 @@ object LazyEvaluation extends ScalaTutorialSection {
    *
    * `#::` can be used in expressions as well as patterns.
    *
-   * = Implementation of LazyLists =
+   * =Implementation of LazyLists=
    *
    * The implementation of lazy lists is quite close to the one of lists.
    *
@@ -148,19 +150,19 @@ object LazyEvaluation extends ScalaTutorialSection {
    *   }
    * }}}
    *
-   * The only important difference between the implementations of `List` and `LazyList`
-   * concern `tail`, the second parameter of `LazyList.cons`.
+   * The only important difference between the implementations of `List` and `LazyList` concern
+   * `tail`, the second parameter of `LazyList.cons`.
    *
-   * For lazy lists, this is a by-name parameter: the type of `tail` starts with `=>`. In such
-   * a case, this parameter is evaluated by following the rules of the call-by-name model.
+   * For lazy lists, this is a by-name parameter: the type of `tail` starts with `=>`. In such a
+   * case, this parameter is evaluated by following the rules of the call-by-name model.
    *
    * That's why the second argument to `LazyList.cons` is not evaluated at the point of call.
    *
    * Instead, it will be evaluated each time someone calls `tail` on a `LazyList` object.
    *
-   * In Scala 2.13, LazyList (previously Stream) became fully lazy from head to tail. To make it possible,
-   * methods (`filter`, `flatMap`...) are implemented in a way where the head is not being evaluated if is
-   * not explicitly indicated.
+   * In Scala 2.13, LazyList (previously Stream) became fully lazy from head to tail. To make it
+   * possible, methods (`filter`, `flatMap`...) are implemented in a way where the head is not being
+   * evaluated if is not explicitly indicated.
    *
    * For instance, here's `filter`:
    *
@@ -185,10 +187,10 @@ object LazyEvaluation extends ScalaTutorialSection {
    *   }
    * }}}
    *
-   * = Exercise =
+   * =Exercise=
    *
-   * Consider the following modification of `llRange`. When you write
-   * `llRange(1, 10).take(3).toList` what is the value of `rec`?
+   * Consider the following modification of `llRange`. When you write `llRange(1,
+   * 10).take(3).toList` what is the value of `rec`?
    *
    * Be careful, head is evaluating too!
    */
@@ -204,34 +206,33 @@ object LazyEvaluation extends ScalaTutorialSection {
   }
 
   /**
-   * = Lazy Evaluation =
+   * =Lazy Evaluation=
    *
-   * The proposed `LazyList` implementation suffers from a serious potential performance
-   * problem: If `tail` is called several times, the corresponding stream
-   * will be recomputed each time.
+   * The proposed `LazyList` implementation suffers from a serious potential performance problem: If
+   * `tail` is called several times, the corresponding stream will be recomputed each time.
    *
-   * This problem can be avoided by storing the result of the first
-   * evaluation of `tail` and re-using the stored result instead of recomputing `tail`.
+   * This problem can be avoided by storing the result of the first evaluation of `tail` and
+   * re-using the stored result instead of recomputing `tail`.
    *
-   * This optimization is sound, since in a purely functional language an
-   * expression produces the same result each time it is evaluated.
+   * This optimization is sound, since in a purely functional language an expression produces the
+   * same result each time it is evaluated.
    *
-   * We call this scheme ''lazy evaluation'' (as opposed to ''by-name evaluation'' in
-   * the case where everything is recomputed, and ''strict evaluation'' for normal
-   * parameters and `val` definitions.)
+   * We call this scheme ''lazy evaluation'' (as opposed to ''by-name evaluation'' in the case where
+   * everything is recomputed, and ''strict evaluation'' for normal parameters and `val`
+   * definitions.)
    *
-   * == Lazy Evaluation in Scala ==
+   * ==Lazy Evaluation in Scala==
    *
    * Haskell is a functional programming language that uses lazy evaluation by default.
    *
-   * Scala uses strict evaluation by default, but allows lazy evaluation of value definitions
-   * with the `lazy val` form:
+   * Scala uses strict evaluation by default, but allows lazy evaluation of value definitions with
+   * the `lazy val` form:
    *
    * {{{
    *   lazy val x = expr
    * }}}
    *
-   * == Exercise ==
+   * ==Exercise==
    */
   def lazyVal(res0: String): Unit = {
     val builder = new StringBuilder
