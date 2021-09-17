@@ -22,7 +22,7 @@ lazy val exercises = (project in file("."))
       "org.scalatest"              %% "scalatest"                 % "3.2.9",
       "org.scalacheck"             %% "scalacheck"                % "1.15.4",
       "org.scalatestplus"          %% "scalacheck-1-14"           % "3.2.2.0",
-      "com.github.alexarchambault" %% "scalacheck-shapeless_1.14" % "1.2.5"
+      "com.github.alexarchambault" %% "scalacheck-shapeless_1.15" % "1.3.0"
     )
   )
   .enablePlugins(ExerciseCompilerPlugin)
