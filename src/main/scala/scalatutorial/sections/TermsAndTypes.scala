@@ -107,8 +107,8 @@ object TermsAndTypes extends ScalaTutorialSection {
    * }}}
    */
   def evaluation(res0: Int, res1: String): Unit = {
-    1 + 2 shouldBe res0
-    "Hello, " ++ "Scala!" shouldBe res1
+    1 + 2 shouldBe 3
+    "Hello, " ++ "Scala!" shouldBe "Hello, Scala!"
   }
 
   /**
@@ -139,8 +139,8 @@ object TermsAndTypes extends ScalaTutorialSection {
    * `toUpperCase` method returns the target `String` in upper case.
    */
   def methods(res0: String, res1: Int): Unit = {
-    "Hello, Scala!".toUpperCase shouldBe res0
-    -42.abs shouldBe res1
+    "Hello, Scala!".toUpperCase shouldBe "HELLO, SCALA!"
+    -42.abs shouldBe 42
   }
 
   /**
@@ -178,7 +178,7 @@ object TermsAndTypes extends ScalaTutorialSection {
    * Fill the following blank with values whose type is different from `Int` and see the result:
    */
   def staticTyping(res0: Int): Unit =
-    1 to res0
+    1 to 1.5
 
   /**
    * =Common Types=
@@ -196,11 +196,11 @@ object TermsAndTypes extends ScalaTutorialSection {
    * evaluating each statement in turn in a scala REPL to see what the result is.
    */
   def moreMethods(res0: String, res1: Boolean, res2: String): Unit = {
-    16.toHexString shouldBe res0
+    16.toHexString shouldBe 1
     (0 to 10).contains(10) shouldBe true
-    (0 until 10).contains(10) shouldBe res1
+    (0 until 10).contains(10) shouldBe false
     "foo".drop(1) shouldBe "oo"
-    "bar".take(2) shouldBe res2
+    "bar".take(2) shouldBe "ba"
   }
 
 }
