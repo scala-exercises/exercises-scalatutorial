@@ -31,6 +31,8 @@ class TermsAndTypesSpec extends RefSpec with Checkers {
     check(Test.testSuccess(TermsAndTypes.methods _, "HELLO, SCALA!" :: 42 :: HNil))
 
   def `check more methods`(): Unit =
-    check(Test.testSuccess(TermsAndTypes.moreMethods _, "10" :: false :: "ba" :: HNil))
+    check(
+      Test.testSuccess(TermsAndTypes.moreMethods _, "10" :: true :: false :: "oo" :: "ba" :: HNil)
+    )
 
 }

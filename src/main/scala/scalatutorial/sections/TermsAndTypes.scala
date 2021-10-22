@@ -195,12 +195,12 @@ object TermsAndTypes extends ScalaTutorialSection {
    * Here are some more methods of standard types. Can you guess what they do? If you get stuck, try
    * evaluating each statement in turn in a scala REPL to see what the result is.
    */
-  def moreMethods(res0: String, res1: Boolean, res2: String): Unit = {
+  def moreMethods(res0: String, res1: Boolean, res2: Boolean, res3: String, res4: String): Unit = {
     16.toHexString shouldBe res0
-    (0 to 10).contains(10) shouldBe true
-    (0 until 10).contains(10) shouldBe res1
-    "foo".drop(1) shouldBe "oo"
-    "bar".take(2) shouldBe res2
+    (0 to 10).contains(10) shouldBe res1
+    (0 until 10).contains(10) shouldBe res2
+    "foo".drop(1) shouldBe res3
+    "bar".take(2) shouldBe res4
   }
 
 }
