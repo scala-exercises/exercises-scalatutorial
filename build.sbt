@@ -1,26 +1,33 @@
-import ProjectPlugin.autoImport._
+import com.jsuereth.sbtpgp.PgpKeys.publishSigned
 
-val scalaExercisesV = "0.6.0-SNAPSHOT"
+ThisBuild / organization       := "org.scala-exercises"
+ThisBuild / githubOrganization := "47degrees"
+ThisBuild / scalaVersion       := "2.13.3"
 
-def dep(artifactId: String) = "org.scala-exercises" %% artifactId % scalaExercisesV
+// This is required by the exercises compiler:
+publishLocal  := (publishLocal dependsOn compile).value
+publishSigned := (publishSigned dependsOn compile).value
 
-lazy val `scala-tutorial` = (project in file("."))
-  .enablePlugins(ExerciseCompilerPlugin)
+addCommandAlias("ci-test", "scalafmtCheckAll; scalafmtSbtCheck; test")
+addCommandAlias("ci-docs", "github; documentation/mdoc; headerCreateAll")
+addCommandAlias("ci-publish", "github; ci-release")
+
+lazy val exercises = (project in file("."))
+  .settings(name := "exercises-scalatutorial")
   .settings(
-    name         := "exercises-scalatutorial",
     libraryDependencies ++= Seq(
-      dep("exercise-compiler"),
-      dep("definitions"),
-      %%("shapeless", V.shapeless),
-      %%("scalatest", V.scalatest),
-      %%("scalacheck", V.scalacheck),
-      "com.github.alexarchambault" %% "scalacheck-shapeless_1.14" % V.scalacheckShapeless,
-      "org.scalatestplus"          %% "scalatestplus-scalacheck"    % V.scalatestplusScheck
+      "org.scala-exercises"        %% "exercise-compiler"         % "0.6.7",
+      "org.scala-exercises"        %% "definitions"               % "0.6.7",
+      "com.chuusai"                %% "shapeless"                 % "2.3.7",
+      "org.scalatest"              %% "scalatest"                 % "3.2.10",
+      "org.scalacheck"             %% "scalacheck"                % "1.15.4",
+      "org.scalatestplus"          %% "scalacheck-1-14"           % "3.2.2.0",
+      "com.github.alexarchambault" %% "scalacheck-shapeless_1.15" % "1.3.0"
     )
   )
+  .enablePlugins(ExerciseCompilerPlugin)
 
-// Distribution
-
-pgpPassphrase := Some(getEnvVar("PGP_PASSPHRASE").getOrElse("").toCharArray)
-pgpPublicRing := file(s"$gpgFolder/pubring.gpg")
-pgpSecretRing := file(s"$gpgFolder/secring.gpg")
+lazy val documentation = project
+  .settings(mdocOut := file("."))
+  .settings(publish / skip := true)
+  .enablePlugins(MdocPlugin)

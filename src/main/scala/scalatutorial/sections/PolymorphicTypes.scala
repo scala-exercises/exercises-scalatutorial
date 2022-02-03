@@ -1,12 +1,25 @@
 /*
- *  scala-exercises - exercises-scalatutorial
- *  Copyright (C) 2015-2019 47 Degrees, LLC. <http://www.47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package scalatutorial.sections
 
-/** @param name polymorphic_types */
+/**
+ * @param name
+ *   polymorphic_types
+ */
 object PolymorphicTypes extends ScalaTutorialSection {
 
   /**
@@ -19,12 +32,12 @@ object PolymorphicTypes extends ScalaTutorialSection {
    *   }
    * }}}
    *
-   * = Type Parameters =
+   * =Type Parameters=
    *
    * It seems too narrow to define only sets with `Int` elements.
    *
-   * We'd need another class hierarchy for `Double` lists, and so on,
-   * one for each possible element type.
+   * We'd need another class hierarchy for `Double` lists, and so on, one for each possible element
+   * type.
    *
    * We can generalize the definition using a ''type parameter'':
    *
@@ -43,7 +56,7 @@ object PolymorphicTypes extends ScalaTutorialSection {
    *
    * Type parameters are written in square brackets, e.g. `[A]`.
    *
-   * = Generic Functions =
+   * =Generic Functions=
    *
    * Like classes, functions can have type parameters.
    *
@@ -60,10 +73,10 @@ object PolymorphicTypes extends ScalaTutorialSection {
    *   singleton[Boolean](true)
    * }}}
    *
-   * = Type Inference =
+   * =Type Inference=
    *
-   * In fact, the Scala compiler can usually deduce the correct type
-   * parameters from the value arguments of a function call.
+   * In fact, the Scala compiler can usually deduce the correct type parameters from the value
+   * arguments of a function call.
    *
    * So, in most cases, type parameters can be left out. You could also write:
    *
@@ -72,12 +85,12 @@ object PolymorphicTypes extends ScalaTutorialSection {
    *   singleton(true)
    * }}}
    *
-   * = Types and Evaluation =
+   * =Types and Evaluation=
    *
    * Type parameters do not affect evaluation in Scala.
    *
-   * We can assume that all type parameters and type arguments are removed
-   * before evaluating the program.
+   * We can assume that all type parameters and type arguments are removed before evaluating the
+   * program.
    *
    * This is also called ''type erasure''.
    *
@@ -85,19 +98,19 @@ object PolymorphicTypes extends ScalaTutorialSection {
    *
    * Some other languages keep the type parameters around at run time, these include C++, C#, F#.
    *
-   * = Polymorphism =
+   * =Polymorphism=
    *
    * Polymorphism means that a function type comes "in many forms".
    *
    * In programming it means that
    *
-   *  - the function can be applied to arguments of many types, or
-   *  - the type can have instances of many types.
+   *   - the function can be applied to arguments of many types, or
+   *   - the type can have instances of many types.
    *
    * We have seen two principal forms of polymorphism:
    *
-   *  - subtyping: instances of a subclass can be passed to a base class
-   *  - generics: instances of a function or class are created by type parameterization.
+   *   - subtyping: instances of a subclass can be passed to a base class
+   *   - generics: instances of a function or class are created by type parameterization.
    *
    * The remaining subsections compare their interaction.
    *
@@ -121,10 +134,10 @@ object PolymorphicTypes extends ScalaTutorialSection {
    *   trait Giraffe extends Mammal
    * }}}
    *
-   * = Type Bounds =
+   * =Type Bounds=
    *
-   * Consider the method `selection` that takes two animals as parameters
-   * and returns the one with the highest `fitness` value:
+   * Consider the method `selection` that takes two animals as parameters and returns the one with
+   * the highest `fitness` value:
    *
    * What would be the best type you can give to `selection`? Maybe:
    *
@@ -134,10 +147,10 @@ object PolymorphicTypes extends ScalaTutorialSection {
    *
    * In most situations this is fine, but can one be more precise?
    *
-   * One might want to express that `selection`
-   * takes `Zebra`s to `Zebra`s and `Reptile`s to `Reptile`s.
+   * One might want to express that `selection` takes `Zebra`s to `Zebra`s and `Reptile`s to
+   * `Reptile`s.
    *
-   * == Upper Bounds ==
+   * ==Upper Bounds==
    *
    * A way to express this is:
    *
@@ -152,10 +165,10 @@ object PolymorphicTypes extends ScalaTutorialSection {
    *
    * Generally, the notation
    *
-   *  - `A <: B` means: ''`A` is a subtype of `B`'', and
-   *  - `A >: B` means: ''`A` is a supertype of `B`'', or ''`B` is a subtype of `A`''.
+   *   - `A <: B` means: ''`A` is a subtype of `B`'', and
+   *   - `A >: B` means: ''`A` is a supertype of `B`'', or ''`B` is a subtype of `A`''.
    *
-   * == Lower Bounds ==
+   * ==Lower Bounds==
    *
    * You can also use a lower bound for a type variable.
    *
@@ -169,7 +182,7 @@ object PolymorphicTypes extends ScalaTutorialSection {
    *
    * (We will see later on in this section where lower bounds are useful).
    *
-   * == Mixed Bounds ==
+   * ==Mixed Bounds==
    *
    * Finally, it is also possible to mix a lower bound with an upper bound.
    *
@@ -181,10 +194,9 @@ object PolymorphicTypes extends ScalaTutorialSection {
    *
    * would restrict `A` any type on the interval between `Zebra` and `Animal`.
    *
-   * = Covariance =
+   * =Covariance=
    *
-   * There's another interaction between subtyping and type parameters we
-   * need to consider.
+   * There's another interaction between subtyping and type parameters we need to consider.
    *
    * Consider the following type modeling a field containing an animal:
    *
@@ -211,19 +223,19 @@ object PolymorphicTypes extends ScalaTutorialSection {
    * Intuitively, this makes sense: a field containing a zebra is a special case of a field
    * containing an arbitrary mammal.
    *
-   * We call types for which this relationship holds ''covariant''
-   * because their subtyping relationship varies with the type parameter.
+   * We call types for which this relationship holds ''covariant'' because their subtyping
+   * relationship varies with the type parameter.
    *
    * Does covariance make sense for all types, not just for `Field`?
    *
-   * === Arrays ===
+   * ===Arrays===
    *
    * For perspective, let's look at arrays in Java (and C#).
    *
    * Reminder:
    *
-   *  - An array of `T` elements is written `T[]` in Java.
-   *  - In Scala we use parameterized type syntax `Array[T]` to refer to the same type.
+   *   - An array of `T` elements is written `T[]` in Java.
+   *   - In Scala we use parameterized type syntax `Array[T]` to refer to the same type.
    *
    * Arrays in Java are covariant, so one would have:
    *
@@ -242,18 +254,17 @@ object PolymorphicTypes extends ScalaTutorialSection {
    *   Zebra zebra = zebras[0]        // Get the first `Zebra` … which is actually a `Giraffe`!
    * }}}
    *
-   * It looks like we assigned in the last line a `Giraffe` to a
-   * variable of type `Zebra`!
+   * It looks like we assigned in the last line a `Giraffe` to a variable of type `Zebra`!
    *
    * What went wrong?
    *
-   * === The Liskov Substitution Principle ===
+   * ===The Liskov Substitution Principle===
    *
-   * The following principle, stated by Barbara Liskov, tells us when a
-   * type can be a subtype of another.
+   * The following principle, stated by Barbara Liskov, tells us when a type can be a subtype of
+   * another.
    *
-   * If `A <: B`, then everything one can to do with a value of type `B` one should also
-   * be able to do with a value of type `A`.
+   * If `A <: B`, then everything one can to do with a value of type `B` one should also be able to
+   * do with a value of type `A`.
    *
    * The problematic array example would be written as follows in Scala:
    *
@@ -272,43 +283,40 @@ object PolymorphicTypes extends ScalaTutorialSection {
    *     required: Array[Mammal]
    * }}}
    *
-   * = Variance =
+   * =Variance=
    *
-   * We have seen that some types should be covariant whereas
-   * others should not.
+   * We have seen that some types should be covariant whereas others should not.
    *
-   * Roughly speaking, a type that accepts mutations of its elements should
-   * not be covariant.
+   * Roughly speaking, a type that accepts mutations of its elements should not be covariant.
    *
-   * But immutable types can be covariant, if some conditions
-   * on methods are met.
+   * But immutable types can be covariant, if some conditions on methods are met.
    *
-   * = Definition of Variance =
+   * =Definition of Variance=
    *
    * Say `C[T]` is a parameterized type and `A`, `B` are types such that `A <: B`.
    *
    * In general, there are ''three'' possible relationships between `C[A]` and `C[B]`:
    *
-   *  - `C[A] <: C[B]`, `C` is ''covariant'',
-   *  - `C[A] >: C[B]`, `C` is ''contravariant'',
-   *  - neither `C[A]` nor `C[B]` is a subtype of the other, `C` is ''nonvariant''.
+   *   - `C[A] <: C[B]`, `C` is ''covariant'',
+   *   - `C[A] >: C[B]`, `C` is ''contravariant'',
+   *   - neither `C[A]` nor `C[B]` is a subtype of the other, `C` is ''nonvariant''.
    *
    * Scala lets you declare the variance of a type by annotating the type parameter:
    *
-   *  - `class C[+A] { … }`, `C` is ''covariant'',
-   *  - `class C[-A] { … }`, `C` is ''contravariant'',
-   *  - `class C[A] { … }`, `C` is ''nonvariant''.
+   *   - `class C[+A] { … }`, `C` is ''covariant'',
+   *   - `class C[-A] { … }`, `C` is ''contravariant'',
+   *   - `class C[A] { … }`, `C` is ''nonvariant''.
    *
-   * == Typing Rules for Functions ==
+   * ==Typing Rules for Functions==
    *
    * Generally, we have the following rule for subtyping between function types:
    *
    * If `A2 <: A1` and `B1 <: B2`, then
    *
-   * `A1 => B1  <:  A2 => B2`
+   * `A1 => B1 <: A2 => B2`
    *
-   * So functions are ''contravariant'' in their argument type(s) and
-   * ''covariant'' in their result type.
+   * So functions are ''contravariant'' in their argument type(s) and ''covariant'' in their result
+   * type.
    *
    * This leads to the following revised definition of the `Function1` trait:
    *
@@ -318,7 +326,7 @@ object PolymorphicTypes extends ScalaTutorialSection {
    *   }
    * }}}
    *
-   * == Contravariance Example ==
+   * ==Contravariance Example==
    *
    * Consider the following type modeling a veterinary:
    *
@@ -328,31 +336,31 @@ object PolymorphicTypes extends ScalaTutorialSection {
    *   }
    * }}}
    *
-   * In such a case, intuitively, it makes sense to have `Vet[Mammal] <: Vet[Zebra]` because
-   * a vet that can treat any mammal is able to treat a zebra in particular. This is
-   * an example of a contravariant type.
+   * In such a case, intuitively, it makes sense to have `Vet[Mammal] <: Vet[Zebra]` because a vet
+   * that can treat any mammal is able to treat a zebra in particular. This is an example of a
+   * contravariant type.
    *
-   * == Variance Checks ==
+   * ==Variance Checks==
    *
-   * We have seen in the array example that the combination of covariance with
-   * certain operations is unsound.
+   * We have seen in the array example that the combination of covariance with certain operations is
+   * unsound.
    *
    * In the case of `Array`, the problematic combination is:
-   *  - the covariant type parameter `T`
-   *  - which appears in parameter position of the method `update`.
+   *   - the covariant type parameter `T`
+   *   - which appears in parameter position of the method `update`.
    *
-   * The Scala compiler will check that there are no problematic combinations when
-   * compiling a class with variance annotations.
+   * The Scala compiler will check that there are no problematic combinations when compiling a class
+   * with variance annotations.
    *
    * Roughly,
    *
-   *  - ''covariant'' type parameters can only appear in method results.
-   *  - ''contravariant'' type parameters can only appear in method parameters.
-   *  - ''invariant'' type parameters can appear anywhere.
+   *   - ''covariant'' type parameters can only appear in method results.
+   *   - ''contravariant'' type parameters can only appear in method parameters.
+   *   - ''invariant'' type parameters can appear anywhere.
    *
    * The precise rules are a bit more involved, fortunately the Scala compiler performs them for us.
    *
-   * === Variance-Checking the Function Trait ===
+   * ===Variance-Checking the Function Trait===
    *
    * Let's have a look again at Function1:
    *
@@ -364,17 +372,17 @@ object PolymorphicTypes extends ScalaTutorialSection {
    *
    * Here,
    *
-   *  - `T` is contravariant and appears only as a method parameter type
-   *  - `U` is covariant and appears only as a method result type
+   *   - `T` is contravariant and appears only as a method parameter type
+   *   - `U` is covariant and appears only as a method result type
    *
-   * So the method is checks out OK.
+   * So the method checks out OK.
    *
-   * = Making Classes Covariant =
+   * =Making Classes Covariant=
    *
    * Sometimes, we have to put in a bit of work to make a class covariant.
    *
-   * Consider adding a `prepend` method to `Stream` which prepends a given
-   * element, yielding a new stream.
+   * Consider adding a `prepend` method to `Stream` which prepends a given element, yielding a new
+   * stream.
    *
    * A first implementation of `prepend` could look like this:
    *
@@ -390,8 +398,8 @@ object PolymorphicTypes extends ScalaTutorialSection {
    *
    * `prepend` fails variance checking.
    *
-   * Indeed, the compiler is right to throw out `Stream` with `prepend`,
-   * because it violates the Liskov Substitution Principle:
+   * Indeed, the compiler is right to throw out `Stream` with `prepend`, because it violates the
+   * Liskov Substitution Principle:
    *
    * Here's something one can do with a stream `mammals` of type `Stream[Mammal]`:
    *
@@ -399,14 +407,13 @@ object PolymorphicTypes extends ScalaTutorialSection {
    *   mammals.prepend(new Giraffe)
    * }}}
    *
-   * But the same operation on a list `zebras` of type
-   * `Stream[Zebra]` would lead to a type error:
+   * But the same operation on a list `zebras` of type `Stream[Zebra]` would lead to a type error:
    *
    * {{{
    *   zebras.prepend(new Giraffe)
-   *                  ^ type mismatch
-   *                  required: Zebra
-   *                  found: Giraffe
+   *                   ^ type mismatch
+   *                   required: Zebra
+   *                   found: Giraffe
    * }}}
    *
    * So, `Stream[Zebra]` cannot be a subtype of `Stream[Mammal]`.
@@ -423,13 +430,13 @@ object PolymorphicTypes extends ScalaTutorialSection {
    *
    * This passes variance checks, because:
    *
-   *  - covariant type parameters may appear in lower bounds of method type parameters
-   *  - contravariant type parameters may appear in upper bounds of method
+   *   - covariant type parameters may appear in lower bounds of method type parameters
+   *   - contravariant type parameters may appear in upper bounds of method type parameters
    *
-   * = Exercise =
+   * =Exercise=
    *
-   * Complete the following implementation of the `size` function that returns
-   * the size of a given list.
+   * Complete the following implementation of the `size` function that returns the size of a given
+   * list.
    */
   def sizeExercise(res0: Int, res1: Int): Unit = {
     def size[A](xs: List[A]): Int =
