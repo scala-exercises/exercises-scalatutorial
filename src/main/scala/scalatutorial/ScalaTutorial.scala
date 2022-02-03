@@ -21,9 +21,11 @@ import org.scalaexercises.definitions.Library
 import sections._
 
 /**
- * Quickly learn Scala through an interactive tutorial based on the first two courses of the Scala MOOCs.
+ * Quickly learn Scala through an interactive tutorial based on the first two courses of the Scala
+ * MOOCs.
  *
- * @param name scala_tutorial
+ * @param name
+ *   scala_tutorial
  */
 object ScalaTutorial extends Library {
   val owner          = "scala-exercises"

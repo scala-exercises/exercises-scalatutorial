@@ -17,12 +17,13 @@
 package scalatutorial.sections
 
 /**
- * @param name standard_library
+ * @param name
+ *   standard_library
  */
 object StandardLibrary extends ScalaTutorialSection {
 
   /**
-   * = List =
+   * =List=
    *
    * The list is a fundamental data structure in functional programming.
    *
@@ -35,12 +36,13 @@ object StandardLibrary extends ScalaTutorialSection {
    *   val empty  = List()
    * }}}
    *
-   *  - Lists are immutable --- the elements of a list cannot be changed,
-   *  - Lists are recursive (as you will see in the next subsection),
-   *  - Lists are ''homogeneous'': A list is intended to be composed of elements that all have the same type.
+   *   - Lists are immutable --- the elements of a list cannot be changed,
+   *   - Lists are recursive (as you will see in the next subsection),
+   *   - Lists are ''homogeneous'': A list is intended to be composed of elements that all have the
+   *     same type.
    *
-   * That's because when you create a `List` of elements with different types it will look for a common ancestor.
-   * The common ancestor for all types is `Any`
+   * That's because when you create a `List` of elements with different types it will look for a
+   * common ancestor. The common ancestor for all types is `Any`
    *
    * {{{
    *   val heterogeneousList: List[Any] = List(1, "1", '1')
@@ -55,13 +57,14 @@ object StandardLibrary extends ScalaTutorialSection {
    *   val empty: List[Nothing]   = List()
    * }}}
    *
-   * == Constructors of Lists ==
+   * ==Constructors of Lists==
    *
    * Actually, all lists are constructed from:
    *
-   *  - the empty list `Nil`, and
-   *  - the construction operation `::` (pronounced ''cons''): `x :: xs` gives a new list
-   *    with the first element `x`, called the `head`, followed by the `tail` `xs`, which is itself a list of elements.
+   *   - the empty list `Nil`, and
+   *   - the construction operation `::` (pronounced ''cons''): `x :: xs` gives a new list with the
+   *     first element `x`, called the `head`, followed by the `tail` `xs`, which is itself a list
+   *     of elements.
    *
    * For example:
    *
@@ -71,7 +74,7 @@ object StandardLibrary extends ScalaTutorialSection {
    *   val empty = Nil
    * }}}
    *
-   * === Right Associativity ===
+   * ===Right Associativity===
    *
    * Convention: Operators ending in “`:`” associate to the right.
    *
@@ -92,13 +95,13 @@ object StandardLibrary extends ScalaTutorialSection {
    *   val nums = Nil.::(4).::(3).::(2).::(1)
    * }}}
    *
-   * == Manipulating Lists ==
+   * ==Manipulating Lists==
    *
    * It is possible to decompose lists with pattern matching:
    *
-   *  - `Nil`: the `Nil` constant,
-   *  - `p :: ps`: A pattern that matches a list with a `head` matching `p` and a
-   *    `tail` matching `ps`.
+   *   - `Nil`: the `Nil` constant,
+   *   - `p :: ps`: A pattern that matches a list with a `head` matching `p` and a `tail` matching
+   *     `ps`.
    *
    * {{{
    *   nums match {
@@ -115,14 +118,14 @@ object StandardLibrary extends ScalaTutorialSection {
    *   }
    * }}}
    *
-   * == Exercise: Sorting Lists ==
+   * ==Exercise: Sorting Lists==
    *
    * Suppose we want to sort a list of numbers in ascending order:
    *
-   *  -  One way to sort the list `List(7, 3, 9, 2)` is to sort the
-   *     tail `List(3, 9, 2)` to obtain `List(2, 3, 9)`.
-   *  -  The next step is to insert the head `7` in the right place
-   *     to obtain the result `List(2, 3, 7, 9)`.
+   *   - One way to sort the list `List(7, 3, 9, 2)` is to sort the tail `List(3, 9, 2)` to obtain
+   *     `List(2, 3, 9)`.
+   *   - The next step is to insert the head `7` in the right place to obtain the result `List(2, 3,
+   *     7, 9)`.
    *
    * This idea describes ''Insertion Sort'':
    *
@@ -150,7 +153,7 @@ object StandardLibrary extends ScalaTutorialSection {
   }
 
   /**
-   * == Common Operations on Lists ==
+   * ==Common Operations on Lists==
    *
    * Transform the elements of a list using `map`:
    *
@@ -164,8 +167,8 @@ object StandardLibrary extends ScalaTutorialSection {
    *   List(1, 2, 3).filter(x => x % 2 == 0) == List(2)
    * }}}
    *
-   * Transform each element of a list into a list and flatten the
-   * results into a single list using `flatMap`:
+   * Transform each element of a list into a list and flatten the results into a single list using
+   * `flatMap`:
    *
    * {{{
    *   val xs =
@@ -175,26 +178,24 @@ object StandardLibrary extends ScalaTutorialSection {
    *   xs == List(1, 2, 3, 2, 4, 6, 3, 6, 9)
    * }}}
    *
-   * = Optional Values =
+   * =Optional Values=
    *
-   * We represent an optional value of type `A` with the type `Option[A]`.
-   * This is useful to implement, for instance, partially defined
-   * functions:
+   * We represent an optional value of type `A` with the type `Option[A]`. This is useful to
+   * implement, for instance, partially defined functions:
    *
    * {{{
    *   // The `sqrt` function is not defined for negative values
    *   def sqrt(x: Double): Option[Double] = …
    * }}}
    *
-   * An `Option[A]` can either be `None` (if there is no value) or `Some[A]`
-   * (if there is a value):
+   * An `Option[A]` can either be `None` (if there is no value) or `Some[A]` (if there is a value):
    *
    * {{{
    *   def sqrt(x: Double): Option[Double] =
    *     if (x < 0) None else Some(…)
    * }}}
    *
-   * == Manipulating Options ==
+   * ==Manipulating Options==
    *
    * It is possible to decompose options with pattern matching:
    *
@@ -206,7 +207,7 @@ object StandardLibrary extends ScalaTutorialSection {
    *     }
    * }}}
    *
-   * == Common Operations on Options ==
+   * ==Common Operations on Options==
    *
    * Transform an optional value with `map`:
    */
@@ -235,19 +236,18 @@ object StandardLibrary extends ScalaTutorialSection {
   }
 
   /**
-   * = Error Handling =
+   * =Error Handling=
    *
    * This subsection introduces types that are useful to handle failures.
    *
-   * == Try ==
+   * ==Try==
    *
-   * `Try[A]` represents a computation that attempted to return an `A`. It can
-   * either be:
-   *  - a `Success[A]`,
-   *  - or a `Failure`.
+   * `Try[A]` represents a computation that attempted to return an `A`. It can either be:
+   *   - a `Success[A]`,
+   *   - or a `Failure`.
    *
-   * The key difference between `None` and `Failure`s is that the latter provide
-   * the reason for the failure:
+   * The key difference between `None` and `Failure`s is that the latter provide the reason for the
+   * failure:
    *
    * {{{
    *   def sqrt(x: Double): Try[Double] =
@@ -255,26 +255,24 @@ object StandardLibrary extends ScalaTutorialSection {
    *     else Success(…)
    * }}}
    *
-   * === Manipulating `Try[A]` values ===
+   * ===Manipulating `Try[A]` values===
    *
-   * Like options and lists, `Try[A]` is an algebraic data type, so it can
-   * be decomposed using pattern matching.
+   * Like options and lists, `Try[A]` is an algebraic data type, so it can be decomposed using
+   * pattern matching.
    *
-   * `Try[A]` also have `map`, `filter` and `flatMap`. They behave the same
-   * as with `Option[A]`, except that any exception that is thrown
-   * during their execution is converted into a `Failure`.
+   * `Try[A]` also have `map`, `filter` and `flatMap`. They behave the same as with `Option[A]`,
+   * except that any exception that is thrown during their execution is converted into a `Failure`.
    *
-   * == Either ==
+   * ==Either==
    *
-   * `Either` can also be useful to handle failures. Basically, the type
-   * `Either[A, B]` represents a value that can either be of type `A` or
-   * of type `B`. It can be decomposed in two cases: `Left` or `Right`.
+   * `Either` can also be useful to handle failures. Basically, the type `Either[A, B]` represents a
+   * value that can either be of type `A` or of type `B`. It can be decomposed in two cases: `Left`
+   * or `Right`.
    *
-   * You can use one case to represent the failure and the other to represent
-   * the success. What makes it different from `Try` is that you can choose a
-   * type other than `Throwable` to represent the exception. Another difference
-   * is that exceptions that occur when transforming `Either` values are
-   * not converted into failures.
+   * You can use one case to represent the failure and the other to represent the success. What
+   * makes it different from `Try` is that you can choose a type other than `Throwable` to represent
+   * the exception. Another difference is that exceptions that occur when transforming `Either`
+   * values are not converted into failures.
    *
    * {{{
    *   def sqrt(x: Double): Either[String, Double] =
@@ -282,18 +280,18 @@ object StandardLibrary extends ScalaTutorialSection {
    *     else Right(…)
    * }}}
    *
-   * === Manipulating `Either[A, B]` Values ===
+   * ===Manipulating `Either[A, B]` Values===
    *
-   * Since Scala 2.12, `Either` has `map` and `flatMap`. These methods
-   * transform the `Right` case only. We say that `Either` is “right biased”:
+   * Since Scala 2.12, `Either` has `map` and `flatMap`. These methods transform the `Right` case
+   * only. We say that `Either` is “right biased”:
    *
    * {{{
    *   Right(1).map((x: Int) => x + 1) shouldBe Right(2)
    *   Left("foo").map((x: Int) => x + 1) shouldBe Left("foo")
    * }}}
    *
-   * `Either` also has a `filterOrElse` method that turns a `Right` value
-   * into a `Left` value if it does not satisfy a given predicate:
+   * `Either` also has a `filterOrElse` method that turns a `Right` value into a `Left` value if it
+   * does not satisfy a given predicate:
    *
    * {{{
    *   Right(1).filterOrElse(x => x % 2 == 0, "Odd value") shouldBe Left("Odd value")
