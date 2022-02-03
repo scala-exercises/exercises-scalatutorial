@@ -145,6 +145,7 @@ object TailRecursion extends ScalaTutorialSection {
       iter(n, res1)
     }
 
+    factorial(0) shouldBe 1
     factorial(3) shouldBe 6
     factorial(4) shouldBe 24
   }
