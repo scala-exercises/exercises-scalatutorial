@@ -1,13 +1,27 @@
 /*
- * scala-exercises - exercises-scalatutorial
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package scalatutorial.sections
 
 import scalatutorial.utils.BankAccount
 
-/** @param name imperative_programming */
+/**
+ * @param name
+ *   imperative_programming
+ */
 object ImperativeProgramming extends ScalaTutorialSection {
 
   /**
@@ -19,18 +33,17 @@ object ImperativeProgramming extends ScalaTutorialSection {
    *
    * This was also reflected in the substitution model of computation.
    *
-   * = Reminder: Substitution Model =
+   * =Reminder: Substitution Model=
    *
    * Programs can be evaluated by ''rewriting'':
    *   - a name is evaluated by replacing it with the right-hand side of its definition,
-   *   - function application is evaluated by replacing it with the function’s right-hand
-   *     side, and, at the same time, by replacing the formal parameters by the actual
-   *     arguments.
+   *   - function application is evaluated by replacing it with the function’s right-hand side, and,
+   *     at the same time, by replacing the formal parameters by the actual arguments.
    *
    * Say you have the following two functions `iterate` and `square`:
    *
    * {{{
-   *   def iterate(n: Int, f: Int => Int, x: Int) =
+   *   def iterate(n: Int, f: Int => Int, x: Int): Int =
    *     if (n == 0) x else iterate(n-1, f, f(x))
    *   def square(x: Int) = x * x
    * }}}
@@ -47,11 +60,10 @@ object ImperativeProgramming extends ScalaTutorialSection {
    *   9
    * }}}
    *
-   * Rewriting can be done anywhere in a term, and all rewritings which
-   * terminate lead to the same solution.
+   * Rewriting can be done anywhere in a term, and all rewritings which terminate lead to the same
+   * solution.
    *
-   * This is an important result of the λ-calculus, the theory
-   * behind functional programming.
+   * This is an important result of the λ-calculus, the theory behind functional programming.
    *
    * For instance, these two rewriting will eventually lead to the same result:
    *
@@ -64,45 +76,42 @@ object ImperativeProgramming extends ScalaTutorialSection {
    *   if (1 == 0) 3 else iterate(1 - 1, square, 3 * 3)
    * }}}
    *
-   * = Stateful Objects =
+   * =Stateful Objects=
    *
-   * One normally describes the world as a set of objects, some of which
-   * have state that ''changes'' over the course of time.
+   * One normally describes the world as a set of objects, some of which have state that ''changes''
+   * over the course of time.
    *
-   * An object ''has a state'' if its behavior is influenced by its
-   * history.
+   * An object ''has a state'' if its behavior is influenced by its history.
    *
-   * Example: a bank account has a state, because the answer to the question
-   * “can I withdraw 100 CHF ?” may vary over the course of the lifetime of
-   * the account.
+   * Example: a bank account has a state, because the answer to the question “can I withdraw 100 CHF
+   * ?” may vary over the course of the lifetime of the account.
    *
-   * = Implementation of State =
+   * =Implementation of State=
    *
    * Every form of mutable state is constructed from variables.
    *
-   * A variable definition is written like a value definition, but with the
-   * keyword `var` in place of `val`:
+   * A variable definition is written like a value definition, but with the keyword `var` in place
+   * of `val`:
    *
    * {{{
    *   var x: String = "abc"
    *   var count = 111
    * }}}
    *
-   * Just like a value definition, a variable definition associates a value
-   * with a name.
+   * Just like a value definition, a variable definition associates a value with a name.
    *
-   * However, in the case of variable definitions, this association can be
-   * changed later through an ''assignment'':
+   * However, in the case of variable definitions, this association can be changed later through an
+   * ''assignment'':
    *
    * {{{
    *   x = "hi"
    *   count = count + 1
    * }}}
    *
-   * = State in Objects =
+   * =State in Objects=
    *
-   * In practice, objects with state are usually represented by objects that
-   * have some variable members.
+   * In practice, objects with state are usually represented by objects that have some variable
+   * members.
    *
    * Here is a class modeling a bank account:
    *
@@ -121,14 +130,13 @@ object ImperativeProgramming extends ScalaTutorialSection {
    *   }
    * }}}
    *
-   * The class `BankAccount` defines a variable `balance` that contains the
-   * current balance of the account.
+   * The class `BankAccount` defines a variable `balance` that contains the current balance of the
+   * account.
    *
-   * The methods `deposit` and `withdraw` change the value of the `balance`
-   * through assignments.
+   * The methods `deposit` and `withdraw` change the value of the `balance` through assignments.
    *
-   * Note that `balance` is `private` in the `BankAccount`
-   * class, it therefore cannot be accessed from outside the class.
+   * Note that `balance` is `private` in the `BankAccount` class, it therefore cannot be accessed
+   * from outside the class.
    *
    * To create bank accounts, we use the usual notation for object creation:
    *
@@ -136,7 +144,7 @@ object ImperativeProgramming extends ScalaTutorialSection {
    *   val account = new BankAccount
    * }}}
    *
-   * = Working with Mutable Objects =
+   * =Working with Mutable Objects=
    *
    * Here is a program that manipulates bank accounts.
    *
@@ -148,13 +156,12 @@ object ImperativeProgramming extends ScalaTutorialSection {
    *   account withdraw 15                 // java.lang.Error: insufficient funds
    * }}}
    *
-   * Applying the same operation to an account twice in a row produces different results.
-   * Clearly, accounts are stateful objects.
+   * Applying the same operation to an account twice in a row produces different results. Clearly,
+   * accounts are stateful objects.
    *
-   * = Identity and Change =
+   * =Identity and Change=
    *
-   * Assignment poses the new problem of deciding whether two expressions
-   * are "the same"
+   * Assignment poses the new problem of deciding whether two expressions are "the same"
    *
    * When one excludes assignments and one writes:
    *
@@ -162,8 +169,8 @@ object ImperativeProgramming extends ScalaTutorialSection {
    *   val x = E; val y = E
    * }}}
    *
-   * where `E` is an arbitrary expression, then it is reasonable to assume that
-   * `x` and `y` are the same. That is to say that we could have also written:
+   * where `E` is an arbitrary expression, then it is reasonable to assume that `x` and `y` are the
+   * same. That is to say that we could have also written:
    *
    * {{{
    *   val x = E; val y = x
@@ -180,25 +187,25 @@ object ImperativeProgramming extends ScalaTutorialSection {
    *
    * Are `x` and `y` the same?
    *
-   * = Operational Equivalence =
+   * =Operational Equivalence=
    *
    * To respond to the last question, we must specify what is meant by “the same”.
    *
-   * The precise meaning of “being the same” is defined by the property of
-   * ''operational equivalence''.
+   * The precise meaning of “being the same” is defined by the property of ''operational
+   * equivalence''.
    *
    * In a somewhat informal way, this property is stated as follows:
    *
-   *  - Suppose we have two definitions `x` and `y`.
-   *  - `x` and `y` are operationally equivalent if ''no possible test'' can
-   *    distinguish between them.
+   *   - Suppose we have two definitions `x` and `y`.
+   *   - `x` and `y` are operationally equivalent if ''no possible test'' can distinguish between
+   *     them.
    *
-   * = Testing for Operational Equivalence =
+   * =Testing for Operational Equivalence=
    *
    * To test if `x` and `y` are the same, we must
    *
-   *  - Execute the definitions followed by an arbitrary sequence `S` of operations that
-   *    involves `x` and `y`, observing the possible outcomes.
+   *   - Execute the definitions followed by an arbitrary sequence `S` of operations that involves
+   *     `x` and `y`, observing the possible outcomes.
    *
    * {{{
    *   val x = new BankAccount
@@ -206,8 +213,8 @@ object ImperativeProgramming extends ScalaTutorialSection {
    *   f(x, y)
    * }}}
    *
-   *  - Then, execute the definitions with another sequence `S'` obtained by
-   *    renaming all occurrences of `y` by `x` in `S`:
+   *   - Then, execute the definitions with another sequence `S'` obtained by renaming all
+   *     occurrences of `y` by `x` in `S`:
    *
    * {{{
    *   val x = new BankAccount
@@ -215,9 +222,9 @@ object ImperativeProgramming extends ScalaTutorialSection {
    *   f(x, x)
    * }}}
    *
-   *  - If the results are different, then the expressions `x` and `y` are certainly different.
-   *  - On the other hand, if all possible pairs of sequences `(S, S')` produce the same result,
-   *    then `x` and `y` are the same.
+   *   - If the results are different, then the expressions `x` and `y` are certainly different.
+   *   - On the other hand, if all possible pairs of sequences `(S, S')` produce the same result,
+   *     then `x` and `y` are the same.
    *
    * Based on this definition, let's see if the expressions
    *
@@ -245,10 +252,9 @@ object ImperativeProgramming extends ScalaTutorialSection {
   }
 
   /**
-   * The final results are different. We conclude that `x` and `y`
-   * are not the same.
+   * The final results are different. We conclude that `x` and `y` are not the same.
    *
-   * = Establishing Operational Equivalence =
+   * =Establishing Operational Equivalence=
    *
    * On the other hand, if we define
    *
@@ -257,16 +263,15 @@ object ImperativeProgramming extends ScalaTutorialSection {
    *   val y = x
    * }}}
    *
-   * then no sequence of operations can distinguish between `x` and `y`, so
-   * `x` and `y` are the same in this case.
+   * then no sequence of operations can distinguish between `x` and `y`, so `x` and `y` are the same
+   * in this case.
    *
-   * = Assignment and Substitution Model =
+   * =Assignment and Substitution Model=
    *
-   * The preceding examples show that our model of computation by
-   * substitution cannot be used.
+   * The preceding examples show that our model of computation by substitution cannot be used.
    *
-   * Indeed, according to this model, one can always replace the name of a
-   * value by the expression that defines it. For example, in
+   * Indeed, according to this model, one can always replace the name of a value by the expression
+   * that defines it. For example, in
    *
    * {{{
    *   val x = new BankAccount
@@ -279,14 +284,14 @@ object ImperativeProgramming extends ScalaTutorialSection {
    *
    * The substitution model ceases to be valid when we add the assignment.
    *
-   * It is possible to adapt the substitution model by introducing a ''store'',
-   * but this becomes considerably more complicated.
+   * It is possible to adapt the substitution model by introducing a ''store'', but this becomes
+   * considerably more complicated.
    *
-   * = Imperative Loops =
+   * =Imperative Loops=
    *
    * In the first sections, we saw how to write loops using recursion.
    *
-   * == While-Loops ==
+   * ==While-Loops==
    *
    * We can also write loops with the `while` keyword:
    *
@@ -299,21 +304,20 @@ object ImperativeProgramming extends ScalaTutorialSection {
    *   }
    * }}}
    *
-   * As long as the condition of a ''while'' statement is `true`,
-   * its body is evaluated.
+   * As long as the condition of a ''while'' statement is `true`, its body is evaluated.
    *
-   * == For-Loops ==
+   * ==For-Loops==
    *
    * In Scala there is a kind of `for` loop:
    *
    * {{{
-   *   for (i <- 1 until 3) { System.out.print(i + " ") }
+   *   for (i <- 1 until 3) { System.out.print(i.toString + " ") }
    * }}}
    *
    * This displays `1 2`.
    *
-   * For-loops translate similarly to for-expressions, but using the
-   * `foreach` combinator instead of `map` and `flatMap`.
+   * For-loops translate similarly to for-expressions, but using the `foreach` combinator instead of
+   * `map` and `flatMap`.
    *
    * `foreach` is defined on collections with elements of type `A` as follows:
    *
@@ -334,7 +338,7 @@ object ImperativeProgramming extends ScalaTutorialSection {
    *   (1 until 3) foreach (i => "abc" foreach (j => println(s"$i $j")))
    * }}}
    *
-   * = Exercise =
+   * =Exercise=
    *
    * Complete the following imperative implementation of `factorial`:
    */

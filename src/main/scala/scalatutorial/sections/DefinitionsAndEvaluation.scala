@@ -1,25 +1,38 @@
 /*
- * scala-exercises - exercises-scalatutorial
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package scalatutorial.sections
 
-/** @param name definitions_and_evaluation */
+/**
+ * @param name
+ *   definitions_and_evaluation
+ */
 object DefinitionsAndEvaluation extends ScalaTutorialSection {
 
   /**
-   * = Naming Things =
+   * =Naming Things=
    *
-   * Consider the following program that computes the area of a disc
-   * whose radius is `10`:
+   * Consider the following program that computes the area of a disc whose radius is `10`:
    *
    * {{{
    *   3.14159 * 10 * 10
    * }}}
    *
-   * To make complex expressions more readable we can give meaningful names to
-   * intermediate expressions:
+   * To make complex expressions more readable we can give meaningful names to intermediate
+   * expressions:
    *
    * {{{
    *   val radius = 10
@@ -28,14 +41,14 @@ object DefinitionsAndEvaluation extends ScalaTutorialSection {
    *   pi * radius * radius
    * }}}
    *
-   * Besides making the last expression more readable it also allows us to
-   * not repeat the actual value of the radius.
+   * Besides making the last expression more readable it also allows us to not repeat the actual
+   * value of the radius.
    *
-   * = Evaluation =
+   * =Evaluation=
    *
    * A name is evaluated by replacing it with the right hand side of its definition
    *
-   * == Example ==
+   * ==Example==
    *
    * Here are the evaluation steps of the above expression:
    *
@@ -48,7 +61,7 @@ object DefinitionsAndEvaluation extends ScalaTutorialSection {
    *   314.159
    * }}}
    *
-   * = Methods =
+   * =Methods=
    *
    * Definitions can have parameters. For instance:
    */
@@ -70,7 +83,7 @@ object DefinitionsAndEvaluation extends ScalaTutorialSection {
   }
 
   /**
-   * = Multiple Parameters =
+   * =Multiple Parameters=
    *
    * Separate several parameters with commas:
    *
@@ -78,7 +91,7 @@ object DefinitionsAndEvaluation extends ScalaTutorialSection {
    *   def sumOfSquares(x: Double, y: Double) = square(x) + square(y)
    * }}}
    *
-   * = Parameters and Return Types =
+   * =Parameters and Return Types=
    *
    * Function parameters come with their type, which is given after a colon
    *
@@ -88,12 +101,12 @@ object DefinitionsAndEvaluation extends ScalaTutorialSection {
    *
    * If a return type is given, it follows the parameter list.
    *
-   * = Val vs Def =
+   * =Val vs Def=
    *
    * The right hand side of a `def` definition is evaluated on each use.
    *
-   * The right hand side of a `val` definition is evaluated at the point of the definition
-   * itself. Afterwards, the name refers to the value.
+   * The right hand side of a `val` definition is evaluated at the point of the definition itself.
+   * Afterwards, the name refers to the value.
    *
    * {{{
    *   val x = 2
@@ -102,16 +115,15 @@ object DefinitionsAndEvaluation extends ScalaTutorialSection {
    *
    * For instance, `y` above refers to `4`, not `square(2)`.
    *
-   * = Evaluation of Function Applications =
+   * =Evaluation of Function Applications=
    *
-   * Applications of parametrized functions are evaluated in a similar way as
-   * operators:
+   * Applications of parametrized functions are evaluated in a similar way as operators:
    *
-   *  1. Evaluate all function arguments, from left to right
-   *  1. Replace the function application by the function's right-hand side, and, at the same time
-   *  1. Replace the formal parameters of the function by the actual arguments.
+   *   1. Evaluate all function arguments, from left to right
+   *   1. Replace the function application by the function's right-hand side, and, at the same time
+   *   1. Replace the formal parameters of the function by the actual arguments.
    *
-   * == Example ==
+   * ==Example==
    *
    * {{{
    *   sumOfSquares(3, 2+2)
@@ -124,19 +136,19 @@ object DefinitionsAndEvaluation extends ScalaTutorialSection {
    *   25
    * }}}
    *
-   * = The substitution model =
+   * =The substitution model=
    *
    * This scheme of expression evaluation is called the ''substitution model''.
    *
-   * The idea underlying this model is that all evaluation does is ''reduce
-   * an expression to a value''.
+   * The idea underlying this model is that all evaluation does is ''reduce an expression to a
+   * value''.
    *
    * It can be applied to all expressions, as long as they have no side effects.
    *
-   * The substitution model is formalized in the λ-calculus, which gives
-   * a foundation for functional programming.
+   * The substitution model is formalized in the λ-calculus, which gives a foundation for functional
+   * programming.
    *
-   * = Termination =
+   * =Termination=
    *
    * Does every expression reduce to a value (in a finite number of steps)?
    *
@@ -148,10 +160,10 @@ object DefinitionsAndEvaluation extends ScalaTutorialSection {
    *   loop
    * }}}
    *
-   * = Value Definitions and Termination =
+   * =Value Definitions and Termination=
    *
-   * The difference between `val` and `def` becomes apparent when the right
-   * hand side does not terminate. Given
+   * The difference between `val` and `def` becomes apparent when the right hand side does not
+   * terminate. Given
    *
    * {{{
    *   def loop: Int = loop
@@ -171,10 +183,9 @@ object DefinitionsAndEvaluation extends ScalaTutorialSection {
    *
    * will lead to an infinite loop.
    *
-   * = Changing the evaluation strategy =
+   * =Changing the evaluation strategy=
    *
-   * The interpreter reduces function arguments to values before rewriting the
-   * function application.
+   * The interpreter reduces function arguments to values before rewriting the function application.
    *
    * One could alternatively apply the function to unreduced arguments.
    *
@@ -191,36 +202,33 @@ object DefinitionsAndEvaluation extends ScalaTutorialSection {
    *   25
    * }}}
    *
-   * = Call-by-name and call-by-value =
+   * =Call-by-name and call-by-value=
    *
-   * The first evaluation strategy is known as ''call-by-value'',
-   * the second is is known as ''call-by-name''.
+   * The first evaluation strategy is known as ''call-by-value'', the second is known as
+   * ''call-by-name''.
    *
-   * Both strategies reduce to the same final values
-   * as long as
+   * Both strategies reduce to the same final values as long as
    *
-   *  - the reduced expression consists of pure functions, and
-   *  - both evaluations terminate.
+   *   - the reduced expression consists of pure functions, and
+   *   - both evaluations terminate.
    *
-   * Call-by-value has the advantage that it evaluates every function argument
-   * only once.
+   * Call-by-value has the advantage that it evaluates every function argument only once.
    *
-   * Call-by-name has the advantage that a function argument is not evaluated if the
-   * corresponding parameter is unused in the evaluation of the function body.
+   * Call-by-name has the advantage that a function argument is not evaluated if the corresponding
+   * parameter is unused in the evaluation of the function body.
    *
    * Scala normally uses call-by-value.
    *
-   * = Exercise =
+   * =Exercise=
    *
-   * Complete the following definition of the `triangleArea` function,
-   * which takes a triangle base and height as parameters and returns
-   * its area:
+   * Complete the following definition of the `triangleArea` function, which takes a triangle base
+   * and height as parameters and returns its area:
    */
   def triangleAreaExercise(res0: Double, res1: Double): Unit = {
     def triangleArea(base: Double, height: Double): Double =
       base * height / res0
 
-    triangleArea(3, 4) shouldBe 6
+    triangleArea(3, 4) shouldBe 6.0
     triangleArea(5, 6) shouldBe res1
   }
 

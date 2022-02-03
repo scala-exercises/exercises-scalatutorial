@@ -1,6 +1,17 @@
 /*
- * scala-exercises - exercises-scalatutorial
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package scalatutorial.sections
@@ -8,7 +19,10 @@ package scalatutorial.sections
 import scalatutorial.utils.Rational
 import scalatutorial.utils.Sorting.insertionSort
 
-/** @param name type_classes */
+/**
+ * @param name
+ *   type_classes
+ */
 object TypeClasses extends ScalaTutorialSection {
 
   /**
@@ -32,26 +46,25 @@ object TypeClasses extends ScalaTutorialSection {
    *
    * }}}
    *
-   * How to parameterize `insertionSort` so that it can also be used for
-   * lists with elements other than `Int` (like, for instance, `Rational`)?
+   * How to parameterize `insertionSort` so that it can also be used for lists with elements other
+   * than `Int` (like, for instance, `Rational`)?
    *
    * {{{
    *   def insertionSort[T](xs: List[T]): List[T] = ...
    * }}}
    *
-   * The above attempt does not work, because the comparison `<` in `insert`
-   * is not defined for arbitrary types `T`.
+   * The above attempt does not work, because the comparison `<` in `insert` is not defined for
+   * arbitrary types `T`.
    *
    * Idea: parameterize `insert` with the necessary comparison function.
    *
-   * = Parameterization of Sort =
+   * =Parameterization of Sort=
    *
-   * The most flexible design is to make the function `insertionSort`
-   * polymorphic and to pass the comparison operation as an additional
-   * parameter:
+   * The most flexible design is to make the function `insertionSort` polymorphic and to pass the
+   * comparison operation as an additional parameter:
    *
    * {{{
-   *   def insertionSort[T](xs: List[T])(lessThan: (T, T) => Boolean) = {
+   *   def insertionSort[T](xs: List[T])(lessThan: (T, T) => Boolean): List[T] = {
    *     def insert(y: T, ys: List[T]): List[T] =
    *       ys match {
    *         …
@@ -66,8 +79,8 @@ object TypeClasses extends ScalaTutorialSection {
    *     }
    *   }
    * }}}
-
-   * = Calling Parameterized Sort =
+   *
+   * =Calling Parameterized Sort=
    *
    * We can now call `insertionSort` as follows:
    *
@@ -85,7 +98,7 @@ object TypeClasses extends ScalaTutorialSection {
    *   insertionSort(nums)((x, y) => x < y)
    * }}}
    *
-   * = Parametrization with Ordered =
+   * =Parametrization with Ordered=
    *
    * There is already a class in the standard library that represents orderings.
    *
@@ -93,9 +106,8 @@ object TypeClasses extends ScalaTutorialSection {
    *   scala.math.Ordering[T]
    * }}}
    *
-   * provides ways to compare elements of type `T`. So instead of
-   * parameterizing with the `lessThan` operation directly, we could parameterize
-   * with `Ordering` instead:
+   * provides ways to compare elements of type `T`. So instead of parameterizing with the `lessThan`
+   * operation directly, we could parameterize with `Ordering` instead:
    *
    * {{{
    *   def insertionSort[T](xs: List[T])(ord: Ordering[T]): List[T] = {
@@ -106,7 +118,7 @@ object TypeClasses extends ScalaTutorialSection {
    *   }
    * }}}
    *
-   * = Ordered Instances: =
+   * =Ordered Instances:=
    *
    * Calling the new `insertionSort` can be done like this:
    *
@@ -115,11 +127,10 @@ object TypeClasses extends ScalaTutorialSection {
    *   insertionSort(fruits)(Ordering.String)
    * }}}
    *
-   * This makes use of the values `Int` and `String` defined in the
-   * `scala.math.Ordering` object, which produce the right orderings on
-   * integers and strings.
+   * This makes use of the values `Int` and `String` defined in the `scala.math.Ordering` object,
+   * which produce the right orderings on integers and strings.
    *
-   * = Implicit Parameters =
+   * =Implicit Parameters=
    *
    * Problem: Passing around `lessThan` or `ord` values is cumbersome.
    *
@@ -141,29 +152,27 @@ object TypeClasses extends ScalaTutorialSection {
    *   insertionSort(fruits)
    * }}}
    *
-   * The compiler will figure out the right implicit to pass based on the
-   * demanded type.
+   * The compiler will figure out the right implicit to pass based on the demanded type.
    *
-   * = Rules for Implicit Parameters =
+   * =Rules for Implicit Parameters=
    *
    * Say, a function takes an implicit parameter of type `T`.
    *
    * The compiler will search an implicit definition that
    *
-   *  - is marked `implicit`
-   *  - has a type compatible with `T`
-   *  - is visible at the point of the function call, or is defined
-   *    in a companion object associated with `T`.
+   *   - is marked `implicit`
+   *   - has a type compatible with `T`
+   *   - is visible at the point of the function call, or is defined in a companion object
+   *     associated with `T`.
    *
-   * If there is a single (most specific) definition, it will be taken as
-   * actual argument for the implicit parameter. Otherwise it's an error.
+   * If there is a single (most specific) definition, it will be taken as actual argument for the
+   * implicit parameter. Otherwise it's an error.
    *
-   * = Type Classes =
+   * =Type Classes=
    *
-   * The combination of types parameterized and implicit parameters is also
-   * called ''type classes''.
+   * The combination of types parameterized and implicit parameters is also called ''type classes''.
    *
-   * = Exercises =
+   * =Exercises=
    *
    * Define an ordering for the `Rational` type:
    *
@@ -181,13 +190,13 @@ object TypeClasses extends ScalaTutorialSection {
   def rationalOrdering(res0: (Rational, Rational) => Int): Unit = {
 
     /**
-     * Returns an integer whose sign communicates how the first parameter
-     * compares to the second parameter.
+     * Returns an integer whose sign communicates how the first parameter compares to the second
+     * parameter.
      *
      * The result sign has the following meaning:
-     *  - Negative if the first parameter is less than the second parameter
-     *  - Positive if the first parameter is greater than the second parameter
-     *  - Zero otherwise
+     *   - Negative if the first parameter is less than the second parameter
+     *   - Positive if the first parameter is greater than the second parameter
+     *   - Zero otherwise
      */
     val compareRationals: (Rational, Rational) => Int = res0
 

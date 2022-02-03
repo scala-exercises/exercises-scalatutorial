@@ -1,18 +1,31 @@
 /*
- * scala-exercises - exercises-scalatutorial
- * Copyright (C) 2015-2016 47 Degrees, LLC. <http://www.47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package scalatutorial.sections
 
-/** @param name functional_loops */
+/**
+ * @param name
+ *   functional_loops
+ */
 object FunctionalLoops extends ScalaTutorialSection {
 
   /**
-   * = Conditional Expressions =
+   * =Conditional Expressions=
    *
-   * To express choosing between two alternatives, Scala
-   * has a conditional expression `if-else`.
+   * To express choosing between two alternatives, Scala has a conditional expression `if-else`.
    *
    * It looks like a `if-else` in Java, but is used for expressions, not statements.
    *
@@ -24,7 +37,7 @@ object FunctionalLoops extends ScalaTutorialSection {
    *
    * `x >= 0` is a ''predicate'', of type `Boolean`.
    *
-   * = Boolean Expressions =
+   * =Boolean Expressions=
    *
    * Boolean expressions `b` can be composed of
    *
@@ -40,7 +53,7 @@ object FunctionalLoops extends ScalaTutorialSection {
    *   e <= e, e >= e, e < e, e > e, e == e, e != e
    * }}}
    *
-   * = Rewrite rules for Booleans =
+   * =Rewrite rules for Booleans=
    *
    * Here are reduction rules for Boolean expressions (`e` is an arbitrary expression):
    *
@@ -55,9 +68,9 @@ object FunctionalLoops extends ScalaTutorialSection {
    *
    * Note that `&&` and `||` do not always need their right operand to be evaluated.
    *
-   * We say, these expressions use “short-circuit evaluation”.
+   * We say these expressions use “short-circuit evaluation”.
    *
-   * = Computing the Square Root of a Value =
+   * =Computing the Square Root of a Value=
    *
    * We will define in this section a method
    *
@@ -66,17 +79,16 @@ object FunctionalLoops extends ScalaTutorialSection {
    *   def sqrt(x: Double): Double = ...
    * }}}
    *
-   * The classical way to achieve this is by successive approximations using
-   * Newton's method.
+   * The classical way to achieve this is by successive approximations using Newton's method.
    *
-   * = Method =
+   * =Method=
    *
    * To compute `sqrt(x)`:
    *
-   *  - Start with an initial ''estimate'' `y` (let's pick `y = 1`).
-   *  - Repeatedly improve the estimate by taking the mean of `y` and `x/y`.
+   *   - Start with an initial ''estimate'' `y` (let's pick `y = 1`).
+   *   - Repeatedly improve the estimate by taking the mean of `y` and `x/y`.
    *
-   * Example:
+   * Example: Evaluation of the square root of 2 (x = 2):
    *
    * {{{
    *   Estimation          Quotient              Mean
@@ -86,7 +98,7 @@ object FunctionalLoops extends ScalaTutorialSection {
    *   1.4142              ...                   ...
    * }}}
    *
-   * = Implementation in Scala =
+   * =Implementation in Scala=
    *
    * First, we define a method which computes one iteration step:
    *
@@ -102,7 +114,8 @@ object FunctionalLoops extends ScalaTutorialSection {
    *
    * For non-recursive methods, the return type is optional.
    *
-   * Second, we define a method `improve` to improve an estimate and a test to check for termination:
+   * Second, we define a method `improve` to improve an estimate and a test to check for
+   * termination:
    *
    * {{{
    *   def improve(guess: Double, x: Double) =
@@ -118,28 +131,28 @@ object FunctionalLoops extends ScalaTutorialSection {
    *   def sqrt(x: Double) = sqrtIter(1.0, x)
    * }}}
    *
-   * = Summary =
+   * =Summary=
    *
    * You have seen simple elements of functional programing in Scala.
    *
-   *  - arithmetic and boolean expressions
-   *  - conditional expressions if-else
-   *  - functions with recursion
+   *   - arithmetic and boolean expressions
+   *   - conditional expressions if-else
+   *   - functions with recursion
    *
-   * You have learned the difference between the call-by-name and
-   * call-by-value evaluation strategies.
+   * You have learned the difference between the call-by-name and call-by-value evaluation
+   * strategies.
    *
-   * You have learned a way to reason about program execution: reduce expressions using
-   * the substitution model.
+   * You have learned a way to reason about program execution: reduce expressions using the
+   * substitution model.
    *
-   * = Exercise =
+   * =Exercise=
    *
    * Complete the following method definition that computes the factorial of a number:
    */
-  def factorialExercise(res0: Int, res1: Int, res2: Int): Unit = {
+  def factorialExercise(res0: Int, res1: Int): Unit = {
     def factorial(n: Int): Int =
       if (n == res0) res1
-      else factorial(n - res2) * n
+      else factorial(n - 1) * n
 
     factorial(3) shouldBe 6
     factorial(4) shouldBe 24
