@@ -1,26 +1,37 @@
 /*
- *  scala-exercises - exercises-scalatutorial
- *  Copyright (C) 2015-2019 47 Degrees, LLC. <http://www.47deg.com>
+ * Copyright 2016-2020 47 Degrees Open Source <https://www.47deg.com>
  *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package scalatutorial.sections
 
 import scalatutorial.utils.{BankAccount, Note}
 
-/** @param name classes_vs_case_classes */
+/**
+ * @param name
+ *   classes_vs_case_classes
+ */
 object ClassesVsCaseClasses extends ScalaTutorialSection {
 
   /**
-   * In the previous sections we have seen how case classes could be
-   * used to achieve information aggregation, and also how classes
-   * could be used to achieve data abstraction or to define stateful
-   * objects.
+   * In the previous sections we have seen how case classes could be used to achieve information
+   * aggregation, and also how classes could be used to achieve data abstraction or to define
+   * stateful objects.
    *
-   * What are the relationship between classes and case classes? How
-   * do they differ?
+   * What are the relationship between classes and case classes? How do they differ?
    *
-   * = Creation and Manipulation =
+   * =Creation and Manipulation=
    *
    * Remember the class definition of `BankAccount`:
    *
@@ -57,14 +68,20 @@ object ClassesVsCaseClasses extends ScalaTutorialSection {
   }
 
   /**
-   * We see that creating a class instance requires the keyword `new`, whereas
-   * this is not required for case classes.
+   * We see that creating a class instance requires the keyword `new`, whereas this is not required
+   * for case classes.
    *
-   * Also, we see that the case class constructor parameters are promoted to
-   * members, whereas this is not the case with regular classes.
+   * Also, we see that the case class constructor parameters are promoted to members, whereas this
+   * is not true for regular classes: the parameters will remain private.
    *
-   * = Equality =
+   * {{{
+   *     class MyClass(x: Int) { def doubledX = x * 2 }
+   *     val myInstance = new MyClass(5)
+   *     myInstance.doubledX // returns  10
+   *     myInstance.x        // error: value x is not a member of MyClass
+   * }}}
    *
+   * =Equality=
    */
   def equality(res0: Boolean, res1: Boolean): Unit = {
     val aliceAccount = new BankAccount
@@ -79,18 +96,17 @@ object ClassesVsCaseClasses extends ScalaTutorialSection {
   }
 
   /**
-   * In the above example, the same definitions of bank accounts lead to different
-   * values, whereas the same definitions of notes lead to equal values.
+   * In the above example, the same definitions of bank accounts lead to different values, whereas
+   * the same definitions of notes lead to equal values.
    *
    * As we have seen in the previous sections, stateful classes introduce a notion of ''identity''
-   * that does not exist in case classes. Indeed, the value of `BankAccount` can change over
-   * time whereas the value of a `Note` is immutable.
+   * that does not exist in case classes. Indeed, the value of `BankAccount` can change over time
+   * whereas the value of a `Note` is immutable.
    *
-   * In Scala, by default, comparing objects will compare their identity, but in the
-   * case of case class instances, the equality is redefined to compare the values of
-   * the aggregated information.
+   * In Scala, by default, comparing objects will compare their identity, but in the case of case
+   * class instances, the equality is redefined to compare the values of the aggregated information.
    *
-   * = Pattern Matching =
+   * =Pattern Matching=
    *
    * We saw how pattern matching can be used to extract information from a case class instance:
    *
@@ -102,24 +118,23 @@ object ClassesVsCaseClasses extends ScalaTutorialSection {
    *
    * By default, pattern matching does not work with regular classes.
    *
-   * = Extensibility =
+   * =Extensibility=
    *
-   * A class can extend another class, whereas a case class can not extend
-   * another case class (because it would not be possible to correctly
-   * implement their equality).
+   * A class can extend another class, whereas a case class can not extend another case class
+   * (because it would not be possible to correctly implement their equality).
    *
-   * = Case Classes Encoding =
+   * =Case Classes Encoding=
    *
    * We saw the main differences between classes and case classes.
    *
-   * It turns out that case classes are just a special case of classes,
-   * whose purpose is to aggregate several values into a single value.
+   * It turns out that case classes are just a special case of classes, whose purpose is to
+   * aggregate several values into a single value.
    *
-   * The Scala language provides explicit support for this use case
-   * because it is very common in practice.
+   * The Scala language provides explicit support for this use case because it is very common in
+   * practice.
    *
-   * So, when we define a case class, the Scala compiler defines a class
-   * enhanced with some more methods and a companion object.
+   * So, when we define a case class, the Scala compiler defines a class enhanced with some more
+   * methods and a companion object.
    *
    * For instance, the following case class definition:
    *
