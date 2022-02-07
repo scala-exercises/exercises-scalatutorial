@@ -4,6 +4,11 @@ ThisBuild / organization       := "org.scala-exercises"
 ThisBuild / githubOrganization := "47degrees"
 ThisBuild / scalaVersion       := "2.13.8"
 
+// Required to prevent errors for eviction from binary incompatible dependency
+// resolutions.
+// See also: https://github.com/scala-exercises/exercises-cats/pull/267
+ThisBuild / libraryDependencySchemes += "org.scala-lang.modules" %% "scala-xml" % "always"
+
 // This is required by the exercises compiler:
 publishLocal  := (publishLocal dependsOn compile).value
 publishSigned := (publishSigned dependsOn compile).value
