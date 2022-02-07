@@ -8,7 +8,9 @@ on:
   release:
     types: [published]
   push:
-    branches: main
+    branches:
+      - main
+      - update/sbt-exercise-0.7.1
 
 jobs:
   release:
