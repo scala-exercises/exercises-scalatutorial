@@ -26,7 +26,7 @@ lazy val exercises = (project in file("."))
       "com.chuusai"                %% "shapeless"                 % "2.3.7",
       "org.scalatest"              %% "scalatest"                 % "3.2.11",
       "org.scalacheck"             %% "scalacheck"                % "1.15.4",
-      "org.scalatestplus"          %% "scalacheck-1-14"           % "3.2.2.0",
+      "org.scalatestplus"          %% "scalacheck-1-15"           % "3.2.9.0",
       "com.github.alexarchambault" %% "scalacheck-shapeless_1.15" % "1.3.0"
     )
   )
