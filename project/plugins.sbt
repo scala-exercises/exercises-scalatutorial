@@ -1,4 +1,4 @@
-addSbtPlugin("org.scala-exercises" % "sbt-exercise"             % "0.6.7")
+addSbtPlugin("org.scala-exercises" % "sbt-exercise"             % "0.7.1")
 addSbtPlugin("com.github.sbt"      % "sbt-ci-release"           % "1.5.10")
 addSbtPlugin("org.scalameta"       % "sbt-mdoc"                 % "2.2.24")
 addSbtPlugin("org.scalameta"       % "sbt-scalafmt"             % "2.4.6")
