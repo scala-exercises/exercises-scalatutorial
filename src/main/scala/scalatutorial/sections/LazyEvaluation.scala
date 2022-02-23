@@ -39,7 +39,7 @@ object LazyEvaluation extends ScalaTutorialSection {
    *     else if (isPrime(from))
    *       if (n == 1) from else nthPrime(from + 1, to, n - 1)
    *     else nthPrime(from + 1, to, n)
-   * 
+   *
    *   def secondPrime(from: Int, to: Int) = nthPrime(from, to, 2)
    * }}}
    *
