@@ -23,7 +23,7 @@ lazy val exercises = (project in file("."))
     libraryDependencies ++= Seq(
       "org.scala-exercises"        %% "exercise-compiler"         % "0.7.1",
       "org.scala-exercises"        %% "definitions"               % "0.7.1",
-      "com.chuusai"                %% "shapeless"                 % "2.3.8",
+      "com.chuusai"                %% "shapeless"                 % "2.3.9",
       "org.scalatest"              %% "scalatest"                 % "3.2.11",
       "org.scalacheck"             %% "scalacheck"                % "1.16.0",
       "org.scalatestplus"          %% "scalacheck-1-14"           % "3.2.2.0",
