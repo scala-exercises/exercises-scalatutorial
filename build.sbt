@@ -2,7 +2,7 @@ import com.jsuereth.sbtpgp.PgpKeys.publishSigned
 
 ThisBuild / organization       := "org.scala-exercises"
 ThisBuild / githubOrganization := "47degrees"
-ThisBuild / scalaVersion       := "2.13.8"
+ThisBuild / scalaVersion       := "2.13.9"
 
 // Required to prevent errors for eviction from binary incompatible dependency
 // resolutions.
@@ -25,7 +25,7 @@ lazy val exercises = (project in file("."))
       "org.scala-exercises"        %% "definitions"               % "0.7.1",
       "com.chuusai"                %% "shapeless"                 % "2.3.9",
       "org.scalatest"              %% "scalatest"                 % "3.2.12",
-      "org.scalacheck"             %% "scalacheck"                % "1.16.0",
+      "org.scalacheck"             %% "scalacheck"                % "1.17.0",
       "org.scalatestplus"          %% "scalacheck-1-14"           % "3.2.2.0",
       "com.github.alexarchambault" %% "scalacheck-shapeless_1.15" % "1.3.0"
     )
