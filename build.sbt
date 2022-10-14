@@ -2,7 +2,7 @@ import com.jsuereth.sbtpgp.PgpKeys.publishSigned
 
 ThisBuild / organization       := "org.scala-exercises"
 ThisBuild / githubOrganization := "47degrees"
-ThisBuild / scalaVersion       := "2.13.9"
+ThisBuild / scalaVersion       := "2.13.10"
 
 // Required to prevent errors for eviction from binary incompatible dependency
 // resolutions.
