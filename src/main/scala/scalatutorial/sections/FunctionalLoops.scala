@@ -83,7 +83,7 @@ object FunctionalLoops extends ScalaTutorialSection {
    *
    * =Method=
    *
-   * To compute `sqrt(x)`:
+   * To compute `sqrt(x)`:  where x = 2 
    *
    *   - Start with an initial ''estimate'' `y` (let's pick `y = 1`).
    *   - Repeatedly improve the estimate by taking the mean of `y` and `x/y`.
