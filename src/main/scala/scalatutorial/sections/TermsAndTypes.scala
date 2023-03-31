@@ -83,7 +83,7 @@ object TermsAndTypes extends ScalaTutorialSection {
    *   - What is the result of the concatenation of the texts “Hello, ” and “Scala!”?
    *
    * {{{
-   *   "Hello, " ++ "Scala!"
+   *   "Hello, " + "Scala!"
    * }}}
    *
    * =Evaluation=
@@ -108,7 +108,7 @@ object TermsAndTypes extends ScalaTutorialSection {
    */
   def evaluation(res0: Int, res1: String): Unit = {
     1 + 2 shouldBe res0
-    "Hello, " ++ "Scala!" shouldBe res1
+    "Hello, " + "Scala!" shouldBe res1
   }
 
   /**
