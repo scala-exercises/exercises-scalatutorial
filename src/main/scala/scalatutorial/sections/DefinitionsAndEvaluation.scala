@@ -199,6 +199,7 @@ object DefinitionsAndEvaluation extends ScalaTutorialSection {
    *   9 + (2+2) * (2+2)
    *   9 + 4 * (2+2)
    *   9 + 4 * 4
+   *   9 + 16
    *   25
    * }}}
    *
