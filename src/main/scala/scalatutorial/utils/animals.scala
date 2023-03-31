@@ -18,6 +18,8 @@ package scalatutorial.utils
 
 trait Animal {
   def fitness: Int
+  def fitness1: Int
+  def fitness2: Int
 }
 
 trait Reptile extends Animal
