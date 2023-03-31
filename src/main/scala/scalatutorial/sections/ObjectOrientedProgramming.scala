@@ -487,7 +487,7 @@ object ObjectOrientedProgramming extends ScalaTutorialSection {
    *
    * `Empty` and `NonEmpty` are ''subclasses'' of `IntSet`.
    *
-   * In Scala, any user-defined class extends another class.
+   * In Scala, every user-defined class extends another class.
    *
    * If no superclass is given, the standard class `Object` in the Java package `java.lang` is
    * assumed.
