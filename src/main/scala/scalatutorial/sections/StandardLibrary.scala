@@ -112,9 +112,7 @@ object StandardLibrary extends ScalaTutorialSection {
    *     // Same as `x :: Nil`
    *     case List(x) => …
    *     // The empty list, same as `Nil`
-   *     case List() =>
-   *     // A list that contains as only element another list that starts with `2`
-   *     case List(2 :: xs) => …
+   *     case List() => …
    *   }
    * }}}
    *
