@@ -117,7 +117,7 @@ object DefinitionsAndEvaluation extends ScalaTutorialSection {
    *
    * =Evaluation of Function Applications=
    *
-   * Applications of parametrized functions are evaluated in a similar way as operators:
+   * Applications of parameterized functions are evaluated in a similar way as operators:
    *
    *   1. Evaluate all function arguments, from left to right
    *   1. Replace the function application by the function's right-hand side, and, at the same time
